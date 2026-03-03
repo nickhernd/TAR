@@ -1,0 +1,25 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Parte 1: Primeros Pasos}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Creación del espacio de trabajo}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Ejemplo de un entorno: Nodos y Topics}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Servicios}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Ejercicios}{4}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Ejercicio 1: Publicar mensaje al topic \texttt {/chatter}}{4}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Ejercicio 2: Modificar el servicio suma}{4}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Parte 2: Nivel Principiante}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Crear un Paquete}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Crear un Mensaje}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Ejercicios}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Ejercicio 1: Paquete \texttt {p2pkg} y mensaje \texttt {P2pkg\_mensaje}}{6}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Ejercicio 2: Nodos publisher y subscriber en \texttt {p2pkg}}{7}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Parte 3: Pasando a Nivel Intermedio}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Crear un archivo launch}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Acciones}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Ejercicios}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Ejercicio 1: \texttt {launch\_ejercicio3.py}}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Ejercicio 2: \texttt {launch\_ejercicio4.py} con namespace y remapping}{9}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Ejercicio 3: Acción \texttt {ejFibonacci.action}}{9}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Ejercicio 4: Servidor \texttt {ejercicios\_fibServer.py}}{9}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Ejercicio 5: Cliente \texttt {ejercicios\_fibClient.py}}{9}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Ejercicio 6: Servicio \texttt {service\_temp} (conversión de temperatura)}{10}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Ejercicio 7: Acción \texttt {battery\_act} (simulación de batería)}{10}{subsection.3.3.7}%

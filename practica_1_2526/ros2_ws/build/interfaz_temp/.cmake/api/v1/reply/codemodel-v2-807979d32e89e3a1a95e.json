@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-069fdd9da3b18dd5e60d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "interfaz_temp__py",
+					"jsonFile" : "directory-interfaz_temp__py-acce9e622e2d5af37469.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/ros2_ws/build/interfaz_temp/interfaz_temp__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "interfaz_temp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_interfaz_temp_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_interfaz_temp_egg-6ecad346ca0e28feed43.json",
+					"name" : "ament_cmake_python_build_interfaz_temp_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_interfaz_temp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_interfaz_temp-3d1c7539ae9a3e4e7cf9.json",
+					"name" : "ament_cmake_python_copy_interfaz_temp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp-99b3fa702fc406a9fe33.json",
+					"name" : "interfaz_temp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__cpp-dadb7eacb1e5d1ba78f3.json",
+					"name" : "interfaz_temp__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "interfaz_temp__py::@4bf42fd6e44de99dca5f",
+					"jsonFile" : "target-interfaz_temp__py-45f9c610a795b8ce667c.json",
+					"name" : "interfaz_temp__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_generator_c-d7010b4fb33fea5c22f3.json",
+					"name" : "interfaz_temp__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_generator_py-f7f1c90c9975f81d11b3.json",
+					"name" : "interfaz_temp__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_c-6e07fb7c0a301b7325e6.json",
+					"name" : "interfaz_temp__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_c__pyext-f1fd92fada8de04897d5.json",
+					"name" : "interfaz_temp__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_cpp-eaaececea603a70b1050.json",
+					"name" : "interfaz_temp__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_fastrtps_c-a17586335b2fd1dbcc89.json",
+					"name" : "interfaz_temp__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_fastrtps_c__pyext-6d4b7419b8ce0086fdb1.json",
+					"name" : "interfaz_temp__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_fastrtps_cpp-7b5ec0e250c422001c1f.json",
+					"name" : "interfaz_temp__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_introspection_c-bee7405a0232b1886d6f.json",
+					"name" : "interfaz_temp__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_introspection_c__pyext-9b752516b6c7a49a4863.json",
+					"name" : "interfaz_temp__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp__rosidl_typesupport_introspection_cpp-c417341e850ed9a854e3.json",
+					"name" : "interfaz_temp__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interfaz_temp_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interfaz_temp_uninstall-5014ef728bdf4bfc27cf.json",
+					"name" : "interfaz_temp_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-20441e66bf229c13e481.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspace/ros2_ws/build/interfaz_temp",
+		"source" : "/workspace/ros2_ws/src/interfaz_temp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

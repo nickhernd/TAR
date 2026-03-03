@@ -1,0 +1,15 @@
+/workspace/ros2_ws/src/install/interfaz/share/ament_index/resource_index/package_run_dependencies/interfaz
+/workspace/ros2_ws/src/install/interfaz/share/ament_index/resource_index/parent_prefix_path/interfaz
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/environment/ament_prefix_path.sh
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/environment/ament_prefix_path.dsv
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/environment/path.sh
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/environment/path.dsv
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/local_setup.bash
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/local_setup.sh
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/local_setup.zsh
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/local_setup.dsv
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/package.dsv
+/workspace/ros2_ws/src/install/interfaz/share/ament_index/resource_index/packages/interfaz
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/cmake/interfazConfig.cmake
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/cmake/interfazConfig-version.cmake
+/workspace/ros2_ws/src/install/interfaz/share/interfaz/package.xml

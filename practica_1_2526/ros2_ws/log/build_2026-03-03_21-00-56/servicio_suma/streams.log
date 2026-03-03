@@ -1,0 +1,42 @@
+[0.590s] Invoking command in '/workspace/ros2_ws/src/servicio_suma': PYTHONPATH=/workspace/ros2_ws/build/servicio_suma/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/servicio_suma build --build-base /workspace/ros2_ws/build/servicio_suma/build install --record /workspace/ros2_ws/build/servicio_suma/install.log --single-version-externally-managed install_data
+[0.711s] running egg_info
+[0.711s] creating ../../build/servicio_suma/servicio_suma.egg-info
+[0.711s] writing ../../build/servicio_suma/servicio_suma.egg-info/PKG-INFO
+[0.711s] writing dependency_links to ../../build/servicio_suma/servicio_suma.egg-info/dependency_links.txt
+[0.712s] writing entry points to ../../build/servicio_suma/servicio_suma.egg-info/entry_points.txt
+[0.712s] writing requirements to ../../build/servicio_suma/servicio_suma.egg-info/requires.txt
+[0.712s] writing top-level names to ../../build/servicio_suma/servicio_suma.egg-info/top_level.txt
+[0.712s] writing manifest file '../../build/servicio_suma/servicio_suma.egg-info/SOURCES.txt'
+[0.712s] reading manifest file '../../build/servicio_suma/servicio_suma.egg-info/SOURCES.txt'
+[0.713s] adding license file 'LICENSE'
+[0.713s] writing manifest file '../../build/servicio_suma/servicio_suma.egg-info/SOURCES.txt'
+[0.713s] running build
+[0.713s] running build_py
+[0.713s] creating /workspace/ros2_ws/build/servicio_suma/build
+[0.713s] creating /workspace/ros2_ws/build/servicio_suma/build/lib
+[0.713s] creating /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma
+[0.714s] copying servicio_suma/__init__.py -> /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma
+[0.714s] copying servicio_suma/add_two_ints_server.py -> /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma
+[0.714s] copying servicio_suma/add_two_ints_client.py -> /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma
+[0.714s] running install
+[0.714s] running install_lib
+[0.714s] creating /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma
+[0.714s] copying /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma/__init__.py -> /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma
+[0.714s] copying /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma/add_two_ints_server.py -> /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma
+[0.714s] copying /workspace/ros2_ws/build/servicio_suma/build/lib/servicio_suma/add_two_ints_client.py -> /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma
+[0.715s] byte-compiling /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma/__init__.py to __init__.cpython-310.pyc
+[0.715s] byte-compiling /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma/add_two_ints_server.py to add_two_ints_server.cpython-310.pyc
+[0.715s] byte-compiling /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma/add_two_ints_client.py to add_two_ints_client.cpython-310.pyc
+[0.715s] running install_data
+[0.715s] creating /workspace/ros2_ws/install/servicio_suma/share/ament_index
+[0.715s] creating /workspace/ros2_ws/install/servicio_suma/share/ament_index/resource_index
+[0.716s] creating /workspace/ros2_ws/install/servicio_suma/share/ament_index/resource_index/packages
+[0.716s] copying resource/servicio_suma -> /workspace/ros2_ws/install/servicio_suma/share/ament_index/resource_index/packages
+[0.716s] copying package.xml -> /workspace/ros2_ws/install/servicio_suma/share/servicio_suma
+[0.716s] running install_egg_info
+[0.717s] Copying ../../build/servicio_suma/servicio_suma.egg-info to /workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages/servicio_suma-0.0.0-py3.10.egg-info
+[0.717s] running install_scripts
+[0.730s] Installing client script to /workspace/ros2_ws/install/servicio_suma/lib/servicio_suma
+[0.731s] Installing server script to /workspace/ros2_ws/install/servicio_suma/lib/servicio_suma
+[0.731s] writing list of installed files to '/workspace/ros2_ws/build/servicio_suma/install.log'
+[0.744s] Invoked command in '/workspace/ros2_ws/src/servicio_suma' returned '0': PYTHONPATH=/workspace/ros2_ws/build/servicio_suma/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/servicio_suma build --build-base /workspace/ros2_ws/build/servicio_suma/build install --record /workspace/ros2_ws/build/servicio_suma/install.log --single-version-externally-managed install_data

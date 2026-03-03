@@ -1,0 +1,234 @@
+[0.021s] Invoking command in '/workspace/ros2_ws/build/interfaz_temp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/mi_accion:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/interfaz_temp -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/interfaz_temp
+[0.245s] -- The C compiler identification is GNU 11.4.0
+[0.364s] -- The CXX compiler identification is GNU 11.4.0
+[0.379s] -- Detecting C compiler ABI info
+[0.472s] -- Detecting C compiler ABI info - done
+[0.480s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.480s] -- Detecting C compile features
+[0.481s] -- Detecting C compile features - done
+[0.486s] -- Detecting CXX compiler ABI info
+[0.584s] -- Detecting CXX compiler ABI info - done
+[0.591s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.591s] -- Detecting CXX compile features
+[0.592s] -- Detecting CXX compile features - done
+[0.610s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.811s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.960s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.969s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.984s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.093s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.445s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.662s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.933s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.959s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.963s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.994s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.994s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.994s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.994s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.018s] -- Found PythonExtra: .so  
+[2.060s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.107s] -- Added test 'lint_cmake' to check CMake code style
+[2.109s] -- Added test 'xmllint' to check XML markup files
+[2.112s] -- Configuring done
+[2.153s] -- Generating done
+[2.163s] -- Build files have been written to: /workspace/ros2_ws/build/interfaz_temp
+[2.170s] Invoked command in '/workspace/ros2_ws/build/interfaz_temp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/mi_accion:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/interfaz_temp -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/interfaz_temp
+[2.172s] Invoking command in '/workspace/ros2_ws/build/interfaz_temp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/mi_accion:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/interfaz_temp -- -j20 -l20
+[2.218s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.229s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.238s] [  6%] Built target ament_cmake_python_copy_interfaz_temp
+[2.400s] running egg_info
+[2.400s] creating interfaz_temp.egg-info
+[2.400s] writing interfaz_temp.egg-info/PKG-INFO
+[2.400s] writing dependency_links to interfaz_temp.egg-info/dependency_links.txt
+[2.400s] writing top-level names to interfaz_temp.egg-info/top_level.txt
+[2.400s] writing manifest file 'interfaz_temp.egg-info/SOURCES.txt'
+[2.401s] [  9%] [32mBuilding C object CMakeFiles/interfaz_temp__rosidl_generator_c.dir/rosidl_generator_c/interfaz_temp/srv/detail/temp_conversion__functions.c.o[0m
+[2.402s] reading manifest file 'interfaz_temp.egg-info/SOURCES.txt'
+[2.402s] writing manifest file 'interfaz_temp.egg-info/SOURCES.txt'
+[2.402s] [  9%] Built target interfaz_temp__cpp
+[2.409s] [ 19%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.409s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.409s] [ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.419s] [ 19%] Built target ament_cmake_python_build_interfaz_temp_egg
+[2.466s] [ 22%] [32m[1mLinking C shared library libinterfaz_temp__rosidl_generator_c.so[0m
+[2.494s] [ 22%] Built target interfaz_temp__rosidl_generator_c
+[2.501s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.501s] [ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.503s] [ 32%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.538s] [ 35%] [32mBuilding CXX object CMakeFiles/interfaz_temp__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaz_temp/srv/temp_conversion__type_support.cpp.o[0m
+[2.554s] [ 38%] [32mBuilding CXX object CMakeFiles/interfaz_temp__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaz_temp/srv/detail/temp_conversion__type_support.cpp.o[0m
+[2.556s] [ 41%] [32mBuilding CXX object CMakeFiles/interfaz_temp__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaz_temp/srv/detail/dds_fastrtps/temp_conversion__type_support.cpp.o[0m
+[2.633s] [ 45%] [32mBuilding CXX object CMakeFiles/interfaz_temp__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaz_temp/srv/temp_conversion__type_support.cpp.o[0m
+[2.641s] [ 48%] [32mBuilding C object CMakeFiles/interfaz_temp__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaz_temp/srv/detail/temp_conversion__type_support.c.o[0m
+[2.647s] [ 51%] [32mBuilding CXX object CMakeFiles/interfaz_temp__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaz_temp/srv/detail/temp_conversion__type_support_c.cpp.o[0m
+[2.656s] [ 54%] [32m[1mLinking CXX shared library libinterfaz_temp__rosidl_typesupport_c.so[0m
+[2.666s] [ 58%] [32m[1mLinking C shared library libinterfaz_temp__rosidl_typesupport_introspection_c.so[0m
+[2.685s] [ 58%] Built target interfaz_temp__rosidl_typesupport_introspection_c
+[2.686s] [ 58%] Built target interfaz_temp__rosidl_typesupport_c
+[2.728s] [ 61%] [32m[1mLinking CXX shared library libinterfaz_temp__rosidl_typesupport_cpp.so[0m
+[2.755s] [ 61%] Built target interfaz_temp__rosidl_typesupport_cpp
+[2.792s] [ 64%] [32m[1mLinking CXX shared library libinterfaz_temp__rosidl_typesupport_introspection_cpp.so[0m
+[2.811s] [ 67%] [32m[1mLinking CXX shared library libinterfaz_temp__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.830s] [ 70%] [32m[1mLinking CXX shared library libinterfaz_temp__rosidl_typesupport_fastrtps_c.so[0m
+[2.830s] [ 70%] Built target interfaz_temp__rosidl_typesupport_introspection_cpp
+[2.860s] [ 70%] Built target interfaz_temp__rosidl_typesupport_fastrtps_cpp
+[2.878s] [ 70%] Built target interfaz_temp__rosidl_typesupport_fastrtps_c
+[2.891s] [ 70%] Built target interfaz_temp
+[2.904s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.080s] [ 74%] Built target interfaz_temp__py
+[3.093s] [ 77%] [32mBuilding C object CMakeFiles/interfaz_temp__rosidl_generator_py.dir/rosidl_generator_py/interfaz_temp/srv/_temp_conversion_s.c.o[0m
+[3.186s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/interfaz_temp/libinterfaz_temp__rosidl_generator_py.so[0m
+[3.213s] [ 80%] Built target interfaz_temp__rosidl_generator_py
+[3.228s] [ 90%] [32mBuilding C object CMakeFiles/interfaz_temp__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaz_temp/_interfaz_temp_s.ep.rosidl_typesupport_c.c.o[0m
+[3.228s] [ 90%] [32mBuilding C object CMakeFiles/interfaz_temp__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaz_temp/_interfaz_temp_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.228s] [ 90%] [32mBuilding C object CMakeFiles/interfaz_temp__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaz_temp/_interfaz_temp_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.283s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaz_temp/interfaz_temp_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.283s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaz_temp/interfaz_temp_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.283s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaz_temp/interfaz_temp_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.303s] [100%] Built target interfaz_temp__rosidl_typesupport_introspection_c__pyext
+[3.303s] [100%] Built target interfaz_temp__rosidl_typesupport_fastrtps_c__pyext
+[3.303s] [100%] Built target interfaz_temp__rosidl_typesupport_c__pyext
+[3.311s] Invoked command in '/workspace/ros2_ws/build/interfaz_temp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/mi_accion:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/interfaz_temp -- -j20 -l20
+[3.317s] Invoking command in '/workspace/ros2_ws/build/interfaz_temp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/mi_accion:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/interfaz_temp
+[3.322s] -- Install configuration: ""
+[3.322s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/ament_index/resource_index/rosidl_interfaces/interfaz_temp
+[3.322s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp
+[3.322s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg/rosidl_generator_c__visibility_control.h
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/temp_conversion.h
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__functions.h
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__type_support.h
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__functions.c
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__struct.h
+[3.323s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/library_path.sh
+[3.324s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/library_path.dsv
+[3.324s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_generator_c.so
+[3.324s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_generator_c.so" to ""
+[3.324s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp
+[3.324s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg
+[3.324s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.325s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv
+[3.325s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail
+[3.325s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__rosidl_typesupport_fastrtps_c.h
+[3.325s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_fastrtps_c.so
+[3.325s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_fastrtps_c.so" to ""
+[3.325s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__rosidl_typesupport_introspection_c.h
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__type_support.c
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_introspection_c.so
+[3.326s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_introspection_c.so" to ""
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_c.so
+[3.326s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_c.so" to ""
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/temp_conversion.hpp
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__traits.hpp
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__type_support.hpp
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__struct.hpp
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__builder.hpp
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__rosidl_typesupport_fastrtps_cpp.hpp
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/dds_fastrtps
+[3.326s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_fastrtps_cpp.so
+[3.326s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.326s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp
+[3.327s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv
+[3.327s] -- Up-to-date: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__rosidl_typesupport_introspection_cpp.hpp
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/include/interfaz_temp/interfaz_temp/srv/detail/temp_conversion__type_support.cpp
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_introspection_cpp.so
+[3.327s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_introspection_cpp.so" to ""
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_cpp.so
+[3.327s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_typesupport_cpp.so" to ""
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/pythonpath.sh
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/pythonpath.dsv
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp-0.0.0-py3.10.egg-info
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp-0.0.0-py3.10.egg-info/top_level.txt
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp-0.0.0-py3.10.egg-info/PKG-INFO
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/_interfaz_temp_s.ep.rosidl_typesupport_introspection_c.c
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/__init__.py
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/_interfaz_temp_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/_interfaz_temp_s.ep.rosidl_typesupport_c.c
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv/__init__.py
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv/_temp_conversion_s.c
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv/_temp_conversion.py
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/libinterfaz_temp__rosidl_generator_py.so
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.327s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.352s] Listing '/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp'...
+[3.352s] Compiling '/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/__init__.py'...
+[3.352s] Listing '/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv'...
+[3.352s] Compiling '/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv/__init__.py'...
+[3.352s] Compiling '/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/srv/_temp_conversion.py'...
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.355s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.355s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.355s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/local/lib/python3.10/dist-packages/interfaz_temp/interfaz_temp_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_generator_py.so
+[3.355s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz_temp/lib/libinterfaz_temp__rosidl_generator_py.so" to ""
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/srv/TempConversion.idl
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/srv/TempConversion.srv
+[3.355s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/srv/TempConversion_Request.msg
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/srv/TempConversion_Response.msg
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/ament_index/resource_index/package_run_dependencies/interfaz_temp
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/ament_index/resource_index/parent_prefix_path/interfaz_temp
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/ament_prefix_path.sh
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/ament_prefix_path.dsv
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/path.sh
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/environment/path.dsv
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/local_setup.bash
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/local_setup.sh
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/local_setup.zsh
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/local_setup.dsv
+[3.356s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/package.dsv
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/ament_index/resource_index/packages/interfaz_temp
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_generator_cExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_generator_cExport-noconfig.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_typesupport_fastrtps_cExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_introspection_cExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_cExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_cExport-noconfig.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_generator_cppExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_introspection_cppExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_cppExport.cmake
+[3.357s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_temp__rosidl_typesupport_cppExport-noconfig.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_generator_pyExport.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/export_interfaz_temp__rosidl_generator_pyExport-noconfig.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/rosidl_cmake-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/ament_cmake_export_libraries-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/ament_cmake_export_targets-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_tempConfig.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/cmake/interfaz_tempConfig-version.cmake
+[3.358s] -- Installing: /workspace/ros2_ws/install/interfaz_temp/share/interfaz_temp/package.xml
+[3.360s] Invoked command in '/workspace/ros2_ws/build/interfaz_temp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/mi_accion:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/interfaz_temp

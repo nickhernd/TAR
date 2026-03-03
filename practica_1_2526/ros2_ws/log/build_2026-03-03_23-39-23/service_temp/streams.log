@@ -1,0 +1,21 @@
+[0.393s] Invoking command in '/workspace/ros2_ws/src/service_temp': PYTHONPATH=/workspace/ros2_ws/build/service_temp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/service_temp/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/service_temp build --build-base /workspace/ros2_ws/build/service_temp/build install --record /workspace/ros2_ws/build/service_temp/install.log --single-version-externally-managed install_data
+[0.593s] running egg_info
+[0.594s] writing ../../build/service_temp/service_temp.egg-info/PKG-INFO
+[0.594s] writing dependency_links to ../../build/service_temp/service_temp.egg-info/dependency_links.txt
+[0.594s] writing entry points to ../../build/service_temp/service_temp.egg-info/entry_points.txt
+[0.594s] writing requirements to ../../build/service_temp/service_temp.egg-info/requires.txt
+[0.594s] writing top-level names to ../../build/service_temp/service_temp.egg-info/top_level.txt
+[0.596s] reading manifest file '../../build/service_temp/service_temp.egg-info/SOURCES.txt'
+[0.596s] adding license file 'LICENSE'
+[0.596s] writing manifest file '../../build/service_temp/service_temp.egg-info/SOURCES.txt'
+[0.596s] running build
+[0.596s] running build_py
+[0.597s] running install
+[0.597s] running install_lib
+[0.598s] running install_data
+[0.598s] running install_egg_info
+[0.600s] removing '/workspace/ros2_ws/install/service_temp/lib/python3.10/site-packages/service_temp-0.0.0-py3.10.egg-info' (and everything under it)
+[0.601s] Copying ../../build/service_temp/service_temp.egg-info to /workspace/ros2_ws/install/service_temp/lib/python3.10/site-packages/service_temp-0.0.0-py3.10.egg-info
+[0.601s] running install_scripts
+[0.621s] writing list of installed files to '/workspace/ros2_ws/build/service_temp/install.log'
+[0.643s] Invoked command in '/workspace/ros2_ws/src/service_temp' returned '0': PYTHONPATH=/workspace/ros2_ws/build/service_temp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/service_temp/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/service_temp build --build-base /workspace/ros2_ws/build/service_temp/build install --record /workspace/ros2_ws/build/service_temp/install.log --single-version-externally-managed install_data

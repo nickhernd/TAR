@@ -1,0 +1,169 @@
+%==============================================================
+% PARTE 1: PRIMEROS PASOS
+%==============================================================
+\chapter{Parte 1: Primeros Pasos}
+
+%--------------------------------------------------------------
+\section{Creación del espacio de trabajo}
+%--------------------------------------------------------------
+
+En esta sección se describe el proceso de creación y configuración del espacio de trabajo ROS 2 (\texttt{ros2\_ws}), así como la instalación del entorno Docker con ROS 2 Humble.
+
+% Describe brevemente los pasos realizados y añade capturas si lo crees necesario.
+
+%--------------------------------------------------------------
+\section{Ejemplo de un entorno: Nodos y Topics}
+%--------------------------------------------------------------
+
+\subsection*{Pregunta 1}
+\textit{¿Qué podemos saber de este nodo? (Suscriptores, topics)}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% Si tienes captura, inclúyela así:
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_nodo_info.png}
+%   \caption{Información del nodo \texttt{/talker} con \texttt{ros2 node info}.}
+%   \label{fig:p1_nodo_info}
+% \end{figure}
+
+\subsection*{Pregunta 2}
+\textit{¿Qué podemos saber sobre el topic que publica el nodo que acabamos de lanzar?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_topic_info.png}
+%   \caption{Información del topic \texttt{/chatter}.}
+%   \label{fig:p1_topic_info}
+% \end{figure}
+
+\subsection*{Pregunta 3}
+\textit{¿Qué podemos saber sobre el nuevo nodo \texttt{/listener}?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_listener_info.png}
+%   \caption{Información del nodo \texttt{/listener}.}
+%   \label{fig:p1_listener_info}
+% \end{figure}
+
+\subsection*{Pregunta 4}
+\textit{¿Qué ha sucedido ahora en el topic \texttt{/chatter}?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_chatter_subs.png}
+%   \caption{Estado del topic \texttt{/chatter} tras conectar el listener.}
+%   \label{fig:p1_chatter_subs}
+% \end{figure}
+
+\subsection*{Pregunta 5}
+\textit{¿Qué podemos saber a partir del gráfico de \texttt{rqt\_graph}?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+\begin{figure}[H]
+  \centering
+  % \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_rqt_graph.png}
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm} [Captura rqt\_graph] \vspace{2cm}}}
+  \caption{Gráfico \texttt{rqt\_graph} con los nodos \texttt{/talker} y \texttt{/listener}.}
+  \label{fig:p1_rqt_graph}
+\end{figure}
+
+%--------------------------------------------------------------
+\section{Servicios}
+%--------------------------------------------------------------
+
+\subsection*{Pregunta 6}
+\textit{¿Qué puedes comentar acerca de este servicio?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_servicio_suma.png}
+%   \caption{Ejecución del servicio de suma.}
+%   \label{fig:p1_servicio_suma}
+% \end{figure}
+
+\subsection*{Pregunta 7}
+\textit{Al lanzar el servidor y ejecutar \texttt{ros2 service list} ¿Qué servicios aparecen? ¿Cómo se ha creado el servicio \texttt{minimal\_service} y cuál es su cometido?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_service_list.png}
+%   \caption{Listado de servicios con \texttt{ros2 service list}.}
+%   \label{fig:p1_service_list}
+% \end{figure}
+
+\subsection*{Pregunta 8}
+\textit{¿Cómo puedo saber cuáles son los parámetros de la ``petición'' y de la ``respuesta'' de un servicio? ¿De qué tipología son estos parámetros?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí. Ejemplo de comando:
+\begin{lstlisting}[style=bash, caption={Mostrar interfaz del servicio con ros2 interface show.}]
+ros2 interface show <tipo_servicio>
+\end{lstlisting}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_interface_show.png}
+%   \caption{Salida de \texttt{ros2 interface show} para el servicio de suma.}
+%   \label{fig:p1_interface_show}
+% \end{figure}
+
+%--------------------------------------------------------------
+\section{Ejercicios}
+%--------------------------------------------------------------
+
+\subsection{Ejercicio 1: Publicar mensaje al topic \texttt{/chatter}}
+
+\textit{Publica desde la terminal un mensaje al topic \texttt{/chatter} para que sea leído por el nodo \texttt{/listener}.}
+
+\textbf{Comandos utilizados:}
+\begin{lstlisting}[style=bash, caption={Publicación manual en el topic /chatter.}]
+ros2 topic pub /chatter std_msgs/msg/String "data: 'Tu mensaje aquí'"
+\end{lstlisting}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_ej1_pub.png}
+%   \caption{Publicación de mensaje en \texttt{/chatter} y recepción en \texttt{/listener}.}
+%   \label{fig:p1_ej1_pub}
+% \end{figure}
+
+\subsection{Ejercicio 2: Modificar el servicio suma}
+
+\textit{Cambia el servicio \texttt{servicio\_suma} para que calcule: \(a + b - c \cdot d \div e\), siendo \(a, b, c, d, e\) valores enteros (\texttt{int64}) y el resultado en \texttt{float64}.}
+
+\textbf{Descripción de los cambios:}\\
+% Explica qué archivos has modificado y cómo.
+
+\textbf{Archivos modificados:}
+\begin{itemize}
+  \item \texttt{interfaz\_servicio\_suma/srv/...} -- Modificación de la interfaz del servicio.
+  \item \texttt{servicio\_suma/...} -- Modificación del servidor y cliente.
+\end{itemize}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_ej2_resultado.png}
+%   \caption{Resultado de la ejecución del servicio modificado.}
+%   \label{fig:p1_ej2_resultado}
+% \end{figure}

@@ -1,0 +1,8 @@
+setup.py
+interfaz_temp/__init__.py
+interfaz_temp.egg-info/PKG-INFO
+interfaz_temp.egg-info/SOURCES.txt
+interfaz_temp.egg-info/dependency_links.txt
+interfaz_temp.egg-info/top_level.txt
+interfaz_temp/srv/__init__.py
+interfaz_temp/srv/_temp_conversion.py

@@ -1,0 +1,306 @@
+[0.013s] Invoking command in '/workspace/ros2_ws/build/interfaz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/interfaz -- -j20 -l20
+[0.104s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.290s] -- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+[0.360s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.364s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.378s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.397s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.419s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.456s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.485s] -- Found action_msgs: 1.2.2 (/opt/ros/humble/share/action_msgs/cmake)
+[0.530s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.880s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.314s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.497s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.526s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.555s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.555s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.555s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.602s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.633s] -- Added test 'lint_cmake' to check CMake code style
+[1.634s] -- Added test 'xmllint' to check XML markup files
+[1.639s] -- Configuring done
+[1.708s] -- Generating done
+[1.724s] -- Build files have been written to: /workspace/ros2_ws/build/interfaz
+[1.755s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.769s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.783s] [  4%] Built target ament_cmake_python_copy_interfaz
+[1.966s] running egg_info
+[1.966s] writing interfaz.egg-info/PKG-INFO
+[1.966s] writing dependency_links to interfaz.egg-info/dependency_links.txt
+[1.966s] writing top-level names to interfaz.egg-info/top_level.txt
+[1.967s] reading manifest file 'interfaz.egg-info/SOURCES.txt'
+[1.968s] writing manifest file 'interfaz.egg-info/SOURCES.txt'
+[1.983s] [  4%] Built target ament_cmake_python_build_interfaz_egg
+[2.077s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_generator_c[0m
+[2.084s] [  6%] [32mBuilding C object CMakeFiles/interfaz__rosidl_generator_c.dir/rosidl_generator_c/interfaz/msg/detail/mi_mensaje__functions.c.o[0m
+[2.085s] [  8%] [32mBuilding C object CMakeFiles/interfaz__rosidl_generator_c.dir/rosidl_generator_c/interfaz/msg/detail/p2pkg_mensaje__functions.c.o[0m
+[2.086s] [ 10%] [32mBuilding C object CMakeFiles/interfaz__rosidl_generator_c.dir/rosidl_generator_c/interfaz/action/detail/fibonacci__functions.c.o[0m
+[2.087s] [ 10%] Built target interfaz__cpp
+[2.095s] [ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.095s] [ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.096s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.217s] [ 19%] [32m[1mLinking C shared library libinterfaz__rosidl_generator_c.so[0m
+[2.257s] [ 19%] Built target interfaz__rosidl_generator_c
+[2.257s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_cpp[0m
+[2.266s] [ 21%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.266s] [ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.267s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.267s] [ 27%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaz/action/fibonacci__type_support.cpp.o[0m
+[2.268s] [ 29%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaz/msg/mi_mensaje__type_support.cpp.o[0m
+[2.270s] [ 31%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaz/msg/p2pkg_mensaje__type_support.cpp.o[0m
+[2.287s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_introspection_cpp[0m
+[2.297s] [ 34%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaz/msg/detail/p2pkg_mensaje__type_support.cpp.o[0m
+[2.297s] [ 36%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaz/action/detail/fibonacci__type_support.cpp.o[0m
+[2.299s] [ 38%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaz/msg/detail/mi_mensaje__type_support.cpp.o[0m
+[2.325s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_fastrtps_cpp[0m
+[2.335s] [ 42%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaz/msg/detail/dds_fastrtps/mi_mensaje__type_support.cpp.o[0m
+[2.335s] [ 42%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaz/action/detail/dds_fastrtps/fibonacci__type_support.cpp.o[0m
+[2.335s] [ 44%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaz/msg/detail/dds_fastrtps/p2pkg_mensaje__type_support.cpp.o[0m
+[2.459s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_c[0m
+[2.467s] [ 46%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaz/msg/mi_mensaje__type_support.cpp.o[0m
+[2.469s] [ 48%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaz/action/fibonacci__type_support.cpp.o[0m
+[2.470s] [ 51%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaz/msg/p2pkg_mensaje__type_support.cpp.o[0m
+[2.515s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_introspection_c[0m
+[2.515s] [ 53%] [32m[1mLinking CXX shared library libinterfaz__rosidl_typesupport_c.so[0m
+[2.525s] [ 55%] [32mBuilding C object CMakeFiles/interfaz__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaz/msg/detail/mi_mensaje__type_support.c.o[0m
+[2.526s] [ 59%] [32mBuilding C object CMakeFiles/interfaz__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaz/msg/detail/p2pkg_mensaje__type_support.c.o[0m
+[2.526s] [ 59%] [32mBuilding C object CMakeFiles/interfaz__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaz/action/detail/fibonacci__type_support.c.o[0m
+[2.555s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_fastrtps_c[0m
+[2.565s] [ 61%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaz/msg/detail/mi_mensaje__type_support_c.cpp.o[0m
+[2.565s] [ 63%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaz/action/detail/fibonacci__type_support_c.cpp.o[0m
+[2.566s] [ 65%] [32mBuilding CXX object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaz/msg/detail/p2pkg_mensaje__type_support_c.cpp.o[0m
+[2.570s] [ 65%] Built target interfaz__rosidl_typesupport_c
+[2.583s] [ 68%] [32m[1mLinking C shared library libinterfaz__rosidl_typesupport_introspection_c.so[0m
+[2.607s] [ 68%] Built target interfaz__rosidl_typesupport_introspection_c
+[2.704s] [ 70%] [32m[1mLinking CXX shared library libinterfaz__rosidl_typesupport_cpp.so[0m
+[2.736s] [ 70%] Built target interfaz__rosidl_typesupport_cpp
+[2.778s] [ 72%] [32m[1mLinking CXX shared library libinterfaz__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.787s] [ 74%] [32m[1mLinking CXX shared library libinterfaz__rosidl_typesupport_introspection_cpp.so[0m
+[2.798s] [ 76%] [32m[1mLinking CXX shared library libinterfaz__rosidl_typesupport_fastrtps_c.so[0m
+[2.829s] [ 76%] Built target interfaz__rosidl_typesupport_fastrtps_cpp
+[2.837s] [ 76%] Built target interfaz__rosidl_typesupport_introspection_cpp
+[2.848s] [ 76%] Built target interfaz__rosidl_typesupport_fastrtps_c
+[2.862s] [ 76%] Built target interfaz
+[2.875s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.290s] [ 78%] Built target interfaz__py
+[3.298s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_generator_py[0m
+[3.306s] [ 82%] [32mBuilding C object CMakeFiles/interfaz__rosidl_generator_py.dir/rosidl_generator_py/interfaz/msg/_mi_mensaje_s.c.o[0m
+[3.306s] [ 82%] [32mBuilding C object CMakeFiles/interfaz__rosidl_generator_py.dir/rosidl_generator_py/interfaz/msg/_p2pkg_mensaje_s.c.o[0m
+[3.306s] [ 85%] [32mBuilding C object CMakeFiles/interfaz__rosidl_generator_py.dir/rosidl_generator_py/interfaz/action/_fibonacci_s.c.o[0m
+[3.434s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/interfaz/libinterfaz__rosidl_generator_py.so[0m
+[3.468s] [ 87%] Built target interfaz__rosidl_generator_py
+[3.477s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_introspection_c__pyext[0m
+[3.477s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_fastrtps_c__pyext[0m
+[3.478s] [35m[1mConsolidate compiler generated dependencies of target interfaz__rosidl_typesupport_c__pyext[0m
+[3.488s] [ 91%] [32mBuilding C object CMakeFiles/interfaz__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaz/_interfaz_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.488s] [ 91%] [32mBuilding C object CMakeFiles/interfaz__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaz/_interfaz_s.ep.rosidl_typesupport_c.c.o[0m
+[3.488s] [ 93%] [32mBuilding C object CMakeFiles/interfaz__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaz/_interfaz_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.572s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaz/interfaz_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.572s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaz/interfaz_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.572s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaz/interfaz_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.599s] [100%] Built target interfaz__rosidl_typesupport_introspection_c__pyext
+[3.599s] [100%] Built target interfaz__rosidl_typesupport_fastrtps_c__pyext
+[3.599s] [100%] Built target interfaz__rosidl_typesupport_c__pyext
+[3.608s] Invoked command in '/workspace/ros2_ws/build/interfaz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/interfaz -- -j20 -l20
+[3.614s] Invoking command in '/workspace/ros2_ws/build/interfaz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/interfaz
+[3.618s] -- Install configuration: ""
+[3.618s] -- Installing: /workspace/ros2_ws/install/interfaz/share/ament_index/resource_index/rosidl_interfaces/interfaz
+[3.619s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/fibonacci.h
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__functions.c
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__struct.h
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__functions.h
+[3.619s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__type_support.h
+[3.620s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg
+[3.620s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/rosidl_generator_c__visibility_control.h
+[3.620s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/p2pkg_mensaje.h
+[3.620s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail
+[3.620s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__struct.h
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__functions.c
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__functions.h
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__type_support.h
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__functions.h
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__struct.h
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__type_support.h
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__functions.c
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/mi_mensaje.h
+[3.621s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/library_path.sh
+[3.621s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/library_path.dsv
+[3.622s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_generator_c.so
+[3.622s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_generator_c.so" to ""
+[3.622s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz
+[3.622s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action
+[3.622s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail
+[3.622s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__rosidl_typesupport_fastrtps_c.h
+[3.623s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg
+[3.623s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.623s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__rosidl_typesupport_fastrtps_c.h
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__rosidl_typesupport_fastrtps_c.h
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_fastrtps_c.so
+[3.623s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_fastrtps_c.so" to ""
+[3.623s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz
+[3.623s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/fibonacci.hpp
+[3.623s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__struct.hpp
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__builder.hpp
+[3.623s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__traits.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__type_support.hpp
+[3.624s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg
+[3.624s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/p2pkg_mensaje.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/mi_mensaje.hpp
+[3.624s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__builder.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__builder.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__type_support.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__type_support.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__struct.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__traits.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__struct.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__traits.hpp
+[3.624s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz
+[3.624s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action
+[3.624s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__rosidl_typesupport_fastrtps_cpp.hpp
+[3.624s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/dds_fastrtps
+[3.625s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg
+[3.625s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.625s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail
+[3.625s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/dds_fastrtps
+[3.625s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__rosidl_typesupport_fastrtps_cpp.hpp
+[3.625s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__rosidl_typesupport_fastrtps_cpp.hpp
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_fastrtps_cpp.so
+[3.626s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.626s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz
+[3.626s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action
+[3.626s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__type_support.c
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__rosidl_typesupport_introspection_c.h
+[3.626s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg
+[3.626s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__rosidl_typesupport_introspection_c.h
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__rosidl_typesupport_introspection_c.h
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__type_support.c
+[3.626s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__type_support.c
+[3.627s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.627s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_introspection_c.so
+[3.627s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_introspection_c.so" to ""
+[3.627s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_c.so
+[3.627s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_c.so" to ""
+[3.627s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz
+[3.627s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action
+[3.627s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail
+[3.627s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__rosidl_typesupport_introspection_cpp.hpp
+[3.627s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/action/detail/fibonacci__type_support.cpp
+[3.627s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg
+[3.627s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail
+[3.627s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__rosidl_typesupport_introspection_cpp.hpp
+[3.627s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__rosidl_typesupport_introspection_cpp.hpp
+[3.628s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/p2pkg_mensaje__type_support.cpp
+[3.628s] -- Installing: /workspace/ros2_ws/install/interfaz/include/interfaz/interfaz/msg/detail/mi_mensaje__type_support.cpp
+[3.628s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_introspection_cpp.so
+[3.629s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_introspection_cpp.so" to ""
+[3.629s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_cpp.so
+[3.629s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_typesupport_cpp.so" to ""
+[3.629s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/pythonpath.sh
+[3.629s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/pythonpath.dsv
+[3.629s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz-0.0.0-py3.10.egg-info
+[3.629s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.629s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.629s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz-0.0.0-py3.10.egg-info/top_level.txt
+[3.629s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz-0.0.0-py3.10.egg-info/PKG-INFO
+[3.629s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action/__init__.py
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action/_fibonacci_s.c
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action/_fibonacci.py
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/_interfaz_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/_interfaz_s.ep.rosidl_typesupport_c.c
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/__init__.py
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/libinterfaz__rosidl_generator_py.so
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/_interfaz_s.ep.rosidl_typesupport_introspection_c.c
+[3.630s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/__init__.py
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/_mi_mensaje_s.c
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/_mi_mensaje.py
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/_p2pkg_mensaje.py
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/_p2pkg_mensaje_s.c
+[3.630s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.631s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.631s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.659s] Listing '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz'...
+[3.659s] Compiling '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/__init__.py'...
+[3.659s] Listing '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action'...
+[3.659s] Compiling '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action/__init__.py'...
+[3.659s] Compiling '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/action/_fibonacci.py'...
+[3.660s] Listing '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg'...
+[3.660s] Compiling '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/__init__.py'...
+[3.660s] Compiling '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/_mi_mensaje.py'...
+[3.660s] Compiling '/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/msg/_p2pkg_mensaje.py'...
+[3.663s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.663s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.663s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.663s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.663s] -- Installing: /workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.664s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages/interfaz/interfaz_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.664s] -- Installing: /workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_generator_py.so
+[3.664s] -- Set runtime path of "/workspace/ros2_ws/install/interfaz/lib/libinterfaz__rosidl_generator_py.so" to ""
+[3.664s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/msg/MiMensaje.idl
+[3.664s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/msg/P2pkgMensaje.idl
+[3.664s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/action/Fibonacci.idl
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/msg/MiMensaje.msg
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/msg/P2pkgMensaje.msg
+[3.665s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/action/Fibonacci.action
+[3.665s] -- Installing: /workspace/ros2_ws/install/interfaz/share/ament_index/resource_index/package_run_dependencies/interfaz
+[3.665s] -- Installing: /workspace/ros2_ws/install/interfaz/share/ament_index/resource_index/parent_prefix_path/interfaz
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/ament_prefix_path.sh
+[3.665s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/ament_prefix_path.dsv
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/path.sh
+[3.665s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/environment/path.dsv
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/local_setup.bash
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/local_setup.sh
+[3.665s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/local_setup.zsh
+[3.665s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/local_setup.dsv
+[3.666s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/package.dsv
+[3.666s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/ament_index/resource_index/packages/interfaz
+[3.666s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_cExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_cExport-noconfig.cmake].
+[3.666s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_cExport.cmake
+[3.666s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_cExport-noconfig.cmake
+[3.666s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cExport-noconfig.cmake].
+[3.666s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cExport.cmake
+[3.666s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.666s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_cppExport.cmake
+[3.667s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cppExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake].
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.667s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cExport-noconfig.cmake].
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cExport.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.667s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cExport-noconfig.cmake].
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cExport.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cExport-noconfig.cmake
+[3.667s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cppExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cppExport-noconfig.cmake].
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cppExport.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.667s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cppExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cppExport-noconfig.cmake].
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cppExport.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfaz__rosidl_typesupport_cppExport-noconfig.cmake
+[3.667s] -- Old export file "/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_pyExport.cmake" will be replaced.  Removing files [/workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_pyExport-noconfig.cmake].
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_pyExport.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/export_interfaz__rosidl_generator_pyExport-noconfig.cmake
+[3.667s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/rosidl_cmake-extras.cmake
+[3.668s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/ament_cmake_export_libraries-extras.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/ament_cmake_export_targets-extras.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfazConfig.cmake
+[3.668s] -- Up-to-date: /workspace/ros2_ws/install/interfaz/share/interfaz/cmake/interfazConfig-version.cmake
+[3.668s] -- Installing: /workspace/ros2_ws/install/interfaz/share/interfaz/package.xml
+[3.670s] Invoked command in '/workspace/ros2_ws/build/interfaz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/interfaz

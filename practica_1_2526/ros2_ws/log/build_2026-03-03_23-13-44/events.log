@@ -1,0 +1,63 @@
+[0.000000] (-) TimerEvent: {}
+[0.000208] (-) JobUnselected: {'identifier': 'interfaz'}
+[0.000240] (-) JobUnselected: {'identifier': 'interfaz_servicio_suma'}
+[0.000258] (-) JobUnselected: {'identifier': 'p2pkg'}
+[0.000401] (-) JobUnselected: {'identifier': 'parte2'}
+[0.000449] (-) JobUnselected: {'identifier': 'primer_paquete'}
+[0.000465] (-) JobUnselected: {'identifier': 'servicio_suma'}
+[0.000481] (mi_accion) JobQueued: {'identifier': 'mi_accion', 'dependencies': OrderedDict([('interfaz', '/workspace/ros2_ws/install/interfaz')])}
+[0.000501] (mi_accion) JobStarted: {'identifier': 'mi_accion'}
+[0.100004] (-) TimerEvent: {}
+[0.207848] (-) TimerEvent: {}
+[0.318230] (-) TimerEvent: {}
+[0.420931] (-) TimerEvent: {}
+[0.531271] (-) TimerEvent: {}
+[0.641621] (-) TimerEvent: {}
+[0.750067] (-) TimerEvent: {}
+[0.860644] (-) TimerEvent: {}
+[0.881136] (mi_accion) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/mi_accion', 'build', '--build-base', '/workspace/ros2_ws/build/mi_accion/build', 'install', '--record', '/workspace/ros2_ws/build/mi_accion/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/workspace/ros2_ws/src/mi_accion', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'HOSTNAME': 'docker-desktop', 'LIBGL_DEBUG': 'verbose', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/workspace/ros2_ws/install/interfaz/lib:/workspace/ros2_ws/install/interfaz_servicio_suma/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/nickhernd-docker', 'OLDPWD': '/workspace/ros2_ws/src/mi_accion/mi_accion', 'ROS_PYTHON_VERSION': '3', 'LC_CTYPE': 'C.UTF-8', 'COLCON_PREFIX_PATH': '/workspace/ros2_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/ros2_ws/install/p2pkg:/workspace/ros2_ws/install/primer_paquete:/workspace/ros2_ws/install/interfaz:/workspace/ros2_ws/install/servicio_suma:/workspace/ros2_ws/install/parte2:/workspace/ros2_ws/install/interfaz_servicio_suma:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/workspace/ros2_ws/build/mi_accion', 'PYTHONPATH': '/workspace/ros2_ws/build/mi_accion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages:/workspace/ros2_ws/install/p2pkg/lib/python3.10/site-packages:/workspace/ros2_ws/install/primer_paquete/lib/python3.10/site-packages:/workspace/ros2_ws/install/interfaz/local/lib/python3.10/dist-packages:/workspace/ros2_ws/install/servicio_suma/lib/python3.10/site-packages:/workspace/ros2_ws/install/interfaz_servicio_suma/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'TZ': 'Europe/Madrid', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/ros2_ws/install/interfaz:/workspace/ros2_ws/install/parte2:/workspace/ros2_ws/install/interfaz_servicio_suma'}, 'shell': False}
+[0.963694] (-) TimerEvent: {}
+[1.073244] (-) TimerEvent: {}
+[1.085487] (mi_accion) StdoutLine: {'line': b'running egg_info\n'}
+[1.086057] (mi_accion) StdoutLine: {'line': b'creating ../../build/mi_accion/mi_accion.egg-info\n'}
+[1.086458] (mi_accion) StdoutLine: {'line': b'writing ../../build/mi_accion/mi_accion.egg-info/PKG-INFO\n'}
+[1.086621] (mi_accion) StdoutLine: {'line': b'writing dependency_links to ../../build/mi_accion/mi_accion.egg-info/dependency_links.txt\n'}
+[1.086808] (mi_accion) StdoutLine: {'line': b'writing entry points to ../../build/mi_accion/mi_accion.egg-info/entry_points.txt\n'}
+[1.086859] (mi_accion) StdoutLine: {'line': b'writing requirements to ../../build/mi_accion/mi_accion.egg-info/requires.txt\n'}
+[1.086893] (mi_accion) StdoutLine: {'line': b'writing top-level names to ../../build/mi_accion/mi_accion.egg-info/top_level.txt\n'}
+[1.087008] (mi_accion) StdoutLine: {'line': b"writing manifest file '../../build/mi_accion/mi_accion.egg-info/SOURCES.txt'\n"}
+[1.087880] (mi_accion) StdoutLine: {'line': b"reading manifest file '../../build/mi_accion/mi_accion.egg-info/SOURCES.txt'\n"}
+[1.088017] (mi_accion) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[1.088457] (mi_accion) StdoutLine: {'line': b"writing manifest file '../../build/mi_accion/mi_accion.egg-info/SOURCES.txt'\n"}
+[1.088603] (mi_accion) StdoutLine: {'line': b'running build\n'}
+[1.088663] (mi_accion) StdoutLine: {'line': b'running build_py\n'}
+[1.088689] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/build/mi_accion/build\n'}
+[1.088785] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/build/mi_accion/build/lib\n'}
+[1.088856] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion\n'}
+[1.088985] (mi_accion) StdoutLine: {'line': b'copying mi_accion/fibonacci_action_server.py -> /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion\n'}
+[1.089099] (mi_accion) StdoutLine: {'line': b'copying mi_accion/__init__.py -> /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion\n'}
+[1.089162] (mi_accion) StdoutLine: {'line': b'copying mi_accion/fibonacci_action_client.py -> /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion\n'}
+[1.089234] (mi_accion) StdoutLine: {'line': b'running install\n'}
+[1.089347] (mi_accion) StdoutLine: {'line': b'running install_lib\n'}
+[1.089715] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion\n'}
+[1.090057] (mi_accion) StdoutLine: {'line': b'copying /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion/fibonacci_action_server.py -> /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion\n'}
+[1.090146] (mi_accion) StdoutLine: {'line': b'copying /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion/__init__.py -> /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion\n'}
+[1.090188] (mi_accion) StdoutLine: {'line': b'copying /workspace/ros2_ws/build/mi_accion/build/lib/mi_accion/fibonacci_action_client.py -> /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion\n'}
+[1.090521] (mi_accion) StdoutLine: {'line': b'byte-compiling /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion/fibonacci_action_server.py to fibonacci_action_server.cpython-310.pyc\n'}
+[1.090989] (mi_accion) StdoutLine: {'line': b'byte-compiling /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion/__init__.py to __init__.cpython-310.pyc\n'}
+[1.091093] (mi_accion) StdoutLine: {'line': b'byte-compiling /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion/fibonacci_action_client.py to fibonacci_action_client.cpython-310.pyc\n'}
+[1.091410] (mi_accion) StdoutLine: {'line': b'running install_data\n'}
+[1.091519] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/install/mi_accion/share/ament_index\n'}
+[1.091570] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/install/mi_accion/share/ament_index/resource_index\n'}
+[1.091688] (mi_accion) StdoutLine: {'line': b'creating /workspace/ros2_ws/install/mi_accion/share/ament_index/resource_index/packages\n'}
+[1.091789] (mi_accion) StdoutLine: {'line': b'copying resource/mi_accion -> /workspace/ros2_ws/install/mi_accion/share/ament_index/resource_index/packages\n'}
+[1.091879] (mi_accion) StdoutLine: {'line': b'copying package.xml -> /workspace/ros2_ws/install/mi_accion/share/mi_accion\n'}
+[1.091984] (mi_accion) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.093102] (mi_accion) StdoutLine: {'line': b'Copying ../../build/mi_accion/mi_accion.egg-info to /workspace/ros2_ws/install/mi_accion/lib/python3.10/site-packages/mi_accion-0.0.0-py3.10.egg-info\n'}
+[1.093632] (mi_accion) StdoutLine: {'line': b'running install_scripts\n'}
+[1.110432] (mi_accion) StdoutLine: {'line': b'Installing client script to /workspace/ros2_ws/install/mi_accion/lib/mi_accion\n'}
+[1.110755] (mi_accion) StdoutLine: {'line': b'Installing server script to /workspace/ros2_ws/install/mi_accion/lib/mi_accion\n'}
+[1.111030] (mi_accion) StdoutLine: {'line': b"writing list of installed files to '/workspace/ros2_ws/build/mi_accion/install.log'\n"}
+[1.129042] (mi_accion) CommandEnded: {'returncode': 0}
+[1.144038] (mi_accion) JobEnded: {'identifier': 'mi_accion', 'rc': 0}
+[1.144349] (-) EventReactorShutdown: {}

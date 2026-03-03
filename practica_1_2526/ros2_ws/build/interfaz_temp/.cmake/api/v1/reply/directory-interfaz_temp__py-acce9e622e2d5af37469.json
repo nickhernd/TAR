@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "interfaz_temp__py",
+		"source" : "/workspace/ros2_ws/build/interfaz_temp/interfaz_temp__py"
+	}
+}

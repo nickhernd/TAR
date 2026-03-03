@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from interfaz/action/BatteryAction.action
+// generated code does not contain a copyright notice
+
+
+module interfaz {
+  module action {
+    struct BatteryAction_Goal {
+      int32 target_percentage;
+    };
+    struct BatteryAction_Result {
+      string warning;
+    };
+    struct BatteryAction_Feedback {
+      int32 current_percentage;
+    };
+  };
+};

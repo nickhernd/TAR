@@ -1,0 +1,4 @@
+[console_scripts]
+client = service_temp.temp_client:main
+server = service_temp.temp_server:main
+

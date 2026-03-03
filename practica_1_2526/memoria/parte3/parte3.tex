@@ -1,0 +1,202 @@
+%==============================================================
+% PARTE 3: PASANDO A NIVEL INTERMEDIO
+%==============================================================
+\chapter{Parte 3: Pasando a Nivel Intermedio}
+
+%--------------------------------------------------------------
+\section{Crear un archivo launch}
+%--------------------------------------------------------------
+
+\subsection*{Pregunta 14}
+\textit{¿Con qué nombre se han lanzado los nodos?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí. Indica los nombres asignados en el launch file.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_launch_nombres.png}
+%   \caption{Nodos lanzados desde \texttt{mi\_launch.py}.}
+%   \label{fig:p3_launch_nombres}
+% \end{figure}
+
+%--------------------------------------------------------------
+\section{Acciones}
+%--------------------------------------------------------------
+
+\subsection*{Pregunta 15}
+\textit{¿Cómo podemos saber que se ha lanzado la acción correctamente? ¿Qué método permite saber que la acción ha finalizado exitosamente?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_action_server.png}
+%   \caption{Servidor de la acción Fibonacci en ejecución.}
+%   \label{fig:p3_action_server}
+% \end{figure}
+
+\subsection*{Pregunta 16}
+\textit{Sin crear un nodo, ¿cómo lanzarías la acción Fibonacci? ¿Cómo observarías el resultado?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí. Indica el comando ros2 action send_goal.
+
+\begin{lstlisting}[style=bash, caption={Lanzar la acción Fibonacci desde terminal.}]
+% Escribe aquí el comando ros2 action send_goal
+\end{lstlisting}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_action_terminal.png}
+%   \caption{Resultado de la acción Fibonacci lanzada desde terminal.}
+%   \label{fig:p3_action_terminal}
+% \end{figure}
+
+\subsection*{Pregunta 17}
+\textit{Si paramos el nodo a mitad de la ejecución de la acción, ¿se cancela la acción? ¿Se puede cancelar la acción desde la terminal?}
+
+\textbf{Respuesta:}\\
+% Escribe tu respuesta aquí.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_action_cancel.png}
+%   \caption{Cancelación de la acción Fibonacci.}
+%   \label{fig:p3_action_cancel}
+% \end{figure}
+
+%--------------------------------------------------------------
+\section{Ejercicios}
+%--------------------------------------------------------------
+
+\subsection{Ejercicio 1: \texttt{launch\_ejercicio3.py}}
+
+\textit{Fichero launch que lanza los nodos del ejercicio anterior con argumento de entrada (valor por defecto 7).}
+
+\textbf{Descripción:}\\
+% Explica cómo has pasado el argumento por línea de comandos en el launch.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_ej1_launch.png}
+%   \caption{Ejecución de \texttt{launch\_ejercicio3.py}.}
+%   \label{fig:p3_ej1_launch}
+% \end{figure}
+
+\subsection{Ejercicio 2: \texttt{launch\_ejercicio4.py} con namespace y remapping}
+
+\textit{Fichero launch que agrupa los nodos en \texttt{miGrupo} con remapping del topic.}
+
+\textbf{Descripción:}\\
+% Explica el uso de namespace y remapping.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_ej2_rqt.png}
+%   \caption{Gráfico \texttt{rqt\_graph} con namespace \texttt{miGrupo}.}
+%   \label{fig:p3_ej2_rqt}
+% \end{figure}
+
+\subsection{Ejercicio 3: Acción \texttt{ejFibonacci.action}}
+
+\textit{Nueva acción con el mismo goal y result que \texttt{Fibonacci.action}, pero con feedback de tipo \texttt{float64}.}
+
+\textbf{Definición del fichero \texttt{ejFibonacci.action}:}
+\begin{lstlisting}[caption={Definición de ejFibonacci.action.}]
+int32 orden
+---
+int32[] secuencia_final
+---
+float64 feedback_valor
+\end{lstlisting}
+
+\subsection{Ejercicio 4: Servidor \texttt{ejercicios\_fibServer.py}}
+
+\textit{Servidor de \texttt{ejFibonacci} cuyo feedback es la raíz cuadrada de la media de la secuencia calculada.}
+
+\textbf{Descripción:}\\
+% Explica la lógica del feedback.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_ej4_server.png}
+%   \caption{Servidor \texttt{ejercicios\_fibServer} en ejecución.}
+%   \label{fig:p3_ej4_server}
+% \end{figure}
+
+\subsection{Ejercicio 5: Cliente \texttt{ejercicios\_fibClient.py}}
+
+\textit{Cliente que acepta el orden por parámetro y publica 'en proceso' al topic \texttt{/estado\_accion}.}
+
+\textbf{Descripción:}\\
+% Explica cómo se publica el estado y cómo se muestra el resultado.
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{subfigure}[b]{0.48\textwidth}
+%     \includegraphics[width=\textwidth]{parte3/imagenes/p3_ej5_server.png}
+%     \caption{Terminal servidor.}
+%   \end{subfigure}
+%   \hfill
+%   \begin{subfigure}[b]{0.48\textwidth}
+%     \includegraphics[width=\textwidth]{parte3/imagenes/p3_ej5_client.png}
+%     \caption{Terminal cliente.}
+%   \end{subfigure}
+%   \caption{Ejecución del ejercicio 5.}
+%   \label{fig:p3_ej5_ejecucion}
+% \end{figure}
+
+\subsection{Ejercicio 6: Servicio \texttt{service\_temp} (conversión de temperatura)}
+
+\textit{Servicio que convierte entre Celsius y Fahrenheit.}
+
+\textbf{Definición del fichero \texttt{.srv}:}
+\begin{lstlisting}[caption={Interfaz del servicio service\_temp.}]
+float64 input_temp
+string conversion_type
+---
+float64 converted_temp
+\end{lstlisting}
+
+\textbf{Descripción de la implementación:}\\
+% Explica servidor y cliente.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.85\textwidth]{parte3/imagenes/p3_ej6_temp.png}
+%   \caption{Ejecución del servicio de conversión de temperatura.}
+%   \label{fig:p3_ej6_temp}
+% \end{figure}
+
+\subsection{Ejercicio 7: Acción \texttt{battery\_act} (simulación de batería)}
+
+\textit{Sistema de acciones que simula la descarga de batería de un robot.}
+
+\textbf{Definición del fichero \texttt{.action}:}
+\begin{lstlisting}[caption={Interfaz de la acción battery\_act.}]
+int32 target_percentage
+---
+string warning
+---
+int32 current_percentage
+\end{lstlisting}
+
+\textbf{Descripción:}\\
+% Explica la lógica del servidor (battery_charger) y del cliente (battery_client).
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{subfigure}[b]{0.48\textwidth}
+%     \includegraphics[width=\textwidth]{parte3/imagenes/p3_ej7_server.png}
+%     \caption{Servidor \texttt{battery\_charger}.}
+%   \end{subfigure}
+%   \hfill
+%   \begin{subfigure}[b]{0.48\textwidth}
+%     \includegraphics[width=\textwidth]{parte3/imagenes/p3_ej7_client.png}
+%     \caption{Cliente \texttt{battery\_client}.}
+%   \end{subfigure}
+%   \caption{Ejecución del sistema de batería.}
+%   \label{fig:p3_ej7_ejecucion}
+% \end{figure}

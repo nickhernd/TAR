@@ -1,0 +1,25 @@
+[0.626s] Invoking command in '/workspace/ros2_ws/src/p2pkg': PYTHONPATH=/workspace/ros2_ws/build/p2pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/p2pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/p2pkg build --build-base /workspace/ros2_ws/build/p2pkg/build install --record /workspace/ros2_ws/build/p2pkg/install.log --single-version-externally-managed install_data
+[0.824s] running egg_info
+[0.824s] writing ../../build/p2pkg/p2pkg.egg-info/PKG-INFO
+[0.827s] writing dependency_links to ../../build/p2pkg/p2pkg.egg-info/dependency_links.txt
+[0.827s] writing entry points to ../../build/p2pkg/p2pkg.egg-info/entry_points.txt
+[0.827s] writing requirements to ../../build/p2pkg/p2pkg.egg-info/requires.txt
+[0.827s] writing top-level names to ../../build/p2pkg/p2pkg.egg-info/top_level.txt
+[0.829s] reading manifest file '../../build/p2pkg/p2pkg.egg-info/SOURCES.txt'
+[0.830s] adding license file 'LICENSE'
+[0.831s] writing manifest file '../../build/p2pkg/p2pkg.egg-info/SOURCES.txt'
+[0.831s] running build
+[0.831s] running build_py
+[0.831s] running install
+[0.832s] running install_lib
+[0.834s] running install_data
+[0.834s] creating /workspace/ros2_ws/install/p2pkg/share/p2pkg/launch
+[0.834s] copying launch/launch_ejercicio3.py -> /workspace/ros2_ws/install/p2pkg/share/p2pkg/launch
+[0.835s] running install_egg_info
+[0.837s] removing '/workspace/ros2_ws/install/p2pkg/lib/python3.10/site-packages/p2pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.837s] Copying ../../build/p2pkg/p2pkg.egg-info to /workspace/ros2_ws/install/p2pkg/lib/python3.10/site-packages/p2pkg-0.0.0-py3.10.egg-info
+[0.838s] running install_scripts
+[0.863s] Installing nodopub_ejercicio2 script to /workspace/ros2_ws/install/p2pkg/lib/p2pkg
+[0.863s] Installing nodosub_ejercicio2 script to /workspace/ros2_ws/install/p2pkg/lib/p2pkg
+[0.863s] writing list of installed files to '/workspace/ros2_ws/build/p2pkg/install.log'
+[0.887s] Invoked command in '/workspace/ros2_ws/src/p2pkg' returned '0': PYTHONPATH=/workspace/ros2_ws/build/p2pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/p2pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/p2pkg build --build-base /workspace/ros2_ws/build/p2pkg/build install --record /workspace/ros2_ws/build/p2pkg/install.log --single-version-externally-managed install_data

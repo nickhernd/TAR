@@ -1,0 +1,6 @@
+{
+  "package_name": "interfaz_temp",
+  "non_idl_tuples": [
+    "/workspace/ros2_ws/src/interfaz_temp:srv/TempConversion.srv"
+  ]
+}

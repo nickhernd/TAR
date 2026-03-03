@@ -1,0 +1,20 @@
+[0.013s] Invoking command in '/workspace/ros2_ws/build/parte2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/parte2 -- -j20 -l20
+[0.060s] Invoked command in '/workspace/ros2_ws/build/parte2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/parte2 -- -j20 -l20
+[0.073s] Invoking command in '/workspace/ros2_ws/build/parte2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/parte2
+[0.079s] -- Install configuration: ""
+[0.079s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/ament_index/resource_index/package_run_dependencies/parte2
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/ament_index/resource_index/parent_prefix_path/parte2
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/environment/ament_prefix_path.sh
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/environment/ament_prefix_path.dsv
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/environment/path.sh
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/environment/path.dsv
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.bash
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.sh
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.zsh
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.dsv
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/package.dsv
+[0.080s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/ament_index/resource_index/packages/parte2
+[0.081s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/cmake/parte2Config.cmake
+[0.081s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/cmake/parte2Config-version.cmake
+[0.081s] -- Up-to-date: /workspace/ros2_ws/install/parte2/share/parte2/package.xml
+[0.083s] Invoked command in '/workspace/ros2_ws/build/parte2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/parte2

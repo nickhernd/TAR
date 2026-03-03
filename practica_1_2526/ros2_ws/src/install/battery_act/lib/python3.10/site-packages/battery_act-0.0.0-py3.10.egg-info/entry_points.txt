@@ -1,0 +1,4 @@
+[console_scripts]
+battery_charger = battery_act.battery_charger:main
+battery_client = battery_act.battery_client:main
+

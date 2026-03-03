@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from interfaz_temp/srv/TempConversion.srv
+// generated code does not contain a copyright notice
+
+
+module interfaz_temp {
+  module srv {
+    struct TempConversion_Request {
+      double input_temp;
+
+      string conversion_type;
+    };
+    struct TempConversion_Response {
+      double converted_temp;
+    };
+  };
+};

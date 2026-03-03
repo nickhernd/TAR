@@ -1,0 +1,132 @@
+%==============================================================
+% MEMORIA PRÁCTICA 1 - TAR (Técnicas Avanzadas de Robótica)
+% ROS 2 Humble
+%==============================================================
+\documentclass[12pt, a4paper]{report}
+
+%--- Paquetes ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{parskip}
+
+%--- Geometría de página ---
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2.5cm
+}
+
+\setlength{\headheight}{14pt}
+
+%--- Colores ---
+\definecolor{azulROS}{RGB}{0, 100, 180}
+\definecolor{grisClaro}{RGB}{245, 245, 245}
+\definecolor{verdeCode}{RGB}{0, 128, 0}
+\definecolor{rojoComentario}{RGB}{150, 0, 0}
+
+%--- Estilo de código ---
+\lstdefinestyle{bash}{
+  backgroundcolor=\color{grisClaro},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{azulROS},
+  keywordstyle=\color{azulROS}\bfseries,
+  commentstyle=\color{rojoComentario}\itshape,
+  stringstyle=\color{verdeCode},
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt
+}
+
+\lstdefinestyle{python}{
+  language=Python,
+  backgroundcolor=\color{grisClaro},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{azulROS},
+  keywordstyle=\color{azulROS}\bfseries,
+  commentstyle=\color{rojoComentario}\itshape,
+  stringstyle=\color{verdeCode},
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt
+}
+
+\lstset{
+  style=bash,
+  extendedchars=true,
+  literate=
+    {á}{{\'{a}}}1 {é}{{\'{e}}}1 {í}{{\'{i}}}1 {ó}{{\'{o}}}1 {ú}{{\'{u}}}1
+    {Á}{{\'{A}}}1 {É}{{\'{E}}}1 {Í}{{\'{I}}}1 {Ó}{{\'{O}}}1 {Ú}{{\'{U}}}1
+    {ñ}{{\~{n}}}1 {Ñ}{{\~{N}}}1
+    {¿}{{?`}}1   {¡}{{!`}}1
+}
+
+%--- Cabecera y pie de página ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small TAR -- Práctica 1: Aprendiendo las bases de ROS 2}
+\fancyhead[R]{\small \textit{Apellido Apellido, Nombre}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%--- Formato de títulos ---
+\titleformat{\chapter}[block]
+  {\normalfont\Large\bfseries\color{azulROS}}
+  {\thechapter.}{1em}{}
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+
+%--- Hiperlinks ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor=azulROS,
+  urlcolor=azulROS,
+  citecolor=azulROS,
+  pdftitle={Práctica 1 TAR - ROS 2 Humble},
+  pdfauthor={Apellido Apellido, Nombre}
+}
+
+%==============================================================
+\begin{document}
+%==============================================================
+
+\input{portada}
+
+\tableofcontents
+\newpage
+
+\input{parte1/parte1}
+\input{parte2/parte2}
+\input{parte3/parte3}
+
+\end{document}

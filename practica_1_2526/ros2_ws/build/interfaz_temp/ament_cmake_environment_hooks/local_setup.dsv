@@ -1,0 +1,4 @@
+source;share/interfaz_temp/environment/ament_prefix_path.sh
+source;share/interfaz_temp/environment/library_path.sh
+source;share/interfaz_temp/environment/path.sh
+source;share/interfaz_temp/environment/pythonpath.sh

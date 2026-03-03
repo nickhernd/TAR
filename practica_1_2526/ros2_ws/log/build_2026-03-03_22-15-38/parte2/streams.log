@@ -1,0 +1,58 @@
+[0.013s] Invoking command in '/workspace/ros2_ws/build/parte2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/parte2 -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/parte2
+[0.166s] -- The C compiler identification is GNU 11.4.0
+[0.279s] -- The CXX compiler identification is GNU 11.4.0
+[0.292s] -- Detecting C compiler ABI info
+[0.376s] -- Detecting C compiler ABI info - done
+[0.384s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.385s] -- Detecting C compile features
+[0.385s] -- Detecting C compile features - done
+[0.390s] -- Detecting CXX compiler ABI info
+[0.482s] -- Detecting CXX compiler ABI info - done
+[0.489s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.490s] -- Detecting CXX compile features
+[0.490s] -- Detecting CXX compile features - done
+[0.506s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.688s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.831s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[0.930s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.941s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.959s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.984s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.014s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.102s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.108s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.249s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.290s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.351s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.371s] -- Looking for pthread.h
+[1.468s] -- Looking for pthread.h - found
+[1.469s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.549s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.550s] -- Found Threads: TRUE  
+[1.646s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.755s] -- Added test 'lint_cmake' to check CMake code style
+[1.757s] -- Added test 'xmllint' to check XML markup files
+[1.759s] -- Configuring done
+[1.766s] -- Generating done
+[1.768s] -- Build files have been written to: /workspace/ros2_ws/build/parte2
+[1.775s] Invoked command in '/workspace/ros2_ws/build/parte2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/parte2 -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/parte2
+[1.777s] Invoking command in '/workspace/ros2_ws/build/parte2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/parte2 -- -j20 -l20
+[1.817s] Invoked command in '/workspace/ros2_ws/build/parte2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/parte2 -- -j20 -l20
+[1.827s] Invoking command in '/workspace/ros2_ws/build/parte2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/parte2
+[1.834s] -- Install configuration: ""
+[1.835s] -- Installing: /workspace/ros2_ws/install/parte2/share/ament_index/resource_index/package_run_dependencies/parte2
+[1.835s] -- Installing: /workspace/ros2_ws/install/parte2/share/ament_index/resource_index/parent_prefix_path/parte2
+[1.835s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/environment/ament_prefix_path.sh
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/environment/ament_prefix_path.dsv
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/environment/path.sh
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/environment/path.dsv
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.bash
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.sh
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.zsh
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/local_setup.dsv
+[1.836s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/package.dsv
+[1.837s] -- Installing: /workspace/ros2_ws/install/parte2/share/ament_index/resource_index/packages/parte2
+[1.837s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/cmake/parte2Config.cmake
+[1.837s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/cmake/parte2Config-version.cmake
+[1.837s] -- Installing: /workspace/ros2_ws/install/parte2/share/parte2/package.xml
+[1.839s] Invoked command in '/workspace/ros2_ws/build/parte2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/servicio_suma:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/parte2
