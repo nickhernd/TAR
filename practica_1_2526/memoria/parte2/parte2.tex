@@ -10,12 +10,10 @@
 \subsection*{Pregunta 9}
 \textit{¿Qué comando me indica todas las dependencias que puedo usar en mis paquetes?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
-
-\begin{lstlisting}[style=bash, caption={Comando para listar dependencias disponibles.}]
-% Escribe aquí el comando
+\begin{lstlisting}[style=bash]
+ros2 pkg list
 \end{lstlisting}
+Lista todos los paquetes disponibles en el entorno ROS 2 instalado, que son las dependencias que se pueden añadir en \texttt{package.xml}.
 
 %--------------------------------------------------------------
 \section{Crear un Mensaje}
@@ -24,114 +22,80 @@
 \subsection*{Pregunta 10}
 \textit{¿Qué comando se debe utilizar para saber de qué tipo es el mensaje creado?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
-
-\begin{lstlisting}[style=bash, caption={Comando para verificar el tipo de mensaje MiMensaje.}]
-% Escribe aquí el comando
+\begin{lstlisting}[style=bash]
+ros2 interface show interfaz/msg/MiMensaje
 \end{lstlisting}
+Muestra los campos y tipos del mensaje. Alternativamente, \texttt{ros2 topic type /mitopic} indica el tipo del topic.
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte2/imagenes/p2_msg_type.png}
-%   \caption{Verificación del tipo de mensaje \texttt{MiMensaje}.}
-%   \label{fig:p2_msg_type}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte2/imagenes/mi_mensaje.png}
+  \caption{Campos del mensaje \texttt{MiMensaje} con \texttt{ros2 interface show}.}
+  \label{fig:p2_mimsg}
+\end{figure}
 
 \subsection*{Pregunta 11}
 \textit{Muestra el gráfico de entorno ROS generado usando \texttt{rqt\_graph}.}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{parte2/imagenes/p2_rqt_graph.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm} [Captura rqt\_graph Parte 2] \vspace{2cm}}}
-  \caption{Gráfico \texttt{rqt\_graph} con los nodos \texttt{nodo\_envia} y \texttt{nodo\_recibe}.}
-  \label{fig:p2_rqt_graph}
+  \includegraphics[width=0.85\textwidth]{parte2/imagenes/tres_terminales.png}
+  \caption{Gráfico \texttt{rqt\_graph} con \texttt{/nodo\_envia} publicando en \texttt{/mitopic} y \texttt{/nodo\_recibe} suscrito.}
+  \label{fig:p2_rqt}
 \end{figure}
 
 \subsection*{Pregunta 12}
-\textit{Intenta modificar la constante nombre del mensaje, modificando el código de \texttt{nodo\_envia}. ¿Qué sucede?}
+\textit{Intenta modificar la constante nombre del mensaje. ¿Qué sucede?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí. Explica el error o comportamiento observado.
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte2/imagenes/p2_const_error.png}
-%   \caption{Error al intentar modificar la constante \texttt{NOMBRE}.}
-%   \label{fig:p2_const_error}
-% \end{figure}
+Las constantes en los mensajes ROS 2 son atributos de solo lectura de la clase. Al intentar asignar \texttt{msg.NOMBRE = "otro"} en el código Python, se lanza un \texttt{AttributeError} en tiempo de ejecución, ya que las constantes no son modificables desde el nodo.
 
 \subsection*{Pregunta 13}
 \textit{¿De qué tipo es el topic que aparece?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí. Indica el tipo del topic /mitopic.
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte2/imagenes/p2_topic_type.png}
-%   \caption{Tipo del topic \texttt{/mitopic}.}
-%   \label{fig:p2_topic_type}
-% \end{figure}
+El topic \texttt{/mitopic} es de tipo \texttt{interfaz/msg/MiMensaje}, comprobable con:
+\begin{lstlisting}[style=bash]
+ros2 topic type /mitopic
+\end{lstlisting}
 
 %--------------------------------------------------------------
 \section{Ejercicios}
 %--------------------------------------------------------------
 
-\subsection{Ejercicio 1: Paquete \texttt{p2pkg} y mensaje \texttt{P2pkg\_mensaje}}
+\subsection{Ejercicio 1: Paquete \texttt{p2pkg} y mensaje \texttt{P2pkgMensaje}}
 
-\textit{Crea el paquete \texttt{p2pkg} y define en \texttt{interfaz} el mensaje \texttt{P2pkg\_mensaje.msg}.}
-
-\textbf{Descripción:}\\
-% Describe los pasos realizados.
+Se crea el paquete \texttt{p2pkg} y se define el mensaje \texttt{P2pkgMensaje.msg} en el paquete \texttt{interfaz}:
 
 \begin{lstlisting}[style=bash, caption={Creación del paquete p2pkg.}]
-cd /workspace/ros2_ws/src
-ros2 pkg create --build-type ament_python --license Apache-2.0 p2pkg --dependencies rclpy std_msgs
+ros2 pkg create --build-type ament_python --license Apache-2.0 p2pkg \
+    --dependencies rclpy std_msgs interfaz geometry_msgs
 \end{lstlisting}
 
-\textbf{Campos del mensaje \texttt{P2pkg\_mensaje.msg}:}
-\begin{lstlisting}[caption={Definición del mensaje P2pkg\_mensaje.msg.}]
+\textbf{Definición de \texttt{P2pkgMensaje.msg}:}
+\begin{lstlisting}[caption={Campos del mensaje P2pkgMensaje.}]
 int32 numero
 geometry_msgs/Pose posicion
 string fecha
 \end{lstlisting}
 
-\textbf{Resultado del comando de verificación:}
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte2/imagenes/p2_ej1_msg.png}
-%   \caption{Campos del mensaje \texttt{P2pkg\_mensaje}.}
-%   \label{fig:p2_ej1_msg}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte2/imagenes/ej1_change_p2pkg_mensajemsg.png}
+  \caption{Definición del mensaje \texttt{P2pkgMensaje} en el paquete interfaz.}
+  \label{fig:p2_ej1}
+\end{figure}
 
 \subsection{Ejercicio 2: Nodos publisher y subscriber en \texttt{p2pkg}}
 
-\textit{Nodo publisher \texttt{nodopub\_ejercicio2} y subscriber \texttt{nodosub\_ejercicio2} para el topic \texttt{/topic\_ejercicio2}.}
+Se implementan \texttt{nodopub\_ejercicio2} y \texttt{nodosub\_ejercicio2} para el topic \texttt{/topic\_ejercicio2}:
 
-\textbf{Descripción de la implementación:}\\
-% Explica la lógica del publisher y subscriber.
+\begin{itemize}
+  \item El publisher publica cada segundo un \texttt{P2pkgMensaje} con \texttt{numero} (parámetro configurable), \texttt{fecha} (fecha actual) y \texttt{posicion} (valores aleatorios).
+  \item El subscriber recibe e imprime por consola los campos del mensaje.
+\end{itemize}
 
-% \begin{figure}[H]
-%   \centering
-%   \begin{subfigure}[b]{0.48\textwidth}
-%     \includegraphics[width=\textwidth]{parte2/imagenes/p2_ej2_pub.png}
-%     \caption{Terminal del publisher.}
-%   \end{subfigure}
-%   \hfill
-%   \begin{subfigure}[b]{0.48\textwidth}
-%     \includegraphics[width=\textwidth]{parte2/imagenes/p2_ej2_sub.png}
-%     \caption{Terminal del subscriber.}
-%   \end{subfigure}
-%   \caption{Ejecución de los nodos del ejercicio 2.}
-%   \label{fig:p2_ej2_ejecucion}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte2/imagenes/p2_ej2_rqt.png}
-%   \caption{Gráfico \texttt{rqt\_graph} del ejercicio 2.}
-%   \label{fig:p2_ej2_rqt}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte2/imagenes/ejercicio2_finish.png}
+  \caption{Ejecución de los nodos del ejercicio 2: publisher y subscriber comunicándose.}
+  \label{fig:p2_ej2}
+\end{figure}

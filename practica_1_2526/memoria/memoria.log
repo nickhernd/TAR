@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.28)  3 MAR 2026 20:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.28)  4 MAR 2026 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -570,157 +570,227 @@ l.126 \newpage
 ] (./parte1/parte1.tex
 Cap\'{\i }tulo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--23
-
+Overfull \hbox (24.9546pt too wide) in paragraph at lines 10--11
+\T1/cmr/m/n/12 com-pi-lan-do con \T1/cmtt/m/n/12 colcon build \T1/cmr/m/n/12 y 
+con-fi-gu-ran-do el en-torno con \T1/cmtt/m/n/12 source install/setup.bash\T1/c
+mr/m/n/12 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
-
+Overfull \hbox (72.28307pt too wide) in paragraph at lines 19--20
+[]\T1/cmr/m/n/12 Con \T1/cmtt/m/n/12 ros2 node info /talker\T1/cmr/m/n/12 : el 
+no-do pu-bli-ca en el to-pic \T1/cmtt/m/n/12 /chatter \T1/cmr/m/n/12 con ti-po 
+\T1/cmtt/m/n/12 std_msgs/msg/String\T1/cmr/m/n/12 .
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
-
- []
-
+<parte1/imagenes/terminal1.png, id=143, 609.02531pt x 386.94562pt>
+File: parte1/imagenes/terminal1.png Graphic file (type png)
+<use parte1/imagenes/terminal1.png>
+Package pdftex.def Info: parte1/imagenes/terminal1.png  used on input line 23.
+(pdftex.def)             Requested size: 374.86775pt x 238.17975pt.
 [2
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 74--76
+ <./parte1/imagenes/terminal1.png>]
+<parte1/imagenes/terminal2.png, id=153, 1327.96124pt x 554.82281pt>
+File: parte1/imagenes/terminal2.png Graphic file (type png)
+<use parte1/imagenes/terminal2.png>
+Package pdftex.def Info: parte1/imagenes/terminal2.png  used on input line 35.
+(pdftex.def)             Requested size: 374.86775pt x 156.6192pt.
 
+Overfull \hbox (42.40561pt too wide) in paragraph at lines 43--44
+[]\T1/cmr/m/n/12 Con \T1/cmtt/m/n/12 ros2 node info /listener\T1/cmr/m/n/12 : s
+e sus-cri-be al to-pic \T1/cmtt/m/n/12 /chatter \T1/cmr/m/n/12 de ti-po \T1/cmt
+t/m/n/12 std_msgs/msg/String\T1/cmr/m/n/12 .
  []
 
+<parte1/imagenes/3terminal.png, id=154, 1348.28719pt x 434.37282pt>
+File: parte1/imagenes/3terminal.png Graphic file (type png)
+<use parte1/imagenes/3terminal.png>
+Package pdftex.def Info: parte1/imagenes/3terminal.png  used on input line 52.
+(pdftex.def)             Requested size: 374.86775pt x 120.76854pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
-
+Overfull \hbox (4.96649pt too wide) in paragraph at lines 60--61
+[]\T1/cmr/m/n/12 El grá-fi-co mues-tra el no-do \T1/cmtt/m/n/12 /talker \T1/cmr
+/m/n/12 pu-bli-can-do en el to-pic \T1/cmtt/m/n/12 /chatter \T1/cmr/m/n/12 y el
+ no-do \T1/cmtt/m/n/12 /listener
  []
 
+[3 <./parte1/imagenes/terminal2.png> <./parte1/imagenes/3terminal.png>]
+<parte1/imagenes/servicio_suma.png, id=166, 841.64438pt x 444.15938pt>
+File: parte1/imagenes/servicio_suma.png Graphic file (type png)
+<use parte1/imagenes/servicio_suma.png>
+Package pdftex.def Info: parte1/imagenes/servicio_suma.png  used on input line 
+73.
+(pdftex.def)             Requested size: 374.86775pt x 197.8299pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--120
-
- []
-
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 120.
+[4 <./parte1/imagenes/servicio_suma.png>]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 135.
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 100.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 104.
+<parte1/imagenes/ejercicio1.png, id=178, 865.73438pt x 381.67593pt>
+File: parte1/imagenes/ejercicio1.png Graphic file (type png)
+<use parte1/imagenes/ejercicio1.png>
+Package pdftex.def Info: parte1/imagenes/ejercicio1.png  used on input line 110
+.
+(pdftex.def)             Requested size: 374.86775pt x 165.26476pt.
 
- []
-
-) (./parte2/parte2.tex [4]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) [5 <./parte1/imagenes/ejercicio1.png>]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 132.
+<parte1/imagenes/change_add_two_ints_srv.png, id=200, 827.34094pt x 191.21437pt
+>
+File: parte1/imagenes/change_add_two_ints_srv.png Graphic file (type png)
+<use parte1/imagenes/change_add_two_ints_srv.png>
+Package pdftex.def Info: parte1/imagenes/change_add_two_ints_srv.png  used on i
+nput line 141.
+(pdftex.def)             Requested size: 211.68661pt x 48.92386pt.
+<parte1/imagenes/change_server.png, id=201, 835.62187pt x 327.47343pt>
+File: parte1/imagenes/change_server.png Graphic file (type png)
+<use parte1/imagenes/change_server.png>
+Package pdftex.def Info: parte1/imagenes/change_server.png  used on input line 
+146.
+(pdftex.def)             Requested size: 211.68661pt x 82.95746pt.
+<parte1/imagenes/ej2_done.png, id=202, 885.3075pt x 370.38374pt>
+File: parte1/imagenes/ej2_done.png Graphic file (type png)
+<use parte1/imagenes/ej2_done.png>
+Package pdftex.def Info: parte1/imagenes/ej2_done.png  used on input line 155.
+(pdftex.def)             Requested size: 374.86775pt x 156.83171pt.
+) (./parte2/parte2.tex [6 <./parte1/imagenes/change_add_two_ints_srv.png> <./pa
+rte1/imagenes/change_server.png> <./parte1/imagenes/ej2_done.png>]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--15
-
+Overfull \hbox (5.71974pt too wide) in paragraph at lines 28--29
+\T1/cmr/m/n/12 Muestra los cam-pos y ti-pos del men-sa-je. Al-ter-na-ti-va-men-
+te, \T1/cmtt/m/n/12 ros2 topic type /mitopic
  []
 
+<parte2/imagenes/mi_mensaje.png, id=218, 810.02625pt x 88.83188pt>
+File: parte2/imagenes/mi_mensaje.png Graphic file (type png)
+<use parte2/imagenes/mi_mensaje.png>
+Package pdftex.def Info: parte2/imagenes/mi_mensaje.png  used on input line 32.
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--29
+(pdftex.def)             Requested size: 374.86775pt x 41.11119pt.
+<parte2/imagenes/tres_terminales.png, id=219, 1098.35344pt x 741.52031pt>
+File: parte2/imagenes/tres_terminales.png Graphic file (type png)
+<use parte2/imagenes/tres_terminales.png>
+Package pdftex.def Info: parte2/imagenes/tres_terminales.png  used on input lin
+e 42.
+(pdftex.def)             Requested size: 374.86775pt x 253.07532pt.
 
+Underfull \hbox (badness 2547) in paragraph at lines 43--43
+[]\T1/cmr/m/n/12 Figura 2.2: |Grá-fi-co \T1/cmtt/m/n/12 rqt_graph \T1/cmr/m/n/1
+2 con \T1/cmtt/m/n/12 /nodo_envia \T1/cmr/m/n/12 pu-bli-can-do en \T1/cmtt/m/n/
+12 /mitopic \T1/cmr/m/n/12 y
  []
 
-[5
+[7
 
+ <./parte2/imagenes/mi_mensaje.png>] [8 <./parte2/imagenes/tres_terminales.png>
 ]
-Overfull \hbox (6.44641pt too wide) in paragraph at lines 53--54
-[]\T1/cmr/m/it/12 Intenta mo-di-fi-car la cons-tan-te nom-bre del men-sa-je, mo
--di-fi-can-do el có-di-go de \T1/cmtt/m/it/12 nodo_envia\T1/cmr/m/it/12 .
+<parte2/imagenes/ej1_change_p2pkg_mensajemsg.png, id=242, 878.53218pt x 140.775
+94pt>
+File: parte2/imagenes/ej1_change_p2pkg_mensajemsg.png Graphic file (type png)
+<use parte2/imagenes/ej1_change_p2pkg_mensajemsg.png>
+Package pdftex.def Info: parte2/imagenes/ej1_change_p2pkg_mensajemsg.png  used 
+on input line 82.
+(pdftex.def)             Requested size: 374.86775pt x 60.07062pt.
+
+Overfull \hbox (51.45305pt too wide) in paragraph at lines 89--90
+[]\T1/cmr/m/n/12 Se im-ple-men-tan \T1/cmtt/m/n/12 nodopub_ejercicio2 \T1/cmr/m
+/n/12 y \T1/cmtt/m/n/12 nodosub_ejercicio2 \T1/cmr/m/n/12 pa-ra el to-pic \T1/c
+mtt/m/n/12 /topic_ejercicio2\T1/cmr/m/n/12 : 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--57
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
-
- []
-
-) (./parte3/parte3.tex [7]
+<parte2/imagenes/ejercicio2_finish.png, id=243, 1365.60187pt x 699.36281pt>
+File: parte2/imagenes/ejercicio2_finish.png Graphic file (type png)
+<use parte2/imagenes/ejercicio2_finish.png>
+Package pdftex.def Info: parte2/imagenes/ejercicio2_finish.png  used on input l
+ine 98.
+(pdftex.def)             Requested size: 374.86775pt x 191.97855pt.
+) (./parte3/parte3.tex [9 <./parte2/imagenes/ej1_change_p2pkg_mensajemsg.png> <
+./parte2/imagenes/ejercicio2_finish.png>]
 Cap\'{\i }tulo 3.
+<parte3/imagenes/parte1.png, id=256, 887.56593pt x 435.87843pt>
+File: parte3/imagenes/parte1.png Graphic file (type png)
+<use parte3/imagenes/parte1.png>
+Package pdftex.def Info: parte3/imagenes/parte1.png  used on input line 22.
+(pdftex.def)             Requested size: 374.86775pt x 184.09193pt.
+[10
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--15
+ <./parte3/imagenes/parte1.png>]
+<parte3/imagenes/action_fibonacci.png, id=266, 809.27344pt x 95.6072pt>
+File: parte3/imagenes/action_fibonacci.png Graphic file (type png)
+<use parte3/imagenes/action_fibonacci.png>
+Package pdftex.def Info: parte3/imagenes/action_fibonacci.png  used on input li
+ne 38.
+(pdftex.def)             Requested size: 374.86775pt x 44.28764pt.
+<parte3/imagenes/fib_accion_en_accion.png, id=267, 1428.83812pt x 676.02562pt>
+File: parte3/imagenes/fib_accion_en_accion.png Graphic file (type png)
+<use parte3/imagenes/fib_accion_en_accion.png>
+Package pdftex.def Info: parte3/imagenes/fib_accion_en_accion.png  used on inpu
+t line 55.
+(pdftex.def)             Requested size: 374.86775pt x 177.36137pt.
+ [11 <./parte3/imagenes/action_fibonacci.png> <./parte3/imagenes/fib_accion_en_
+accion.png>]
+<parte3/imagenes/ejercicio1.png, id=281, 895.09406pt x 359.09157pt>
+File: parte3/imagenes/ejercicio1.png Graphic file (type png)
+<use parte3/imagenes/ejercicio1.png>
+Package pdftex.def Info: parte3/imagenes/ejercicio1.png  used on input line 85.
 
+(pdftex.def)             Requested size: 374.86775pt x 150.39003pt.
+
+Overfull \hbox (19.58519pt too wide) in paragraph at lines 92--93
+[]\T1/cmr/m/n/12 Los no-dos se agru-pan ba-jo el na-mes-pa-ce \T1/cmtt/m/n/12 m
+iGrupo \T1/cmr/m/n/12 y se re-ma-pea el to-pic \T1/cmtt/m/n/12 /topic_ejercicio
+2
  []
 
+<parte3/imagenes/ejercicio2.png, id=282, 1247.41031pt x 549.55313pt>
+File: parte3/imagenes/ejercicio2.png Graphic file (type png)
+<use parte3/imagenes/ejercicio2.png>
+Package pdftex.def Info: parte3/imagenes/ejercicio2.png  used on input line 105
+.
+(pdftex.def)             Requested size: 374.86775pt x 165.14392pt.
+[12 <./parte3/imagenes/ejercicio1.png>]
+<parte3/imagenes/ejercicio4.png, id=301, 1096.095pt x 389.20406pt>
+File: parte3/imagenes/ejercicio4.png Graphic file (type png)
+<use parte3/imagenes/ejercicio4.png>
+Package pdftex.def Info: parte3/imagenes/ejercicio4.png  used on input line 134
+.
+(pdftex.def)             Requested size: 374.86775pt x 133.11154pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
-
+Overfull \hbox (12.55267pt too wide) in paragraph at lines 141--142
+\T1/cmr/m/n/12 es-tá en cur-so, pu-bli-ca pe-rió-di-ca-men-te el string \T1/cmt
+t/m/n/12 'en proceso' \T1/cmr/m/n/12 en el to-pic \T1/cmtt/m/n/12 /estado_accio
+n\T1/cmr/m/n/12 : 
  []
 
+[13 <./parte3/imagenes/ejercicio2.png> <./parte3/imagenes/ejercicio4.png>]
+<parte3/imagenes/ejercicio5.png, id=321, 1342.2647pt x 612.78937pt>
+File: parte3/imagenes/ejercicio5.png Graphic file (type png)
+<use parte3/imagenes/ejercicio5.png>
+Package pdftex.def Info: parte3/imagenes/ejercicio5.png  used on input line 153
+.
+(pdftex.def)             Requested size: 374.86775pt x 171.14038pt.
+<parte3/imagenes/ejercicio6_finish.png, id=322, 1345.27594pt x 677.53125pt>
+File: parte3/imagenes/ejercicio6_finish.png Graphic file (type png)
+<use parte3/imagenes/ejercicio6_finish.png>
+Package pdftex.def Info: parte3/imagenes/ejercicio6_finish.png  used on input l
+ine 178.
+(pdftex.def)             Requested size: 374.86775pt x 188.79768pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
-
- []
-
-[8
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
-
- []
-
-
-Overfull \hbox (8.17258pt too wide) in paragraph at lines 131--132
-[]\T1/cmr/m/it/12 Cliente que acep-ta el or-den por pa-rá-me-tro y pu-bli-ca 'e
-n pro-ce-so' al to-pic \T1/cmtt/m/it/12 /estado_accion\T1/cmr/m/it/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
-
- []
-
-) [10] (./memoria.aux
+[14 <./parte3/imagenes/ejercicio5.png>]
+<parte3/imagenes/ejercicio7.png, id=342, 1268.48906pt x 354.57469pt>
+File: parte3/imagenes/ejercicio7.png Graphic file (type png)
+<use parte3/imagenes/ejercicio7.png>
+Package pdftex.def Info: parte3/imagenes/ejercicio7.png  used on input line 200
+.
+(pdftex.def)             Requested size: 374.86775pt x 104.78258pt.
+) [15 <./parte3/imagenes/ejercicio6_finish.png> <./parte3/imagenes/ejercicio7.p
+ng>] (./memoria.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -729,35 +799,38 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: FF234630EF363CCE4B537753F7E28E92;5534.
+(rerunfilecheck)             Checksum: 89642889A26FEC21629F62F2293EB86A;5526.
  ) 
 Here is how much of TeX's memory you used:
- 15829 strings out of 474222
- 245995 string characters out of 5748733
- 1965975 words of memory out of 5000000
- 37812 multiletter control sequences out of 15000+600000
- 574765 words of font info for 70 fonts, out of 8000000 for 9000
+ 16318 strings out of 474222
+ 256254 string characters out of 5748733
+ 1987975 words of memory out of 5000000
+ 38229 multiletter control sequences out of 15000+600000
+ 575015 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1136b,1206s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1136b,1396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1200.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on memoria.pdf (11 pages, 362490 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx14
+40.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc172
+8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1200.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sftt1200.pfb>
+Output written on memoria.pdf (16 pages, 4719232 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 481 PDF objects out of 1000 (max. 8388607)
+ 373 compressed objects within 4 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 298 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -7,80 +7,57 @@
 \section{Creación del espacio de trabajo}
 %--------------------------------------------------------------
 
-En esta sección se describe el proceso de creación y configuración del espacio de trabajo ROS 2 (\texttt{ros2\_ws}), así como la instalación del entorno Docker con ROS 2 Humble.
-
-% Describe brevemente los pasos realizados y añade capturas si lo crees necesario.
+Se creó el espacio de trabajo \texttt{ros2\_ws} dentro del contenedor Docker con ROS 2 Humble, compilando con \texttt{colcon build} y configurando el entorno con \texttt{source install/setup.bash}.
 
 %--------------------------------------------------------------
 \section{Ejemplo de un entorno: Nodos y Topics}
 %--------------------------------------------------------------
 
 \subsection*{Pregunta 1}
-\textit{¿Qué podemos saber de este nodo? (Suscriptores, topics)}
+\textit{¿Qué podemos saber de este nodo?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
+Con \texttt{ros2 node info /talker}: el nodo publica en el topic \texttt{/chatter} con tipo \texttt{std\_msgs/msg/String}. No tiene suscriptores ni servicios propios.
 
-% Si tienes captura, inclúyela así:
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_nodo_info.png}
-%   \caption{Información del nodo \texttt{/talker} con \texttt{ros2 node info}.}
-%   \label{fig:p1_nodo_info}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte1/imagenes/terminal1.png}
+  \caption{Información del nodo \texttt{/talker}.}
+  \label{fig:p1_talker}
+\end{figure}
 
 \subsection*{Pregunta 2}
-\textit{¿Qué podemos saber sobre el topic que publica el nodo que acabamos de lanzar?}
+\textit{¿Qué podemos saber sobre el topic que publica el nodo?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
+Con \texttt{ros2 topic info /chatter}: tipo \texttt{std\_msgs/msg/String}, 1 publisher (\texttt{/talker}), 0 subscribers. Con \texttt{ros2 topic echo /chatter} se puede ver el contenido publicado.
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_topic_info.png}
-%   \caption{Información del topic \texttt{/chatter}.}
-%   \label{fig:p1_topic_info}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte1/imagenes/terminal2.png}
+  \caption{Información del topic \texttt{/chatter} con un publisher.}
+  \label{fig:p1_chatter}
+\end{figure}
 
 \subsection*{Pregunta 3}
 \textit{¿Qué podemos saber sobre el nuevo nodo \texttt{/listener}?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_listener_info.png}
-%   \caption{Información del nodo \texttt{/listener}.}
-%   \label{fig:p1_listener_info}
-% \end{figure}
+Con \texttt{ros2 node info /listener}: se suscribe al topic \texttt{/chatter} de tipo \texttt{std\_msgs/msg/String}. No publica en ningún topic.
 
 \subsection*{Pregunta 4}
 \textit{¿Qué ha sucedido ahora en el topic \texttt{/chatter}?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
+Al lanzar el listener, el topic pasa a tener 1 publisher y 1 subscriber. La comunicación queda establecida y el listener empieza a recibir mensajes.
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_chatter_subs.png}
-%   \caption{Estado del topic \texttt{/chatter} tras conectar el listener.}
-%   \label{fig:p1_chatter_subs}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte1/imagenes/3terminal.png}
+  \caption{Talker, listener y echo del topic \texttt{/chatter} activos simultáneamente.}
+  \label{fig:p1_3terminal}
+\end{figure}
 
 \subsection*{Pregunta 5}
 \textit{¿Qué podemos saber a partir del gráfico de \texttt{rqt\_graph}?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
-
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_rqt_graph.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm} [Captura rqt\_graph] \vspace{2cm}}}
-  \caption{Gráfico \texttt{rqt\_graph} con los nodos \texttt{/talker} y \texttt{/listener}.}
-  \label{fig:p1_rqt_graph}
-\end{figure}
+El gráfico muestra el nodo \texttt{/talker} publicando en el topic \texttt{/chatter} y el nodo \texttt{/listener} suscribiéndose a dicho topic. Permite visualizar gráficamente la arquitectura de comunicación entre nodos.
 
 %--------------------------------------------------------------
 \section{Servicios}
@@ -89,44 +66,32 @@ En esta sección se describe el proceso de creación y configuración del espaci
 \subsection*{Pregunta 6}
 \textit{¿Qué puedes comentar acerca de este servicio?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
+El servicio \texttt{add\_two\_ints} (de tipo \texttt{example\_interfaces/srv/AddTwoInts}) implementa una arquitectura cliente-servidor síncrona. El servidor queda a la espera de peticiones y el cliente envía dos enteros, recibiendo su suma como respuesta.
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_servicio_suma.png}
-%   \caption{Ejecución del servicio de suma.}
-%   \label{fig:p1_servicio_suma}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte1/imagenes/servicio_suma.png}
+  \caption{Ejecución del servicio suma original.}
+  \label{fig:p1_servicio}
+\end{figure}
 
 \subsection*{Pregunta 7}
-\textit{Al lanzar el servidor y ejecutar \texttt{ros2 service list} ¿Qué servicios aparecen? ¿Cómo se ha creado el servicio \texttt{minimal\_service} y cuál es su cometido?}
+\textit{¿Qué servicios aparecen? ¿Cómo se ha creado el servicio \texttt{minimal\_service}?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí.
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_service_list.png}
-%   \caption{Listado de servicios con \texttt{ros2 service list}.}
-%   \label{fig:p1_service_list}
-% \end{figure}
+Al ejecutar \texttt{ros2 service list} aparece \texttt{/add\_two\_ints} junto con los servicios de parámetros del nodo (\texttt{/minimal\_service/get\_parameters}, etc.). El \texttt{minimal\_service} se crea con:
+\begin{lstlisting}[style=bash]
+self.srv = self.create_service(AddTwoInts, 'add_two_ints', self.callback)
+\end{lstlisting}
+Su cometido es sumar (o en la versión modificada, calcular la operación aritmética sobre) los valores recibidos y devolver el resultado.
 
 \subsection*{Pregunta 8}
-\textit{¿Cómo puedo saber cuáles son los parámetros de la ``petición'' y de la ``respuesta'' de un servicio? ¿De qué tipología son estos parámetros?}
+\textit{¿Cómo puedo saber los parámetros de la petición y la respuesta? ¿De qué tipo son?}
 
-\textbf{Respuesta:}\\
-% Escribe tu respuesta aquí. Ejemplo de comando:
-\begin{lstlisting}[style=bash, caption={Mostrar interfaz del servicio con ros2 interface show.}]
-ros2 interface show <tipo_servicio>
+Con el comando:
+\begin{lstlisting}[style=bash]
+ros2 interface show example_interfaces/srv/AddTwoInts
 \end{lstlisting}
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_interface_show.png}
-%   \caption{Salida de \texttt{ros2 interface show} para el servicio de suma.}
-%   \label{fig:p1_interface_show}
-% \end{figure}
+Se obtiene: request con \texttt{int64 a} e \texttt{int64 b}; response con \texttt{int64 sum}. Son valores enteros de 64 bits.
 
 %--------------------------------------------------------------
 \section{Ejercicios}
@@ -134,36 +99,60 @@ ros2 interface show <tipo_servicio>
 
 \subsection{Ejercicio 1: Publicar mensaje al topic \texttt{/chatter}}
 
-\textit{Publica desde la terminal un mensaje al topic \texttt{/chatter} para que sea leído por el nodo \texttt{/listener}.}
+Se publica directamente desde terminal un mensaje al topic \texttt{/chatter} para que el nodo \texttt{/listener} lo reciba:
 
-\textbf{Comandos utilizados:}
 \begin{lstlisting}[style=bash, caption={Publicación manual en el topic /chatter.}]
-ros2 topic pub /chatter std_msgs/msg/String "data: 'Tu mensaje aquí'"
+ros2 topic pub /chatter std_msgs/msg/String "data: 'Hola desde terminal'" --once
 \end{lstlisting}
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_ej1_pub.png}
-%   \caption{Publicación de mensaje en \texttt{/chatter} y recepción en \texttt{/listener}.}
-%   \label{fig:p1_ej1_pub}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte1/imagenes/ejercicio1.png}
+  \caption{Publicación manual en \texttt{/chatter} y recepción en \texttt{/listener}.}
+  \label{fig:p1_ej1}
+\end{figure}
 
 \subsection{Ejercicio 2: Modificar el servicio suma}
 
-\textit{Cambia el servicio \texttt{servicio\_suma} para que calcule: \(a + b - c \cdot d \div e\), siendo \(a, b, c, d, e\) valores enteros (\texttt{int64}) y el resultado en \texttt{float64}.}
+Se modifica el servicio para calcular $a + b - c \cdot d \div e$, con $a, b, c, d, e \in \texttt{int64}$ y resultado en \texttt{float64}.
 
-\textbf{Descripción de los cambios:}\\
-% Explica qué archivos has modificado y cómo.
+\textbf{Interfaz modificada} (\texttt{AddTwoInts.srv}):
+\begin{lstlisting}[caption={Nueva interfaz del servicio.}]
+int64 a
+int64 b
+int64 c
+int64 d
+int64 e
+---
+float64 sum
+\end{lstlisting}
 
-\textbf{Archivos modificados:}
-\begin{itemize}
-  \item \texttt{interfaz\_servicio\_suma/srv/...} -- Modificación de la interfaz del servicio.
-  \item \texttt{servicio\_suma/...} -- Modificación del servidor y cliente.
-\end{itemize}
+\textbf{Callback del servidor}:
+\begin{lstlisting}[style=python, caption={Operación modificada en el servidor.}]
+def add_two_ints_callback(self, request, response):
+    response.sum = float(request.a + request.b
+                         - request.c * request.d / request.e)
+    return response
+\end{lstlisting}
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{parte1/imagenes/p1_ej2_resultado.png}
-%   \caption{Resultado de la ejecución del servicio modificado.}
-%   \label{fig:p1_ej2_resultado}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[width=\textwidth]{parte1/imagenes/change_add_two_ints_srv.png}
+    \caption{Interfaz \texttt{.srv} modificada.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[width=\textwidth]{parte1/imagenes/change_server.png}
+    \caption{Servidor con la nueva operación.}
+  \end{subfigure}
+  \caption{Cambios realizados en el ejercicio 2.}
+  \label{fig:p1_ej2_cambios}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{parte1/imagenes/ej2_done.png}
+  \caption{Resultado de la ejecución del servicio modificado.}
+  \label{fig:p1_ej2_result}
+\end{figure}
