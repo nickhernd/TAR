@@ -1,0 +1,21 @@
+[0.450s] Invoking command in '/workspace/ros2_ws/src/maze_pkg': PYTHONPATH=/workspace/ros2_ws/build/maze_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/maze_pkg build --build-base /workspace/ros2_ws/build/maze_pkg/build install --record /workspace/ros2_ws/build/maze_pkg/install.log --single-version-externally-managed install_data
+[0.607s] running egg_info
+[0.607s] writing ../../build/maze_pkg/maze_pkg.egg-info/PKG-INFO
+[0.607s] writing dependency_links to ../../build/maze_pkg/maze_pkg.egg-info/dependency_links.txt
+[0.607s] writing entry points to ../../build/maze_pkg/maze_pkg.egg-info/entry_points.txt
+[0.608s] writing requirements to ../../build/maze_pkg/maze_pkg.egg-info/requires.txt
+[0.608s] writing top-level names to ../../build/maze_pkg/maze_pkg.egg-info/top_level.txt
+[0.609s] reading manifest file '../../build/maze_pkg/maze_pkg.egg-info/SOURCES.txt'
+[0.610s] writing manifest file '../../build/maze_pkg/maze_pkg.egg-info/SOURCES.txt'
+[0.610s] running build
+[0.610s] running build_py
+[0.610s] running install
+[0.611s] running install_lib
+[0.612s] running install_data
+[0.612s] copying launch/maze_2.launch.py -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/launch
+[0.612s] copying launch/maze_1.launch.py -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/launch
+[0.612s] copying worlds/maze_2.world -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/worlds
+[0.612s] copying worlds/maze_1.world -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/worlds
+[0.612s] copying models/maze_1/model.config -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1
+[0.612s] error: can't copy 'models/maze_1/maze_1': doesn't exist or not a regular file
+[0.628s] Invoked command in '/workspace/ros2_ws/src/maze_pkg' returned '1': PYTHONPATH=/workspace/ros2_ws/build/maze_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/maze_pkg build --build-base /workspace/ros2_ws/build/maze_pkg/build install --record /workspace/ros2_ws/build/maze_pkg/install.log --single-version-externally-managed install_data
