@@ -1,0 +1,134 @@
+
+%==============================================================
+% MEMORIA PRÁCTICA 2 - TAR (Tecnología y Arquitectura Robótica)
+% Turtlebot 3 en simulación
+%==============================================================
+\documentclass[12pt, a4paper]{report}
+
+%--- Paquetes ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{parskip}
+
+%--- Geometría de página ---
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2.5cm
+}
+
+\setlength{\headheight}{14pt}
+
+%--- Colores ---
+\definecolor{azulROS}{RGB}{0, 100, 180}
+\definecolor{grisClaro}{RGB}{245, 245, 245}
+\definecolor{verdeCode}{RGB}{0, 128, 0}
+\definecolor{rojoComentario}{RGB}{150, 0, 0}
+
+%--- Estilo de código ---
+\lstdefinestyle{bash}{
+  backgroundcolor=\color{grisClaro},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{azulROS},
+  keywordstyle=\color{azulROS}\bfseries,
+  commentstyle=\color{rojoComentario}\itshape,
+  stringstyle=\color{verdeCode},
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt
+}
+
+\lstdefinestyle{python}{
+  language=Python,
+  backgroundcolor=\color{grisClaro},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{azulROS},
+  keywordstyle=\color{azulROS}\bfseries,
+  commentstyle=\color{rojoComentario}\itshape,
+  stringstyle=\color{verdeCode},
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt
+}
+
+\lstset{
+  style=bash,
+  extendedchars=true,
+  literate=
+    {á}{{\'{a}}}1 {é}{{\'{e}}}1 {í}{{\'{i}}}1 {ó}{{\'{o}}}1 {ú}{{\'{u}}}1
+    {Á}{{\'{A}}}1 {É}{{\'{E}}}1 {Í}{{\'{I}}}1 {Ó}{{\'{O}}}1 {Ú}{{\'{U}}}1
+    {ñ}{{\~{n}}}1 {Ñ}{{\~{N}}}1
+    {¿}{{?`}}1   {¡}{{!`}}1
+}
+
+%--- Cabecera y pie de página ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small TAR -- Práctica 2: Trabajando con Turtlebot 3 en simulación}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%--- Formato de títulos ---
+\titleformat{\chapter}[block]
+  {\normalfont\Large\bfseries\color{azulROS}}
+  {\thechapter.}{1em}{}
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+
+%--- Hiperlinks ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor=azulROS,
+  urlcolor=azulROS,
+  citecolor=azulROS,
+  pdftitle={Práctica 2 TAR - Turtlebot 3 en simulación},
+  pdfauthor={Apellido Apellido, Nombre}
+}
+
+%==============================================================
+\begin{document}
+%==============================================================
+
+\input{portada}
+
+\tableofcontents
+\newpage
+
+\input{parts/parte1/figuras.tex}
+\input{parts/parte1/aparcamiento.tex}
+\input{parts/parte2/maze.tex}
+
+%==============================================================
+\end{document}
+%==============================================================
