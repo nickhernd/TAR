@@ -1,1 +1,7 @@
 \babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Parte 2: Resolución de un Laberinto}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Preguntas teóricas previas}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Ejercicio 1: Resolución del Laberinto 1 (Waffle)}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Ejercicio 2: Laberinto 2 y análisis de limitaciones}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Ejercicio 3: Repetición con Turtlebot 3 Burger}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Ejercicio 4: Laberinto propio}{6}{section.1.5}%

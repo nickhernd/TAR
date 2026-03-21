@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: maze-pkg
+Version: 0.0.0
+Summary: Maze solving with Turtlebot3 using LiDAR
+Home-page: UNKNOWN
+Maintainer: nickhernd
+Maintainer-email: nickhernd@todo.todo
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+
