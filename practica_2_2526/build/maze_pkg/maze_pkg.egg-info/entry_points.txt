@@ -1,3 +1,4 @@
 [console_scripts]
+pledge_maze = maze_pkg.pledge_maze:main
 res_maze = maze_pkg.res_maze:main
 

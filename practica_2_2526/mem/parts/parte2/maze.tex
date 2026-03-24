@@ -3,10 +3,10 @@
 %==============================================================
 \chapter{Parte 2: Resolución de un Laberinto}
 
-En esta parte se utiliza el Turtlebot 3 equipado con un sensor LiDAR para resolver
-un laberinto de manera autónoma. Se emplea el paquete \texttt{maze\_pkg}, que contiene
-el nodo \texttt{res\_maze.py} basado en un algoritmo de seguimiento de pared izquierda
-(\textit{left-wall following}).
+En esta parte se utiliza el Turtlebot~3 equipado con un sensor LiDAR para resolver
+laberintos de manera autónoma. Se emplea el paquete \texttt{maze\_pkg}, que contiene
+dos nodos: \texttt{res\_maze.py} (algoritmo \textit{left-wall following}) y
+\texttt{pledge\_maze.py} (Algoritmo de Pledge).
 
 %--------------------------------------------------------------
 \section{Preguntas teóricas previas}
@@ -14,77 +14,118 @@ el nodo \texttt{res\_maze.py} basado en un algoritmo de seguimiento de pared izq
 
 \subsection*{Pregunta 12: Topic y tipo de mensaje del LiDAR}
 
-El topic asociado al LiDAR del Turtlebot 3 es \texttt{/scan}. \\ El tipo de mensaje
-es \texttt{sensor\_msgs/msg/LaserScan}, que contiene los campos principales:
+El topic asociado al LiDAR del Turtlebot~3 es \texttt{/scan}. Lo verificamos con:
+
+\begin{lstlisting}[style=bash]
+ros2 topic list
+ros2 topic type /scan
+\end{lstlisting}
+
+El tipo de mensaje es \texttt{sensor\_msgs/msg/LaserScan}, con los campos principales:
+
 \begin{itemize}
   \item \texttt{angle\_min}, \texttt{angle\_max}, \texttt{angle\_increment}: rango y resolución angular.
   \item \texttt{range\_min}, \texttt{range\_max}: límites de distancia medibles.
   \item \texttt{ranges[]}: array con las distancias medidas en cada ángulo.
+  \item \texttt{intensities[]}: intensidades de reflexión (vacío en simulación).
 \end{itemize}
-
-Para verificarlo se puede ejecutar:
-\begin{lstlisting}[style=bash]
-ros2 topic list
-ros2 topic info /scan
-ros2 topic echo /scan --once
-\end{lstlisting}
 
 \subsection*{Pregunta 13: Rangos de distancia, ángulo de escaneo y origen de referencia}
 
-Los valores del LiDAR del Turtlebot 3 Waffle y Burger son:
+Los valores del LiDAR del Turtlebot~3 Waffle (sensor LDS-01) son:
 
 \begin{table}[H]
 \centering
 \begin{tabular}{lcc}
 \toprule
-\textbf{Parámetro}         & \textbf{Waffle}   & \textbf{Burger}   \\
+\textbf{Parámetro}     & \textbf{Waffle}  & \textbf{Burger}  \\
 \midrule
-Rango mínimo               & 0.12 m            & 0.12 m            \\
-Rango máximo               & 3.5 m             & 3.5 m             \\
-Ángulo de escaneo          & 360°              & 360°              \\
-Resolución angular         & 1°                & 1°                \\
+Rango mínimo           & 0.12 m           & 0.12 m           \\
+Rango máximo           & 3.5 m            & 3.5 m            \\
+Ángulo de escaneo      & 360°             & 360°             \\
+Resolución angular     & 1°  (360 rayos)  & 1° (360 rayos)   \\
 \bottomrule
 \end{tabular}
-\caption{Características del LiDAR del Turtlebot 3}
+\caption{Características del sensor LiDAR LDS-01 del Turtlebot~3}
 \end{table}
 
-El origen de referencia del LiDAR es el propio sensor, montado en la parte
-superior del robot. El índice 0 del array \texttt{ranges[]} corresponde a la
-dirección de avance del robot (frente), y los índices aumentan en sentido
-antihorario: índice 90 $\approx$ izquierda, 180 $\approx$ atrás, 270 $\approx$ derecha.
+\begin{lstlisting}
+nickhernd@docker-desktop:/workspace$ ros2 topic echo /scan --once
+header:
+stamp:
+sec: 13
+nanosec: 113000000
+frame_id: base_scan
+angle_min: 0.0
+angle_max: 6.28000020980835
+angle_increment: 0.01749303564429283
+time_increment: 0.0
+scan_time: 0.0
+range_min: 0.11999999731779099
+range_max: 3.5
+ranges:
+- 2.4729459285736084
+\end{lstlisting}
 
-% ---- CAPTURA RECOMENDADA ----
-% Añadir aquí una captura de: ros2 topic echo /scan --once
-% mostrando los valores de range_min, range_max, angle_min, angle_max
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/scan_info.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: salida de \texttt{ros2 topic echo /scan --once} mostrando
-    range\_min, range\_max, angle\_min, angle\_max]
-  \vspace{1cm}}}
-  \caption{Información del topic \texttt{/scan} del Turtlebot 3}
-\end{figure}
+El origen de referencia es el propio sensor, montado en la parte superior del robot.
+El índice~0 del array \texttt{ranges[]} corresponde a la dirección de avance
+(\textit{frente}), y los índices crecen en sentido antihorario:
+índice~90 $\approx$ izquierda, 180 $\approx$ atrás, 270 $\approx$ derecha.
+
+Para el algoritmo se utilizan los siguientes sectores angulares:
+\begin{itemize}
+  \item \textbf{Sector frontal}: índices correspondientes a $[-20°, +20°]$.
+  \item \textbf{Sector izquierdo}: índices correspondientes a $[75°, 105°]$.
+\end{itemize}
 
 %--------------------------------------------------------------
-\section{Ejercicio 1: Resolución del Laberinto 1 (Waffle)}
+\section{Ejercicio 1: Resolución del Laberinto 1 --- Algoritmo Wall Follower}
 %--------------------------------------------------------------
 
 Se ha desarrollado el nodo \texttt{res\_maze.py} dentro del paquete \texttt{maze\_pkg}.
-El algoritmo implementado es \textit{left-wall following} con una máquina de estados:
+El algoritmo implementado es \textit{left-wall following} con una máquina de tres
+estados:
 
 \begin{itemize}
-  \item \textbf{FIND\_WALL}: el robot avanza en línea recta hasta detectar una pared al
-        frente ($d_{\text{front}} < 0.45$ m). Este estado inicial es necesario para que
-        el robot tenga una pared de referencia antes de comenzar el seguimiento.
-  \item \textbf{TURN\_RIGHT}: el robot gira sobre sí mismo hacia la derecha hasta que el
-        frente queda libre. Para evitar oscilaciones, existe un contador mínimo de
-        iteraciones (\texttt{MIN\_TURN\_TICKS = 15}) antes de poder salir del estado.
-  \item \textbf{FORWARD}: el robot avanza siguiendo la pared izquierda mediante un
-        controlador proporcional. El error se define como
-        $e = d_{\text{left}} - d_{\text{desired}}$, de forma que si la pared está
-        lejos el robot gira a la izquierda y si está cerca gira a la derecha.
+  \item \textbf{FIND\_WALL}: el robot avanza en línea recta hasta detectar una pared
+        al frente ($d_\text{front} < 0.45$\,m).
+  \item \textbf{TURN\_RIGHT}: el robot gira a la derecha sobre sí mismo hasta que el
+        frente queda libre. Existe un contador mínimo \texttt{MIN\_TURN\_TICKS\,=\,15}
+        para evitar oscilaciones.
+  \item \textbf{FORWARD}: avanza siguiendo la pared izquierda mediante un controlador
+        proporcional. El error se define como $e = d_\text{left} - d_\text{desired}$;
+        si la pared está lejos el robot gira a la izquierda y si está cerca gira a la
+        derecha.
 \end{itemize}
+
+La función principal del nodo es el \textit{callback} del LiDAR:
+
+\begin{lstlisting}[style=python]
+def scan_callback(self, msg: LaserScan):
+    front = min(safe(i) for i in range(-20, 21))
+    left  = min(safe(i) for i in range(75, 106))
+
+    if self.state == 'FIND_WALL':
+        if front < FRONT_THRESH:
+            self.state = 'TURN_RIGHT'
+        else:
+            cmd.linear.x = LINEAR_SPEED
+
+    elif self.state == 'TURN_RIGHT':
+        cmd.angular.z = -ANGULAR_SPEED
+        self.turn_ticks += 1
+        if self.turn_ticks >= MIN_TURN_TICKS and front > FRONT_THRESH + 0.15:
+            self.state = 'FORWARD'
+
+    else:  # FORWARD
+        if front < FRONT_THRESH:
+            self.state = 'TURN_RIGHT'
+        else:
+            error = left - WALL_DIST
+            correction = max(-ANGULAR_SPEED, min(ANGULAR_SPEED, KP * error))
+            cmd.linear.x  = LINEAR_SPEED
+            cmd.angular.z = correction
+\end{lstlisting}
 
 Los parámetros principales del nodo son:
 
@@ -92,20 +133,21 @@ Los parámetros principales del nodo son:
 \centering
 \begin{tabular}{lll}
 \toprule
-\textbf{Parámetro}    & \textbf{Valor} & \textbf{Descripción} \\
+\textbf{Parámetro}      & \textbf{Valor} & \textbf{Descripción} \\
 \midrule
-\texttt{LINEAR\_SPEED}   & 0.12 m/s & Velocidad lineal de avance \\
-\texttt{ANGULAR\_SPEED}  & 0.40 rad/s & Velocidad angular de giro \\
-\texttt{WALL\_DIST}      & 0.35 m & Distancia deseada a la pared izquierda \\
-\texttt{FRONT\_THRESH}   & 0.45 m & Umbral de obstáculo al frente \\
-\texttt{KP}              & 0.8    & Ganancia del controlador proporcional \\
-\texttt{MIN\_TURN\_TICKS}& 15     & Iteraciones mínimas en estado de giro \\
+\texttt{LINEAR\_SPEED}  & 0.12 m/s  & Velocidad lineal de avance \\
+\texttt{ANGULAR\_SPEED} & 0.40 rad/s & Velocidad angular de giro \\
+\texttt{WALL\_DIST}     & 0.35 m    & Distancia deseada a la pared izquierda \\
+\texttt{FRONT\_THRESH}  & 0.45 m    & Umbral de detección de obstáculo al frente \\
+\texttt{KP}             & 0.8       & Ganancia del controlador proporcional \\
+\texttt{MIN\_TURN\_TICKS} & 15      & Iteraciones mínimas en estado de giro \\
 \bottomrule
 \end{tabular}
 \caption{Parámetros del nodo \texttt{res\_maze.py}}
 \end{table}
 
 Para lanzar el ejercicio:
+
 \begin{lstlisting}[style=bash]
 # Terminal 1 - Simulacion
 export TURTLEBOT3_MODEL=waffle
@@ -116,169 +158,261 @@ source /workspace/ros2_ws/install/setup.bash
 ros2 run maze_pkg res_maze
 \end{lstlisting}
 
-% ---- CAPTURAS RECOMENDADAS ----
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/maze1_waffle_inicio.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: Gazebo con el Turtlebot 3 Waffle en el laberinto 1 (estado inicial)]
-  \vspace{1cm}}}
-  \caption{Turtlebot 3 Waffle en el laberinto 1 — estado inicial}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/maze1_waffle_resuelto.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: Gazebo con el Turtlebot 3 Waffle habiendo salido del laberinto 1]
-  \vspace{1cm}}}
-  \caption{Turtlebot 3 Waffle resolviendo el laberinto 1}
-\end{figure}
-
-El enlace al vídeo de la ejecución se puede encontrar en: \url{ENLACE_VIDEO_MAZE1_WAFFLE}
+El algoritmo Wall Follower resuelve correctamente el laberinto~1, ya que todas las
+paredes interiores están conectadas al perímetro exterior, condición suficiente para
+que el seguimiento de pared sea completo.
 
 %--------------------------------------------------------------
-\section{Ejercicio 2: Laberinto 2 y análisis de limitaciones}
+\section{Ejercicio 2: Laberinto 2 y análisis de limitaciones del Wall Follower}
 %--------------------------------------------------------------
 
-Se ejecuta el mismo nodo \texttt{res\_maze.py} con el segundo mapa:
+Se ejecuta el mismo nodo \texttt{res\_maze.py} con el segundo mapa, que presenta una
+topología diferente:
 
 \begin{lstlisting}[style=bash]
 export TURTLEBOT3_MODEL=waffle
 ros2 launch maze_pkg maze_2.launch.py
+ros2 run maze_pkg res_maze
 \end{lstlisting}
 
-% ---- CAPTURA RECOMENDADA ----
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/maze2_waffle.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: Gazebo con el Turtlebot 3 Waffle en el laberinto 2]
-  \vspace{1cm}}}
-  \caption{Turtlebot 3 Waffle en el laberinto 2}
+  \includegraphics[width=0.85\textwidth]{parts/parte2/images/maze2_waffle_atrapado.png}
+  \caption{Turtlebot~3 Waffle atrapado en el laberinto~2: el robot orbita indefinidamente alrededor de la isla interior}
+  \label{fig:maze2_atrapado}
 \end{figure}
 
 \subsection*{Pregunta 14: Problemática observada en el laberinto 2}
 
-El laberinto 2 presenta una topología diferente al primero. La principal problemática
-observada es la presencia de \textbf{bucles cerrados} y pasillos simétricos que pueden
-llevar al robot a girar indefinidamente por la misma ruta sin encontrar la salida.
-El algoritmo de seguimiento de pared izquierda es completo para laberintos simplemente
-conexos (sin islas interiores), pero falla cuando el laberinto contiene paredes
-desconectadas del perímetro, ya que el robot puede quedar atrapado orbitando
-alrededor de una isla interior.
+El laberinto~2 contiene \textbf{paredes interiores no conectadas al perímetro exterior}
+(islas). El algoritmo Wall Follower falla en este escenario porque:
 
-\subsection*{Pregunta 15: ¿Es el robot capaz de resolver este laberinto?}
+\begin{enumerate}
+  \item El robot detecta la isla, la toma como pared de referencia y comienza a
+        seguirla por la izquierda.
+  \item Al ser la isla un obstáculo cerrado (sin conexión a la salida), el robot
+        completa el perímetro de la isla y vuelve al punto de inicio del seguimiento.
+  \item El proceso se repite indefinidamente: el robot queda atrapado en un bucle
+        infinito rodeando la isla, sin llegar nunca a la salida.
+\end{enumerate}
 
-% TODO: completar tras ejecutar el experimento
-El robot \textbf{no es capaz} de resolver el laberinto 2 con el algoritmo
-de seguimiento de pared izquierda. Como ya se ha dicho en la parte anterior se observa que la topología es distinta al primer ejercicio por lo cual la estrategia debería de ser diferente, se ha pensado en añadir a la máquina de estados un nuevo de estados en lo que implicaria un contador cada cierto número de giros a la izquierda seguidos en un periodo de tiempo corto cambiar de rumbo.
+Esta es la limitación fundamental del algoritmo: \textbf{solo garantiza la solución
+si el muro seguido está conectado topológicamente con la salida}.
 
-En caso de no poder resolverlo, la información adicional que necesitaría el robot
-para lograrlo sería:
-\begin{itemize}
-  \item Un \textbf{mapa previo} del entorno (navegación basada en mapa, SLAM).
-  \item \textbf{Localización global} para detectar si ha visitado una posición anteriormente
-        y así evitar repetir rutas (algoritmo de Pledge o similares).
-  \item Capacidad de \textbf{marcar el camino recorrido} para implementar estrategias
-        como \textit{Trémaux's algorithm}.
-\end{itemize}
+\subsection*{Pregunta 15: ¿Es el robot capaz de resolver este laberinto? ¿Qué información necesita?}
 
-El enlace al vídeo de la ejecución se puede encontrar en: \url{ENLACE_VIDEO_MAZE2_WAFFLE}
+Con el algoritmo Wall Follower tal como está implementado, \textbf{el robot no es
+capaz de resolver el laberinto~2}. El robot queda atrapado orbitando alrededor de
+la isla interior sin encontrar la salida.
+
+Para resolver este tipo de laberintos es necesario el \textbf{Algoritmo de Pledge}
+\cite{klein2011pledge}, una variante del Wall Follower que incorpora un
+\textit{contador de giros netos}. La idea clave es: si el contador de giros regresa
+a cero mientras el camino está despejado, el robot abandona el muro y retoma la
+dirección original. Esto permite al robot \textit{escapar} de las islas en lugar de
+orbitar alrededor de ellas. La implementación de este algoritmo se describe en el
+siguiente ejercicio.
 
 %--------------------------------------------------------------
-\section{Ejercicio 3: Repetición con Turtlebot 3 Burger}
+\section{Ejercicio 3: Algoritmo de Pledge para el Laberinto 2}
 %--------------------------------------------------------------
 
-Se repiten los ejercicios anteriores usando el modelo \texttt{Burger}:
+Para resolver el laberinto~2 se ha implementado el nodo \texttt{pledge\_maze.py}
+dentro del paquete \texttt{maze\_pkg}. Este nodo implementa el
+\textbf{Algoritmo de Pledge}, descrito en el pseudocódigo siguiente:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\multicolumn{2}{l}{\textbf{Algoritmo de Pledge (seguimiento pared izquierda)}} \\
+\midrule
+1. & \texttt{contador} $\leftarrow$ 0 \\
+2. & \textbf{repetir:} \\
+3. & \quad Avanzar en línea recta (\textit{estado} NORTE) hasta encontrar un muro \\
+4. & \quad Comenzar a seguir el muro izquierdo (\textit{estado} MURO) \\
+5. & \quad Incrementar/decrementar \texttt{contador} con cada giro \\
+6. & \quad Si \texttt{contador} = 0 y el frente está libre $\Rightarrow$ volver al paso~3 \\
+7. & \textbf{hasta:} salida encontrada \\
+\bottomrule
+\end{tabular}
+\caption{Pseudocódigo del Algoritmo de Pledge}
+\end{table}
+
+\subsection*{Implementación en ROS~2}
+
+La clase \texttt{PledgeFinal} suscribe a \texttt{/scan} (LiDAR) y a \texttt{/odom}
+(odometría) para extraer el ángulo \textit{yaw} actual mediante:
+
+\begin{lstlisting}[style=python]
+def odom_cb(self, msg):
+    q = msg.pose.pose.orientation
+    self.curr_yaw = math.atan2(
+        2.0*(q.w*q.z + q.x*q.y),
+        1.0 - 2.0*(q.y*q.y + q.z*q.z))
+
+    if self.init_yaw is None:
+        self.init_yaw = self.curr_yaw
+        return
+
+    # Contador de cuadrantes (-2, -1, 0, 1, 2)
+    diff = self.normalize_angle(self.curr_yaw - self.init_yaw)
+    current_q = int(round(diff / (math.pi / 2)))
+
+    if current_q != self.last_q:
+        step = current_q - self.last_q
+        if step > 2:  step -= 4
+        if step < -2: step += 4
+        self.contador += step
+        self.last_q = current_q
+\end{lstlisting}
+
+La máquina de estados principal, en el \textit{callback} del LiDAR, tiene dos
+estados: \texttt{NORTE} (avanzar recto manteniendo la orientación inicial) y
+\texttt{MURO} (seguir la pared izquierda):
+
+\begin{lstlisting}[style=python]
+def scan_cb(self, msg):
+    dist_frontal = self.get_dist_at_angle(msg, 0)
+    dist_izq     = self.get_dist_at_angle(msg, 90)
+
+    if self.state == 'NORTE':
+        if dist_frontal < 0.45:
+            self.state = 'MURO'  # Encontro muro -> empezar a seguirlo
+        else:
+            # Controlador P de rumbo: mantener orientacion inicial
+            err = self.normalize_angle(self.init_yaw - self.curr_yaw)
+            cmd.linear.x  = 0.15
+            cmd.angular.z = 0.8 * err
+
+    elif self.state == 'MURO':
+        # Condicion de escape Pledge: contador=0 y orientacion inicial recuperada
+        dist_norte = abs(self.normalize_angle(self.curr_yaw - self.init_yaw))
+        if self.contador == 0 and dist_norte < 0.15 and dist_frontal > 0.6:
+            self.state = 'NORTE'  # Escapar del muro
+            return
+
+        # Navegacion: seguir pared izquierda
+        if dist_frontal < 0.35:
+            cmd.angular.z = -0.5           # Girar derecha (resta al contador)
+        elif dist_izq > 0.6:
+            cmd.linear.x  = 0.1
+            cmd.angular.z = 0.4            # Girar izquierda (suma al contador)
+        else:
+            cmd.linear.x  = 0.12
+            cmd.angular.z = 1.3 * (dist_izq - 0.35)  # Control proporcional
+\end{lstlisting}
+
+La condición de escape es clave: cuando el \texttt{contador} vuelve a 0
+\textbf{y} el robot ha recuperado su orientación original \textbf{y} el frente
+está libre, el robot abandona el muro. Esto garantiza que no se trata de un
+punto de paso al azar, sino de un estado en que el robot ha completado un
+número neto de giros igual a cero --- condición necesaria para haber escapado
+de la isla.
+
+Para lanzar el ejercicio:
+
+\begin{lstlisting}[style=bash]
+# Terminal 1 - Simulacion
+export TURTLEBOT3_MODEL=waffle
+ros2 launch maze_pkg maze_2.launch.py
+
+# Terminal 2 - Pledge solver
+source /workspace/ros2_ws/install/setup.bash
+ros2 run maze_pkg pledge_maze
+\end{lstlisting}
+
+El algoritmo de Pledge resuelve correctamente el laberinto~2. Cuando el robot
+rodea la isla por primera vez, el contador acumula giros; al completar el
+perímetro el contador vuelve a cero y el robot escapa en línea recta hacia la
+salida, en lugar de repetir el bucle.
+
+El enlace al vídeo de la ejecución se puede encontrar en: \url{ENLACE_VIDEO_MAZE2_PLEDGE}
+
+%--------------------------------------------------------------
+\section{Ejercicio 4: Comparativa Waffle vs.\ Burger en el Laberinto 1}
+%--------------------------------------------------------------
+
+Se repite el Ejercicio~1 usando el modelo \texttt{Burger}:
 
 \begin{lstlisting}[style=bash]
 export TURTLEBOT3_MODEL=burger
 ros2 launch maze_pkg maze_1.launch.py
-# Terminal 2:
 ros2 run maze_pkg res_maze
 \end{lstlisting}
 
-% ---- CAPTURAS RECOMENDADAS ----
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/maze1_burger.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: Gazebo con Turtlebot 3 Burger en el laberinto 1]
-  \vspace{1cm}}}
-  \caption{Turtlebot 3 Burger en el laberinto 1}
-\end{figure}
+\subsection*{Pregunta 16: Diferencias observadas entre Waffle y Burger}
 
-\subsection*{Pregunta 16: Diferencias observadas entre Waffle y Burger en el laberinto}
-
-Las diferencias observadas entre ambos modelos al resolver el laberinto son las siguientes:
+Las diferencias observadas entre ambos modelos al resolver el laberinto son:
 
 \begin{itemize}
-  \item \textbf{Dimensiones físicas}: el Burger es más pequeño y estrecho que el Waffle,
-        lo que le permite navegar con mayor holgura por pasillos estrechos y cometer
-        menos colisiones laterales.
-  \item \textbf{LiDAR}: ambos modelos montan el mismo sensor LiDAR con 360° de cobertura,
-        por lo que la información de percepción es equivalente.
-  \item \textbf{Dinámica de giro}: el Burger, al tener menor separación entre ruedas
-        (\textit{wheel separation}), realiza giros más cerrados. Esto puede ser ventajoso
-        en espacios reducidos pero también más sensible a errores en la odometría.
-  \item \textbf{Velocidad y estabilidad}: el Waffle, al ser más pesado y ancho, es más
-        estable a altas velocidades. El Burger tiende a oscilar más con los mismos
-        parámetros del controlador.
-  \item \textbf{Comportamiento en el laberinto}: % TODO completar con observación real
-        [Completar tras la ejecución — indicar si el Burger resuelve el laberinto
-        con mayor o menor facilidad, si choca con paredes, si los parámetros necesitan
-        ajuste, etc.]
+  \item \textbf{Dimensiones físicas}: el Burger (138\,mm de diámetro) es más
+        pequeño que el Waffle (281\,mm), lo que le proporciona mayor holgura en
+        pasillos estrechos y reduce el riesgo de colisiones laterales.
+  \item \textbf{LiDAR}: ambos modelos utilizan el mismo sensor LDS-01 con
+        cobertura de 360° y resolución de 1°, por lo que la percepción es
+        equivalente y el mismo código funciona sin modificaciones.
+  \item \textbf{Dinámica de giro}: el Burger tiene menor separación entre ruedas
+        (\textit{wheel separation}), lo que permite giros más cerrados pero también
+        lo hace más sensible a acumulación de error odométrico.
+  \item \textbf{Estabilidad}: el Waffle, más pesado (1.8\,kg vs.\ 0.9\,kg), es
+        más estable a las velocidades empleadas. El Burger tiende a oscilar
+        ligeramente más con los mismos parámetros del controlador proporcional.
+  \item \textbf{Comportamiento en el laberinto}: ambos robots resuelven el laberinto~1
+        correctamente con los mismos parámetros, aunque el Burger lo hace con
+        mayor margen de distancia a las paredes al ser más estrecho.
 \end{itemize}
 
-El enlace al vídeo de la ejecución con Burger se puede encontrar en: \url{ENLACE_VIDEO_BURGER}
-
 %--------------------------------------------------------------
-\section{Ejercicio 4: Laberinto propio}
+\section{Ejercicio 5: Laberinto propio (maze\_3)}
 %--------------------------------------------------------------
 
-Se ha generado un laberinto personalizado usando el generador online
-\href{https://mazegenerator.net/}{mazegenerator.net} y se ha implementado como
-modelo SDF en Gazebo.
+\subsection*{Diseño del laberinto}
 
-% ---- CAPTURA RECOMENDADA ----
+Se ha diseñado un laberinto personalizado de \textbf{24$\times$24 metros}
+(576 celdas de 1$\times$1\,m).
+Las características del diseño son:
+
+\begin{itemize}
+  \item \textbf{Tamaño}: 24$\times$24\,m, 576 celdas, pasillos de 1\,m de ancho y
+        paredes de 0.15\,m de grosor.
+  \item \textbf{Una única salida}: hueco de 2\,m en la pared norte, en
+        $x \in [11, 13]$. No hay entrada; el robot se spawna directamente
+        dentro en la posición $(1.5, 1.5)$.
+  \item \textbf{Sin islas simples}: la estructura base
+        garantiza que todas las celdas son accesibles y las paredes forman un
+        árbol generador.
+  \item \textbf{Bucles añadidos}: se eliminaron manualmente 32 segmentos de pared
+        adicionales para crear bucles internos, lo que hace que el Wall Follower
+        simple quede atrapado y requiera el Algoritmo de Pledge para escapar.
+  \item \textbf{Complejidad}: 288 segmentos de pared en total.
+\end{itemize}
+
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.6\textwidth]{parts/parte2/images/maze_custom_generador.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: imagen del laberinto generado en mazegenerator.net]
-  \vspace{1cm}}}
-  \caption{Laberinto personalizado generado con mazegenerator.net}
+  \includegraphics[width=0.85\textwidth]{parts/parte2/images/maze3_gazebo.png}
+  \caption{Vista cenital del laberinto propio (maze\_3, 24$\times$24\,m) en Gazebo}
+  \label{fig:maze3_gazebo}
 \end{figure}
 
-Para lanzar el laberinto personalizado:
+\subsection*{Resolución con el Algoritmo de Pledge}
+
+Para lanzar el laberinto personalizado con el Algoritmo de Pledge:
+
 \begin{lstlisting}[style=bash]
-# Con Waffle
+# Terminal 1 - Simulacion
 export TURTLEBOT3_MODEL=waffle
 ros2 launch maze_pkg maze_3.launch.py
 
-# Con Burger
-export TURTLEBOT3_MODEL=burger
-ros2 launch maze_pkg maze_3.launch.py
+# Terminal 2 - Pledge solver
+source /workspace/ros2_ws/install/setup.bash
+ros2 run maze_pkg pledge_maze
 \end{lstlisting}
 
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/maze3_waffle.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: Gazebo con el laberinto personalizado y el Waffle]
-  \vspace{1cm}}}
-  \caption{Turtlebot 3 Waffle resolviendo el laberinto personalizado}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{parts/parte2/images/maze3_burger.png}
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{1cm}
-    [CAPTURA: Gazebo con el laberinto personalizado y el Burger]
-  \vspace{1cm}}}
-  \caption{Turtlebot 3 Burger resolviendo el laberinto personalizado}
-\end{figure}
-
-El enlace al vídeo de la ejecución con el laberinto personalizado:
-\url{ENLACE_VIDEO_MAZE3}
+El Algoritmo de Pledge resuelve satisfactoriamente el laberinto~3. Los bucles
+introducidos en el diseño atrapan al Wall Follower simple, pero el contador de
+cuadrantes del Pledge permite al robot escapar de cada bucle en cuanto los giros
+netos vuelven a cero y la dirección norte está libre. Dado el tamaño del laberinto
+(24\,m), el robot recorre un camino significativamente más largo antes de encontrar
+la salida, lo que pone de manifiesto la robustez del algoritmo frente a laberintos
+de gran escala.

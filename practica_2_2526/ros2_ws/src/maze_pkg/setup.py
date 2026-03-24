@@ -17,6 +17,7 @@ setup(
         (os.path.join('share', package_name, 'models', 'maze_1'), glob('models/maze_1/*.config') + glob('models/maze_1/*.sdf')),
         (os.path.join('share', package_name, 'models', 'maze_1', 'maze_1'), glob('models/maze_1/maze_1/*')),
         (os.path.join('share', package_name, 'models', 'maze_2'), glob('models/maze_2/*')),
+        (os.path.join('share', package_name, 'models', 'maze_3'), glob('models/maze_3/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -32,6 +33,7 @@ setup(
     entry_points={
         'console_scripts': [
             'res_maze = maze_pkg.res_maze:main',
+            'pledge_maze = maze_pkg.pledge_maze:main',
         ],
     },
 )

@@ -1,0 +1,162 @@
+<?xml version='1.0'?>
+<!--
+  maze_3 — "Island Maze"
+  Layout (top view, cada celda ~1m):
+
+       -5    -3   -2    0    2    3    5
+   5   +====+====[ EXIT ]=====+====+====+
+       |                               |
+   3   |    +-----+         +-----+    |
+       |    |     |         |     |    |
+   1   |    | ISL |         | ISL |    |
+       |    |  A  |         |  B  |    |
+  -1   |    +-----+         +-----+    |
+       |                               |
+  -3   +====+====+====+====+====+====++
+       |                               |
+  -5   +====+[ ENTRADA ]+====+====+====+
+
+  Dos islas simétricas (~2x2) flanquean el pasillo central.
+  El wall-follower simple queda atrapado rodeando una isla.
+  El Pledge Algorithm escapa porque el contador de giros netos
+  vuelve a 0 en el pasillo central y retoma la dirección norte.
+-->
+<sdf version='1.7'>
+  <model name='maze_3'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <!-- ====== PARED OESTE (x=-5, vertical) ====== -->
+    <link name='Wall_W'>
+      <collision name='col'><geometry><box><size>10.2 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>10.2 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-5 0 0 0 0 1.5708</pose>
+    </link>
+
+    <!-- ====== PARED ESTE (x=5, vertical) ====== -->
+    <link name='Wall_E'>
+      <collision name='col'><geometry><box><size>10.2 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>10.2 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>5 0 0 0 0 1.5708</pose>
+    </link>
+
+    <!-- ====== PARED SUR izquierda (y=-5, x de -5 a -1) ====== -->
+    <link name='Wall_SL'>
+      <collision name='col'><geometry><box><size>4.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>4.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-3 -5 0 0 0 0</pose>
+    </link>
+
+    <!-- ====== PARED SUR derecha (y=-5, x de 1 a 5) ====== -->
+    <link name='Wall_SR'>
+      <collision name='col'><geometry><box><size>4.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>4.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>3 -5 0 0 0 0</pose>
+    </link>
+
+    <!-- ====== PARED NORTE izquierda (y=5, x de -5 a -0.5) === -->
+    <link name='Wall_NL'>
+      <collision name='col'><geometry><box><size>4.5 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>4.5 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-2.75 5 0 0 0 0</pose>
+    </link>
+
+    <!-- ====== PARED NORTE derecha (y=5, x de 1.5 a 5) ======= -->
+    <link name='Wall_NR'>
+      <collision name='col'><geometry><box><size>3.5 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>3.5 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>3.25 5 0 0 0 0</pose>
+    </link>
+
+    <!-- ====== ISLA A (izquierda, cerrada, ~2x2 centrada en -2.5, 0.5) ====== -->
+    <!-- Isla A - pared norte -->
+    <link name='Wall_IA_N'>
+      <collision name='col'><geometry><box><size>2.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-2.5 1.5 0 0 0 0</pose>
+    </link>
+    <!-- Isla A - pared sur -->
+    <link name='Wall_IA_S'>
+      <collision name='col'><geometry><box><size>2.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-2.5 -0.5 0 0 0 0</pose>
+    </link>
+    <!-- Isla A - pared oeste -->
+    <link name='Wall_IA_W'>
+      <collision name='col'><geometry><box><size>2.2 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.2 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-3.5 0.5 0 0 0 1.5708</pose>
+    </link>
+    <!-- Isla A - pared este -->
+    <link name='Wall_IA_E'>
+      <collision name='col'><geometry><box><size>2.2 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.2 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-1.5 0.5 0 0 0 1.5708</pose>
+    </link>
+
+    <!-- ====== ISLA B (derecha, cerrada, ~2x2 centrada en 2.5, 0.5) ====== -->
+    <!-- Isla B - pared norte -->
+    <link name='Wall_IB_N'>
+      <collision name='col'><geometry><box><size>2.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>2.5 1.5 0 0 0 0</pose>
+    </link>
+    <!-- Isla B - pared sur -->
+    <link name='Wall_IB_S'>
+      <collision name='col'><geometry><box><size>2.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>2.5 -0.5 0 0 0 0</pose>
+    </link>
+    <!-- Isla B - pared oeste -->
+    <link name='Wall_IB_W'>
+      <collision name='col'><geometry><box><size>2.2 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.2 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>1.5 0.5 0 0 0 1.5708</pose>
+    </link>
+    <!-- Isla B - pared este -->
+    <link name='Wall_IB_E'>
+      <collision name='col'><geometry><box><size>2.2 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.2 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>3.5 0.5 0 0 0 1.5708</pose>
+    </link>
+
+    <!-- ====== PARED INTERIOR horizontal (y=-2, divide zona sur) ====== -->
+    <!-- Lado oeste: x de -5 a -3 -->
+    <link name='Wall_MID_WL'>
+      <collision name='col'><geometry><box><size>2.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-4 -2.5 0 0 0 0</pose>
+    </link>
+    <!-- Lado este: x de 3 a 5 -->
+    <link name='Wall_MID_ER'>
+      <collision name='col'><geometry><box><size>2.0 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.0 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>4 -2.5 0 0 0 0</pose>
+    </link>
+
+    <!-- ====== PARED SUPERIOR interna (y=3, guía hacia salida) ====== -->
+    <link name='Wall_TOP_L'>
+      <collision name='col'><geometry><box><size>2.5 0.2 2.5</size></box></geometry><pose>0 0 1.25 0 0 0</pose></collision>
+      <visual name='vis'><pose>0 0 1.25 0 0 0</pose><geometry><box><size>2.5 0.2 2.5</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Grey</name></script></material></visual>
+      <pose>-3.75 3 0 0 0 0</pose>
+    </link>
+
+    <static>1</static>
+  </model>
+</sdf>

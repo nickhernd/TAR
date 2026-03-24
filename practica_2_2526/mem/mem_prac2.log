@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.28)  22 MAR 2026 21:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.28)  24 MAR 2026 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -572,8 +572,59 @@ l.126 \newpage
 Cap\'{\i }tulo 1.
 [2
 
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3] [4]
-[5] [6]) [7] (./mem_prac2.aux
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 77.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 77.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 77.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 77.
+
+Missing character: There is no ° in font cmr12!
+Missing character: There is no ° in font cmr12!
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 78.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 78.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 78.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 78.
+
+Missing character: There is no ° in font cmr12!
+Missing character: There is no ° in font cmr12!
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 104.
+ [3] [4]
+<parts/parte2/images/maze2_waffle_atrapado.png, id=136, 548.80031pt x 438.13687
+pt>
+File: parts/parte2/images/maze2_waffle_atrapado.png Graphic file (type png)
+<use parts/parte2/images/maze2_waffle_atrapado.png>
+Package pdftex.def Info: parts/parte2/images/maze2_waffle_atrapado.png  used on
+ input line 180.
+(pdftex.def)             Requested size: 374.86775pt x 299.28625pt.
+
+[5 <./parts/parte2/images/maze2_waffle_atrapado.png>] [6] [7] [8]
+<parts/parte2/images/maze3_gazebo.png, id=232, 1438.6247pt x 770.88pt>
+File: parts/parte2/images/maze3_gazebo.png Graphic file (type png)
+<use parts/parte2/images/maze3_gazebo.png>
+Package pdftex.def Info: parts/parte2/images/maze3_gazebo.png  used on input li
+ne 393.
+(pdftex.def)             Requested size: 374.86775pt x 200.87105pt.
+ [9 <./parts/parte2/images/maze3_gazebo.png>]) [10] [11
+
+] (./mem_prac2.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -582,16 +633,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `mem_prac2.out' has not changed.
-(rerunfilecheck)             Checksum: 32FD08B4CB9B4E22CD0EBFED2942F354;1596.
+(rerunfilecheck)             Checksum: A424A34B24E9E76D944865D5352AC9F8;2257.
  ) 
 Here is how much of TeX's memory you used:
- 15789 strings out of 474222
- 245531 string characters out of 5748733
- 1964975 words of memory out of 5000000
- 37791 multiletter control sequences out of 15000+600000
- 573722 words of font info for 66 fonts, out of 8000000 for 9000
+ 16160 strings out of 474222
+ 250705 string characters out of 5748733
+ 2246975 words of memory out of 5000000
+ 38054 multiletter control sequences out of 15000+600000
+ 574038 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1138b,2055s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,1138b,2238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
@@ -599,17 +650,18 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
 cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pf
 b></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on mem_prac2.pdf (8 pages, 330832 bytes).
+m-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on mem_prac2.pdf (12 pages, 508618 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
 

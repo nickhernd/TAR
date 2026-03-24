@@ -10,7 +10,9 @@ setup.py
 ../../build/maze_pkg/maze_pkg.egg-info/zip-safe
 launch/maze_1.launch.py
 launch/maze_2.launch.py
+launch/maze_3.launch.py
 maze_pkg/__init__.py
+maze_pkg/pledge_maze.py
 maze_pkg/res_maze.py
 models/maze_1/model.config
 models/maze_1/model.sdf
@@ -18,9 +20,12 @@ models/maze_1/maze_1/model.config
 models/maze_1/maze_1/model.sdf
 models/maze_2/model.config
 models/maze_2/model.sdf
+models/maze_3/model.config
+models/maze_3/model.sdf
 resource/maze_pkg
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 worlds/maze_1.world
 worlds/maze_2.world
+worlds/maze_3.world
