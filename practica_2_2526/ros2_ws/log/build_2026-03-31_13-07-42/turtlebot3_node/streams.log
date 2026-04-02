@@ -1,0 +1,36 @@
+[1.636s] Invoking command in '/workspace/ros2_ws/build/turtlebot3_node': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/turtlebot3_msgs:/workspace/ros2_ws/install/turtlebot3:/workspace/ros2_ws/install/turtlebot3_simulations:/workspace/ros2_ws/install/turtlebot3_bringup:/workspace/ros2_ws/install/turtlebot3_node:/workspace/ros2_ws/install/turtlebot3_navigation2:/workspace/ros2_ws/install/turtlebot3_fake_node:/workspace/ros2_ws/install/turtlebot3_manipulation_gazebo:/workspace/ros2_ws/install/turtlebot3_gazebo:/workspace/ros2_ws/install/turtlebot3_description:/workspace/ros2_ws/install/turtlebot3_cartographer:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/turtlebot3/turtlebot3_node -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/turtlebot3_node
+[10.490s] -- The C compiler identification is GNU 11.4.0
+[10.641s] -- The CXX compiler identification is GNU 11.4.0
+[10.660s] -- Detecting C compiler ABI info
+[10.723s] -- Detecting C compiler ABI info - done
+[10.733s] -- Check for working C compiler: /usr/bin/cc - skipped
+[10.733s] -- Detecting C compile features
+[10.740s] -- Detecting C compile features - done
+[10.740s] -- Detecting CXX compiler ABI info
+[12.286s] -- Detecting CXX compiler ABI info - done
+[12.382s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[12.448s] -- Detecting CXX compile features
+[12.448s] -- Detecting CXX compile features - done
+[12.511s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[16.770s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[19.284s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[20.640s] [31mCMake Error at CMakeLists.txt:20 (find_package):
+[20.640s]   By not providing "Finddynamixel_sdk.cmake" in CMAKE_MODULE_PATH this
+[20.652s]   project has asked CMake to find a package configuration file provided by
+[20.652s]   "dynamixel_sdk", but CMake did not find one.
+[20.652s] 
+[20.652s]   Could not find a package configuration file provided by "dynamixel_sdk"
+[20.652s]   with any of the following names:
+[20.652s] 
+[20.652s]     dynamixel_sdkConfig.cmake
+[20.653s]     dynamixel_sdk-config.cmake
+[20.653s] 
+[20.653s]   Add the installation prefix of "dynamixel_sdk" to CMAKE_PREFIX_PATH or set
+[20.653s]   "dynamixel_sdk_DIR" to a directory containing one of the above files.  If
+[20.653s]   "dynamixel_sdk" provides a separate development package or SDK, be sure it
+[20.653s]   has been installed.
+[20.653s] 
+[20.653s] [0m
+[20.666s] -- Configuring incomplete, errors occurred!
+[20.666s] See also "/workspace/ros2_ws/build/turtlebot3_node/CMakeFiles/CMakeOutput.log".
+[20.717s] Invoked command in '/workspace/ros2_ws/build/turtlebot3_node' returned '1': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/turtlebot3_msgs:/workspace/ros2_ws/install/turtlebot3:/workspace/ros2_ws/install/turtlebot3_simulations:/workspace/ros2_ws/install/turtlebot3_bringup:/workspace/ros2_ws/install/turtlebot3_node:/workspace/ros2_ws/install/turtlebot3_navigation2:/workspace/ros2_ws/install/turtlebot3_fake_node:/workspace/ros2_ws/install/turtlebot3_manipulation_gazebo:/workspace/ros2_ws/install/turtlebot3_gazebo:/workspace/ros2_ws/install/turtlebot3_description:/workspace/ros2_ws/install/turtlebot3_cartographer:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/turtlebot3/turtlebot3_node -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/turtlebot3_node

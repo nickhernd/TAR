@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /workspace/ros2_ws/turtlebot3/turtlebot3_bringup
+# Source directory: /workspace/ros2_ws/src/turtlebot3/turtlebot3_bringup
 # Build directory: /workspace/ros2_ws/build/turtlebot3_bringup
 # 
 # This file includes the relevant testing commands required for 

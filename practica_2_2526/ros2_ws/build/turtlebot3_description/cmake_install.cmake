@@ -1,4 +1,4 @@
-# Install script for directory: /workspace/ros2_ws/turtlebot3/turtlebot3_description
+# Install script for directory: /workspace/ros2_ws/src/turtlebot3/turtlebot3_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

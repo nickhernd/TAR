@@ -1,0 +1,46 @@
+[2.277s] Invoking command in '/workspace/ros2_ws/build/maze_pkg': PYTHONPATH=/workspace/ros2_ws/build/maze_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/ros2_ws/build/maze_pkg/build --no-deps symlink_data
+[2.527s] running develop
+[2.666s] running egg_info
+[2.666s] creating maze_pkg.egg-info
+[2.666s] writing maze_pkg.egg-info/PKG-INFO
+[2.668s] writing dependency_links to maze_pkg.egg-info/dependency_links.txt
+[2.668s] writing entry points to maze_pkg.egg-info/entry_points.txt
+[2.668s] writing requirements to maze_pkg.egg-info/requires.txt
+[2.668s] writing top-level names to maze_pkg.egg-info/top_level.txt
+[2.668s] writing manifest file 'maze_pkg.egg-info/SOURCES.txt'
+[2.668s] reading manifest file 'maze_pkg.egg-info/SOURCES.txt'
+[2.668s] writing manifest file 'maze_pkg.egg-info/SOURCES.txt'
+[2.668s] running build_ext
+[2.668s] Creating /workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages/maze-pkg.egg-link (link to .)
+[2.668s] Installing pledge_maze script to /workspace/ros2_ws/install/maze_pkg/lib/maze_pkg
+[2.668s] Installing res_maze script to /workspace/ros2_ws/install/maze_pkg/lib/maze_pkg
+[2.668s] 
+[2.668s] Installed /workspace/ros2_ws/build/maze_pkg
+[2.668s] running symlink_data
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/ament_index
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/ament_index/resource_index
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/ament_index/resource_index/packages
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/resource/maze_pkg -> /workspace/ros2_ws/install/maze_pkg/share/ament_index/resource_index/packages
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/package.xml -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/launch
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/launch/maze_3.launch.py -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/launch
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/launch/maze_2.launch.py -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/launch
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/launch/maze_1.launch.py -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/launch
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/worlds
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/worlds/maze_3.world -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/worlds
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/worlds/maze_2.world -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/worlds
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/worlds/maze_1.world -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/worlds
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_1/model.config -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_1/model.sdf -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1/maze_1
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_1/maze_1/model.sdf -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1/maze_1
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_1/maze_1/model.config -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_1/maze_1
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_2
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_2/model.sdf -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_2
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_2/model.config -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_2
+[2.669s] creating /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_3
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_3/model.sdf -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_3
+[2.669s] symbolically linking /workspace/ros2_ws/build/maze_pkg/models/maze_3/model.config -> /workspace/ros2_ws/install/maze_pkg/share/maze_pkg/models/maze_3
+[2.707s] Invoked command in '/workspace/ros2_ws/build/maze_pkg' returned '0': PYTHONPATH=/workspace/ros2_ws/build/maze_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/ros2_ws/build/maze_pkg/build --no-deps symlink_data

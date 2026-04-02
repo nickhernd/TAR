@@ -55,11 +55,6 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
         # remove trailing slash
         string(SUBSTRING "${dir}" 0 ${offset} dir)
       endif()
-      
-      # Create destination directory.
-      # This does *not* solve the problem of empty directories WITHIN the install tree,
-      # but does make sure that the top-level directory specified by the caller gets created.
-      file(MAKE_DIRECTORY "${destination}")
 
       # glob recursive files
       set(relative_files "")
@@ -316,46 +311,46 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "config" "gazebo" "launch" "ros2_control" "rviz" "urdf" "worlds" "models" "meshes" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_directory("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" DIRECTORY "config" "gazebo" "launch" "ros2_control" "rviz" "urdf" "worlds" "models" "meshes" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_directory("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" DIRECTORY "config" "gazebo" "launch" "ros2_control" "rviz" "urdf" "worlds" "models" "meshes" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo/environment")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/turtlebot3_manipulation_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
 
 # install(FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_core/turtlebot3_manipulation_gazeboConfig.cmake" "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_core/turtlebot3_manipulation_gazeboConfig-version.cmake" "DESTINATION" "share/turtlebot3_manipulation_gazebo/cmake")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_core/turtlebot3_manipulation_gazeboConfig.cmake" "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_core/turtlebot3_manipulation_gazeboConfig-version.cmake" "DESTINATION" "share/turtlebot3_manipulation_gazebo/cmake")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_core/turtlebot3_manipulation_gazeboConfig.cmake" "/workspace/ros2_ws/build/turtlebot3_manipulation_gazebo/ament_cmake_core/turtlebot3_manipulation_gazeboConfig-version.cmake" "DESTINATION" "share/turtlebot3_manipulation_gazebo/cmake")
 
-# install(FILES "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo/package.xml" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
-ament_cmake_symlink_install_files("/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo/package.xml" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+# install(FILES "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo/package.xml" "DESTINATION" "share/turtlebot3_manipulation_gazebo")
+ament_cmake_symlink_install_files("/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo" FILES "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo/package.xml" "DESTINATION" "share/turtlebot3_manipulation_gazebo")

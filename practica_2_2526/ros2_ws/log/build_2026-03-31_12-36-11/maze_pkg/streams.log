@@ -1,0 +1,18 @@
+[0.813s] Invoking command in '/workspace/ros2_ws/build/maze_pkg': PYTHONPATH=/workspace/ros2_ws/build/maze_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/ros2_ws/build/maze_pkg/build --no-deps symlink_data
+[1.156s] running develop
+[1.325s] running egg_info
+[1.325s] writing maze_pkg.egg-info/PKG-INFO
+[1.325s] writing dependency_links to maze_pkg.egg-info/dependency_links.txt
+[1.326s] writing entry points to maze_pkg.egg-info/entry_points.txt
+[1.327s] writing requirements to maze_pkg.egg-info/requires.txt
+[1.350s] writing top-level names to maze_pkg.egg-info/top_level.txt
+[1.350s] reading manifest file 'maze_pkg.egg-info/SOURCES.txt'
+[1.350s] writing manifest file 'maze_pkg.egg-info/SOURCES.txt'
+[1.350s] running build_ext
+[1.350s] Creating /workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages/maze-pkg.egg-link (link to .)
+[1.351s] Installing pledge_maze script to /workspace/ros2_ws/install/maze_pkg/lib/maze_pkg
+[1.351s] Installing res_maze script to /workspace/ros2_ws/install/maze_pkg/lib/maze_pkg
+[1.351s] 
+[1.351s] Installed /workspace/ros2_ws/build/maze_pkg
+[1.351s] running symlink_data
+[1.368s] Invoked command in '/workspace/ros2_ws/build/maze_pkg' returned '0': PYTHONPATH=/workspace/ros2_ws/build/maze_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/ros2_ws/install/maze_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/ros2_ws/build/maze_pkg/build --no-deps symlink_data

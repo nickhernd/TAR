@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/ros2_ws/turtlebot3_msgs
+CMAKE_SOURCE_DIR = /workspace/ros2_ws/src/turtlebot3_msgs
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspace/ros2_ws/build/turtlebot3_msgs
@@ -269,6 +269,6 @@ turtlebot3_msgs__py/CMakeFiles/turtlebot3_msgs__py.dir/clean:
 .PHONY : turtlebot3_msgs__py/CMakeFiles/turtlebot3_msgs__py.dir/clean
 
 turtlebot3_msgs__py/CMakeFiles/turtlebot3_msgs__py.dir/depend:
-	cd /workspace/ros2_ws/build/turtlebot3_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/ros2_ws/turtlebot3_msgs /workspace/ros2_ws/build/turtlebot3_msgs/turtlebot3_msgs__py /workspace/ros2_ws/build/turtlebot3_msgs /workspace/ros2_ws/build/turtlebot3_msgs/turtlebot3_msgs__py /workspace/ros2_ws/build/turtlebot3_msgs/turtlebot3_msgs__py/CMakeFiles/turtlebot3_msgs__py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspace/ros2_ws/build/turtlebot3_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/ros2_ws/src/turtlebot3_msgs /workspace/ros2_ws/build/turtlebot3_msgs/turtlebot3_msgs__py /workspace/ros2_ws/build/turtlebot3_msgs /workspace/ros2_ws/build/turtlebot3_msgs/turtlebot3_msgs__py /workspace/ros2_ws/build/turtlebot3_msgs/turtlebot3_msgs__py/CMakeFiles/turtlebot3_msgs__py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : turtlebot3_msgs__py/CMakeFiles/turtlebot3_msgs__py.dir/depend
 

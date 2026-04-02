@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo
+CMAKE_SOURCE_DIR = /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspace/ros2_ws/build/turtlebot3_gazebo
@@ -70,18 +70,18 @@ include CMakeFiles/obstacles.dir/progress.make
 include CMakeFiles/obstacles.dir/flags.make
 
 CMakeFiles/obstacles.dir/src/obstacles.cpp.o: CMakeFiles/obstacles.dir/flags.make
-CMakeFiles/obstacles.dir/src/obstacles.cpp.o: /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp
+CMakeFiles/obstacles.dir/src/obstacles.cpp.o: /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp
 CMakeFiles/obstacles.dir/src/obstacles.cpp.o: CMakeFiles/obstacles.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/ros2_ws/build/turtlebot3_gazebo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/obstacles.dir/src/obstacles.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/obstacles.dir/src/obstacles.cpp.o -MF CMakeFiles/obstacles.dir/src/obstacles.cpp.o.d -o CMakeFiles/obstacles.dir/src/obstacles.cpp.o -c /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/obstacles.dir/src/obstacles.cpp.o -MF CMakeFiles/obstacles.dir/src/obstacles.cpp.o.d -o CMakeFiles/obstacles.dir/src/obstacles.cpp.o -c /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp
 
 CMakeFiles/obstacles.dir/src/obstacles.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obstacles.dir/src/obstacles.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp > CMakeFiles/obstacles.dir/src/obstacles.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp > CMakeFiles/obstacles.dir/src/obstacles.cpp.i
 
 CMakeFiles/obstacles.dir/src/obstacles.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obstacles.dir/src/obstacles.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp -o CMakeFiles/obstacles.dir/src/obstacles.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/obstacles.cpp -o CMakeFiles/obstacles.dir/src/obstacles.cpp.s
 
 # Object files for target obstacles
 obstacles_OBJECTS = \
@@ -156,6 +156,6 @@ CMakeFiles/obstacles.dir/clean:
 .PHONY : CMakeFiles/obstacles.dir/clean
 
 CMakeFiles/obstacles.dir/depend:
-	cd /workspace/ros2_ws/build/turtlebot3_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo /workspace/ros2_ws/build/turtlebot3_gazebo /workspace/ros2_ws/build/turtlebot3_gazebo /workspace/ros2_ws/build/turtlebot3_gazebo/CMakeFiles/obstacles.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspace/ros2_ws/build/turtlebot3_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo /workspace/ros2_ws/build/turtlebot3_gazebo /workspace/ros2_ws/build/turtlebot3_gazebo /workspace/ros2_ws/build/turtlebot3_gazebo/CMakeFiles/obstacles.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/obstacles.dir/depend
 

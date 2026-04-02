@@ -1,0 +1,3 @@
+[console_scripts]
+movimiento = p3_pkg.movimiento:main
+

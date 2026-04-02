@@ -151,8 +151,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
   "ament_cmake_core/package.cmake"
   "ament_cmake_package_templates/templates.cmake"
-  "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_simulations/CMakeLists.txt"
-  "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_simulations/package.xml"
+  "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_simulations/CMakeLists.txt"
+  "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_simulations/package.xml"
   )
 
 # The corresponding makefile is:

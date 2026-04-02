@@ -1,0 +1,255 @@
+[0.417s] Invoking command in '/workspace/ros2_ws/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/turtlebot3_gazebo
+[3.583s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[11.229s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[12.029s] [33mCMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+[12.029s]   The package name passed to `find_package_handle_standard_args` (PkgConfig)
+[12.029s]   does not match the name of the calling package (gazebo).  This can lead to
+[12.032s]   problems in calling code that expects `find_package` result variables
+[12.032s]   (e.g., `_FOUND`) to follow a certain pattern.
+[12.034s] Call Stack (most recent call first):
+[12.034s]   /usr/share/cmake-3.22/Modules/FindPkgConfig.cmake:99 (find_package_handle_standard_args)
+[12.034s]   /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:72 (include)
+[12.034s]   CMakeLists.txt:23 (find_package)
+[12.065s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[12.065s] [0m
+[15.344s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[20.282s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[20.752s] -- Looking for ignition-math6 -- found version 6.15.1
+[21.702s] -- Searching for dependencies of ignition-math6
+[22.026s] -- Looking for OGRE...
+[22.225s] -- Found Ogre Ghadamon (1.9.0)
+[22.225s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[22.422s] -- Looking for OGRE_Paging...
+[22.422s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[22.422s] -- Looking for OGRE_Terrain...
+[22.422s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[22.422s] -- Looking for OGRE_Property...
+[22.422s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[22.422s] -- Looking for OGRE_RTShaderSystem...
+[22.422s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[22.422s] -- Looking for OGRE_Volume...
+[22.463s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[22.464s] -- Looking for OGRE_Overlay...
+[22.513s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[24.440s] -- Looking for ignition-math6 -- found version 6.15.1
+[24.457s] -- Looking for ignition-transport8 -- found version 8.2.1
+[24.485s] -- Searching for dependencies of ignition-transport8
+[26.311s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[26.740s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[26.891s] -- Checking for module 'libzmq >= 4'
+[28.334s] --   Found libzmq , version 4.3.4
+[31.309s] -- Checking for module 'uuid'
+[32.066s] --   Found uuid, version 2.37.2
+[33.416s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[33.416s] -- Searching for dependencies of ignition-msgs5
+[33.995s] -- Looking for ignition-math6 -- found version 6.15.1
+[34.479s] -- Checking for module 'tinyxml2'
+[35.411s] --   Found tinyxml2, version 9.0.0
+[37.716s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[37.789s] -- Looking for ignition-common3 -- found version 3.14.0
+[37.789s] -- Searching for dependencies of ignition-common3
+[37.825s] -- Looking for dlfcn.h - found
+[37.825s] -- Looking for libdl - found
+[38.815s] -- Searching for <ignition-common3> component [graphics]
+[38.819s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[38.825s] -- Searching for dependencies of ignition-common3-graphics
+[38.825s] -- Looking for ignition-math6 -- found version 6.15.1
+[39.046s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[39.046s] -- Searching for dependencies of ignition-fuel_tools4
+[40.789s] -- Checking for module 'jsoncpp'
+[41.575s] --   Found jsoncpp, version 1.9.5
+[44.679s] -- Checking for module 'libzip'
+[45.567s] --   Found libzip, version 1.7.3
+[46.619s] -- Looking for ignition-common3 -- found version 3.14.0
+[46.630s] -- Looking for ignition-math6 -- found version 6.15.1
+[46.635s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[46.775s] -- Found gazebo_ros_pkgs: 3.9.0 (/opt/ros/humble/share/gazebo_ros_pkgs/cmake)
+[46.865s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[47.594s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[47.605s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[48.015s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[48.044s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[48.627s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[52.172s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[52.894s] -- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+[56.890s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[56.961s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[64.767s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[67.430s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[68.882s] -- Found tf2: 0.25.18 (/opt/ros/humble/share/tf2/cmake)
+[72.000s] -- Configuring done
+[79.257s] -- Generating done
+[80.139s] -- Build files have been written to: /workspace/ros2_ws/build/turtlebot3_gazebo
+[80.290s] Invoked command in '/workspace/ros2_ws/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/turtlebot3_gazebo
+[80.330s] Invoking command in '/workspace/ros2_ws/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/turtlebot3_gazebo -- -j6 -l6
+[82.900s] [35m[1mConsolidate compiler generated dependencies of target turtlebot3_drive[0m
+[83.729s] [ 16%] Built target turtlebot3_drive
+[85.097s] [35m[1mConsolidate compiler generated dependencies of target obstacles[0m
+[87.170s] [ 33%] Built target obstacles
+[87.805s] [35m[1mConsolidate compiler generated dependencies of target obstacle2[0m
+[88.359s] [ 50%] Built target obstacle2
+[89.377s] [35m[1mConsolidate compiler generated dependencies of target obstacle1[0m
+[91.532s] [ 66%] Built target obstacle1
+[92.137s] [35m[1mConsolidate compiler generated dependencies of target traffic_bar_plugin[0m
+[92.842s] [ 83%] Built target traffic_bar_plugin
+[93.405s] [35m[1mConsolidate compiler generated dependencies of target traffic_light_plugin[0m
+[94.001s] [100%] Built target traffic_light_plugin
+[94.864s] Invoked command in '/workspace/ros2_ws/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2_ws/build/turtlebot3_gazebo -- -j6 -l6
+[95.053s] Invoking command in '/workspace/ros2_ws/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/turtlebot3_gazebo
+[95.275s] -- Install configuration: ""
+[95.558s] -- Execute custom install script
+[95.558s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/lib/turtlebot3_gazebo/turtlebot3_drive
+[95.904s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/empty_world.launch.py
+[95.954s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/multi_robot.launch.py
+[95.967s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/multi_spawn_turtlebot3.launch.py
+[95.967s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/robot_state_publisher.launch.py
+[95.967s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/spawn_turtlebot3.launch.py
+[95.975s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_autorace_2020.launch.py
+[95.999s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage1.launch.py
+[96.015s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage2.launch.py
+[96.015s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage3.launch.py
+[96.015s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage4.launch.py
+[96.017s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_house.launch.py
+[96.017s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_world.launch.py
+[97.806s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/checker/materials/checker.png
+[97.818s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/checker/materials/scripts/checker.material
+[97.818s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/checker/materials/textures/checker.png
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/checker/model.config
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/checker/model.sdf
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/course/materials/scripts/course.material
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/course/materials/textures/course.png
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/course/model.config
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/course/model.sdf
+[97.819s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_bar/materials/scripts/traffic_bar.material
+[98.241s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_bar/materials/textures/traffic_bar.png
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_bar/model.config
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_bar/model.sdf
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_construction/materials/scripts/traffic_construction.material
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_construction/materials/textures/traffic_construction.png
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_construction/model.config
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_construction/model.sdf
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_intersection/materials/scripts/traffic_intersection.material
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_intersection/materials/textures/traffic_intersection.png
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_intersection/model.config
+[98.242s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_intersection/model.sdf
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_left/materials/scripts/traffic_is_left.material
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_left/materials/textures/traffic_left.png
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_left/model.config
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_left/model.sdf
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/materials/scripts/traffic_light.material
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/materials/textures/traffic_light.png
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/materials/textures/traffic_light_green.png
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/materials/textures/traffic_light_red.png
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/materials/textures/traffic_light_yellow.png
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/model.config
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_light/model.sdf
+[98.243s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_noentry/materials/scripts/traffic_noentry.material
+[98.244s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_noentry/materials/textures/traffic_noentry.png
+[98.244s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_noentry/model.config
+[98.244s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_noentry/model.sdf
+[98.244s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_parking/materials/scripts/traffic_parking.material
+[98.244s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_parking/materials/textures/traffic_parking.png
+[98.294s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_parking/model.config
+[98.294s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_parking/model.sdf
+[98.294s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_pl_left/materials/scripts/traffic_pl_left.material
+[98.294s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_pl_left/materials/textures/traffic_pl_left.png
+[98.294s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_pl_left/model.config
+[98.422s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_pl_left/model.sdf
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_right/materials/scripts/traffic_right.material
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_right/materials/textures/traffic_right.png
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_right/model.config
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_right/model.sdf
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_stop/materials/scripts/traffic_stop.material
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_stop/materials/textures/traffic_stop.png
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_stop/model.config
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_stop/model.sdf
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_tunnel/materials/scripts/tunnel.material
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_tunnel/materials/textures/tunnel.png
+[98.423s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_tunnel/model.config
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_autorace_2020/traffic_tunnel/model.sdf
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model-1_4.sdf
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.config
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.sdf
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger_cam/model-1_4.sdf
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger_cam/model.config
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger_cam/model.sdf
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/bases/burger_base.stl
+[98.424s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/bases/waffle_base.stl
+[98.435s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/bases/waffle_pi_base.stl
+[98.443s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/burger_base.dae
+[98.446s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/lds.dae
+[98.449s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/r200.dae
+[98.449s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/sensors/astra.dae
+[98.449s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/sensors/astra.jpg
+[98.449s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/sensors/lds.stl
+[98.449s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/sensors/r200.dae
+[98.449s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/sensors/r200.jpg
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/tire.dae
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/waffle_base.dae
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/waffle_pi_base.dae
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/wheels/left_tire.stl
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/wheels/right_tire.stl
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/model.config
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box/model.config
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box/model.sdf
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls/model.config
+[98.450s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls/model.sdf
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/model.config
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/model.sdf
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1/model.config
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1/model.sdf
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2/model.config
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2/model.sdf
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles/model.config
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles/model.sdf
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house/model.config
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house/model.sdf
+[98.451s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model-1_4.sdf
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model.config
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model.sdf
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model-1_4_.sdf
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model.config
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model.sdf
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes/hexagon.dae
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes/wall.dae
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model-1_4.sdf
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model.config
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model.sdf
+[98.452s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//rviz/tb3_gazebo.rviz
+[98.453s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/common_properties.urdf
+[98.453s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_burger.urdf
+[98.453s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_burger_cam.urdf
+[98.519s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle.urdf
+[98.522s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle_pi.urdf
+[98.533s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/empty_world.world
+[98.545s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_autorace_2020.world
+[98.545s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage1.world
+[98.546s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage2.world
+[98.546s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage3.world
+[98.546s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage4.world
+[98.547s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_house.world
+[98.547s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_world.world
+[98.694s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/include//turtlebot3_gazebo/obstacle1.hpp
+[98.706s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/include//turtlebot3_gazebo/obstacle2.hpp
+[98.706s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/include//turtlebot3_gazebo/obstacles.hpp
+[98.742s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/include//turtlebot3_gazebo/traffic_bar_plugin.hpp
+[98.750s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/include//turtlebot3_gazebo/traffic_light_plugin.hpp
+[98.822s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/include//turtlebot3_gazebo/turtlebot3_drive.hpp
+[98.822s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/ament_index/resource_index/package_run_dependencies/turtlebot3_gazebo
+[98.841s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/ament_index/resource_index/parent_prefix_path/turtlebot3_gazebo
+[98.841s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/ament_prefix_path.sh
+[98.841s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/ament_prefix_path.dsv
+[98.841s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/path.sh
+[98.841s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/path.dsv
+[98.841s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.bash
+[98.842s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.sh
+[98.842s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.zsh
+[98.842s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.dsv
+[98.888s] -- Symlinking: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/package.dsv
+[99.007s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/ament_index/resource_index/packages/turtlebot3_gazebo
+[99.007s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/ament_cmake_export_include_directories-extras.cmake
+[99.100s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/ament_cmake_export_dependencies-extras.cmake
+[99.100s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/turtlebot3_gazeboConfig.cmake
+[99.100s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/turtlebot3_gazeboConfig-version.cmake
+[99.100s] -- Up-to-date symlink: /workspace/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/package.xml
+[99.210s] Invoked command in '/workspace/ros2_ws/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2_ws/install/turtlebot3_teleop:/workspace/ros2_ws/install/turtlebot3_example:/workspace/ros2_ws/install/maze_pkg:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2_ws/build/turtlebot3_gazebo

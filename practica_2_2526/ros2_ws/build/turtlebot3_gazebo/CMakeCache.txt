@@ -597,7 +597,7 @@ Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotoc.so
 Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Name of the computer/site where compile is being run
-SITE:STRING=docker-desktop
+SITE:STRING=dani-VirtualBox
 
 //The directory containing a CMake configuration file for Simbody.
 Simbody_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/simbody
@@ -981,7 +981,7 @@ turtlebot3_gazebo_BINARY_DIR:STATIC=/workspace/ros2_ws/build/turtlebot3_gazebo
 turtlebot3_gazebo_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-turtlebot3_gazebo_SOURCE_DIR:STATIC=/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo
+turtlebot3_gazebo_SOURCE_DIR:STATIC=/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo
 
 //The directory containing a CMake configuration file for yaml.
 yaml_DIR:PATH=/opt/ros/humble/cmake
@@ -1112,7 +1112,7 @@ CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo
+CMAKE_HOME_DIRECTORY:INTERNAL=/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
@@ -1329,7 +1329,7 @@ OGRE_PLUGIN_DIR_DBG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OGRE_PLUGIN_DIR_REL
 OGRE_PLUGIN_DIR_REL-ADVANCED:INTERNAL=1
 //x
-OGRE_PREFIX_WATCH_INT_CHECK:INTERNAL=/opt/ogre;/opt/OGRE;/usr/lib/ogre;/usr/lib/OGRE;/usr/local/lib/ogre;/usr/local/lib/OGRE;/home/nickhernd/ogre;/home/nickhernd/OGRE;NOTFOUND;NOTFOUND
+OGRE_PREFIX_WATCH_INT_CHECK:INTERNAL=/opt/ogre;/opt/OGRE;/usr/lib/ogre;/usr/lib/OGRE;/usr/local/lib/ogre;/usr/local/lib/OGRE;/home/dani-docker/ogre;/home/dani-docker/OGRE;NOTFOUND;NOTFOUND
 //ADVANCED property for variable: OGRE_Paging_INCLUDE_DIR
 OGRE_Paging_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OGRE_Paging_LIBRARY_DBG

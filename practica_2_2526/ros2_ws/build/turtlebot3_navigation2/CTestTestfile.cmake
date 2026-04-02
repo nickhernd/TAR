@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /workspace/ros2_ws/turtlebot3/turtlebot3_navigation2
+# Source directory: /workspace/ros2_ws/src/turtlebot3/turtlebot3_navigation2
 # Build directory: /workspace/ros2_ws/build/turtlebot3_navigation2
 # 
 # This file includes the relevant testing commands required for 

@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo
+# Source directory: /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo
 # Build directory: /workspace/ros2_ws/build/turtlebot3_manipulation_gazebo
 # 
 # This file includes the relevant testing commands required for 

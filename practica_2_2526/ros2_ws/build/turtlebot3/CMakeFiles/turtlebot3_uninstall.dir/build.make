@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/ros2_ws/turtlebot3/turtlebot3
+CMAKE_SOURCE_DIR = /workspace/ros2_ws/src/turtlebot3/turtlebot3
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspace/ros2_ws/build/turtlebot3
@@ -82,6 +82,6 @@ CMakeFiles/turtlebot3_uninstall.dir/clean:
 .PHONY : CMakeFiles/turtlebot3_uninstall.dir/clean
 
 CMakeFiles/turtlebot3_uninstall.dir/depend:
-	cd /workspace/ros2_ws/build/turtlebot3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/ros2_ws/turtlebot3/turtlebot3 /workspace/ros2_ws/turtlebot3/turtlebot3 /workspace/ros2_ws/build/turtlebot3 /workspace/ros2_ws/build/turtlebot3 /workspace/ros2_ws/build/turtlebot3/CMakeFiles/turtlebot3_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspace/ros2_ws/build/turtlebot3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/ros2_ws/src/turtlebot3/turtlebot3 /workspace/ros2_ws/src/turtlebot3/turtlebot3 /workspace/ros2_ws/build/turtlebot3 /workspace/ros2_ws/build/turtlebot3 /workspace/ros2_ws/build/turtlebot3/CMakeFiles/turtlebot3_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/turtlebot3_uninstall.dir/depend
 

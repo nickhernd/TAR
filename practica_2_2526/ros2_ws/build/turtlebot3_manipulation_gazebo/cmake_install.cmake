@@ -1,4 +1,4 @@
-# Install script for directory: /workspace/ros2_ws/turtlebot3_simulations/turtlebot3_manipulation_gazebo
+# Install script for directory: /workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_manipulation_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

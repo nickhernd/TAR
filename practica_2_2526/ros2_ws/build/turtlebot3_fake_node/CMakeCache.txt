@@ -266,7 +266,7 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Name of the computer/site where compile is being run
-SITE:STRING=docker-desktop
+SITE:STRING=dani-VirtualBox
 
 //The directory containing a CMake configuration file for TinyXML2.
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
@@ -485,7 +485,7 @@ turtlebot3_fake_node_BINARY_DIR:STATIC=/workspace/ros2_ws/build/turtlebot3_fake_
 turtlebot3_fake_node_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-turtlebot3_fake_node_SOURCE_DIR:STATIC=/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_fake_node
+turtlebot3_fake_node_SOURCE_DIR:STATIC=/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_fake_node
 
 //The directory containing a CMake configuration file for turtlebot3_msgs.
 turtlebot3_msgs_DIR:PATH=/workspace/ros2_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/cmake
@@ -585,7 +585,7 @@ CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_fake_node
+CMAKE_HOME_DIRECTORY:INTERNAL=/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_fake_node
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER

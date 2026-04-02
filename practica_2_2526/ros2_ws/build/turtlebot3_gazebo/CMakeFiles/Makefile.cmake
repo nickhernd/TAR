@@ -822,8 +822,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake"
   "ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake"
   "ament_cmake_package_templates/templates.cmake"
-  "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo/CMakeLists.txt"
-  "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_gazebo/package.xml"
+  "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/CMakeLists.txt"
+  "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/package.xml"
   )
 
 # The corresponding makefile is:

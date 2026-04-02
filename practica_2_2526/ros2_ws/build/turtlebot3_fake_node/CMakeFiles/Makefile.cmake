@@ -778,8 +778,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/workspace/ros2_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/cmake/turtlebot3_msgs__rosidl_typesupport_introspection_cExport.cmake"
   "/workspace/ros2_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/cmake/turtlebot3_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake"
   "/workspace/ros2_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/cmake/turtlebot3_msgs__rosidl_typesupport_introspection_cppExport.cmake"
-  "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_fake_node/CMakeLists.txt"
-  "/workspace/ros2_ws/turtlebot3_simulations/turtlebot3_fake_node/package.xml"
+  "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_fake_node/CMakeLists.txt"
+  "/workspace/ros2_ws/src/turtlebot3_simulations/turtlebot3_fake_node/package.xml"
   )
 
 # The corresponding makefile is:

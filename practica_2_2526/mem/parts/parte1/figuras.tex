@@ -1,0 +1,120 @@
+%==============================================================
+% PARTE 1: Primeros Pasos con el Turtlebot y Odometría
+%==============================================================
+\chapter{Parte 1: Primeros Pasos con el Turtlebot y Odometría}
+
+En esta sección se detalla la configuración inicial del entorno de simulación, la resolución de cuestiones teóricas sobre la cinemática del Turtlebot~3 y la implementación de nodos de control para trayectorias básicas y monitorización de odometría.
+
+%--------------------------------------------------------------
+\section{Preguntas teóricas previas}
+%--------------------------------------------------------------
+
+\subsection*{Preguntas 1 y 2: Topic y tipo de mensaje de movimiento}
+
+El topic en el cual se debe publicar la información para que el Turtlebot~3 se mueva es \texttt{/cmd\_vel}. 
+Podemos verificar tanto el topic como el tipo de mensaje ejecutando los siguientes comandos en una terminal paralela mientras el nodo de teleoperación (\texttt{teleop\_keyboard}) está activo:
+
+\begin{lstlisting}[style=bash]
+	ros2 topic list
+	ros2 topic info /cmd_vel
+\end{lstlisting}
+
+El tipo de mensaje que se publica en este topic es \texttt{geometry\_msgs/msg/Twist}. Este estándar de ROS contiene dos vectores tridimensionales: uno para expresar la velocidad lineal (\texttt{linear}) en los ejes X, Y, Z; y otro para la velocidad angular (\texttt{angular}) alrededor de dichos ejes.
+
+\subsection*{Pregunta 3: Tipos de movimientos y ejes positivos}
+
+El Turtlebot~3, al poseer una configuración de tracción diferencial, está restringido a realizar movimientos en un plano 2D. Por tanto, emplea principalmente:
+\begin{itemize}
+	\item \textbf{Movimiento lineal:} Desplazamiento hacia adelante o hacia atrás a lo largo de su eje longitudinal (\texttt{linear.x}).
+	\item \textbf{Movimiento angular:} Rotación sobre su propio eje central (\texttt{angular.z}).
+\end{itemize}
+
+En ROS~2 se utiliza la regla de la mano derecha (estándar REP 103) para los sistemas de coordenadas. Esto implica que:
+\begin{itemize}
+	\item El eje \textbf{X positivo} apunta hacia el frente del robot.
+	\item El eje \textbf{Z positivo} apunta hacia arriba. Por tanto, una velocidad angular positiva produce un giro en sentido antihorario (\textbf{hacia la izquierda}).
+\end{itemize}
+
+En consecuencia, si le enviamos al robot un comando para que gire \textbf{-20º} (una velocidad angular negativa), el robot girará en sentido horario, es decir, \textbf{hacia la derecha}.
+
+\subsection*{Pregunta 4: Giro sobre su eje y cinemática}
+
+Sí, el robot gira exactamente sobre su propio eje central vertical. 
+
+Esto se debe a su configuración cinemática de \textbf{tracción diferencial} (\textit{differential drive}). Cuando enviamos un comando puramente rotacional a través de \texttt{/cmd\_vel} (con velocidad lineal a 0), el controlador base del Turtlebot traduce este mensaje y manda a los motores de las ruedas comandos de velocidad de la \textbf{misma magnitud pero de signos opuestos}. 
+
+Por ejemplo, para girar a la izquierda, la rueda derecha recibe una velocidad positiva (avanza) y la rueda izquierda recibe una velocidad negativa (retrocede), provocando que el centro instantáneo de rotación (ICR) se sitúe exactamente en el centro del eje que une ambas ruedas.
+
+\subsection*{Pregunta 5: Unidades de magnitud}
+
+De acuerdo con el estándar internacional adoptado por ROS (REP 103), las magnitudes enviadas en los mensajes de tipo \texttt{Twist} utilizan el Sistema Internacional de Unidades (SI):
+\begin{itemize}
+	\item \textbf{Velocidad lineal:} Se mide en metros por segundo (\textbf{m/s}).
+	\item \textbf{Velocidad angular:} Se mide en radianes por segundo (\textbf{rad/s}).
+\end{itemize}
+
+%--------------------------------------------------------------
+\section{Ejercicio 1: Figuras Geométricas}
+%--------------------------------------------------------------
+\subsection*{Implementación del nodo \texttt{movimiento.py}}
+
+Para cumplir con el requerimiento de un único fichero ejecutable, se ha desarrollado una clase en Python orientada a objetos (\texttt{ControladorFiguras}) que integra un menú interactivo en la terminal. El control del movimiento se realiza en \textit{lazo abierto}, calculando el tiempo de ejecución exacto necesario para cada desplazamiento y giro.
+
+\textbf{Fundamento Matemático:}
+Al publicar mensajes del tipo \texttt{Twist} con velocidades constantes, el tiempo de activación ($t$) se calcula en función de la distancia ($d$), el ángulo a girar ($\theta$) y las velocidades correspondientes ($v$ lineal y $\omega$ angular):
+
+\begin{equation}
+	t_{lineal} = \frac{d}{v} \quad ; \quad t_{giro} = \frac{\theta}{\omega}
+\end{equation}
+
+Se establecieron los siguientes parámetros para las figuras:
+\begin{itemize}
+	\item \textbf{Cuadrado:} El robot avanza $1\,m$ a $0.2\,m/s$ ($t=5\,s$). Posteriormente, realiza un giro de $90^\circ$ ($\pi/2\,rad$) a una velocidad de $0.5\,rad/s$ ($t\approx3.14\,s$). Este patrón se repite 4 veces.
+	\item \textbf{Triángulo equilátero:} El avance es idéntico al cuadrado. Sin embargo, para cerrar la figura, el robot debe rotar el ángulo exterior del polígono, equivalente a $120^\circ$ ($2\pi/3\,rad$).
+	\item \textbf{Infinito:} Esta figura consiste en la concatenación de dos circunferencias tangentes. Se logra enviando velocidad lineal y angular simultáneamente durante un tiempo correspondiente a $2\pi\,rad$. El primer círculo emplea una velocidad angular positiva ($\omega = 0.4\,rad/s$), y el segundo invierte el signo ($\omega = -0.4\,rad/s$).
+\end{itemize}
+
+Para garantizar la estabilidad en la simulación, se implementaron paradas de seguridad ($0.0\,m/s$) de $0.5$ segundos entre las transiciones de movimiento lineal y angular.
+
+\subsection*{Resultados en Simulación}
+
+% Espacio para capturas de pantalla de Gazebo
+\begin{figure}[H]
+	\centering
+	% \includegraphics[width=0.8\textwidth]{images/trayectorias_gazebo.png}
+	\caption{Ejecución de las trayectorias en el entorno Gazebo.}
+	\label{fig:gazebo_mov}
+\end{figure}
+
+%--------------------------------------------------------------
+\section{Ejercicio 2: Monitorización y Gráficas}
+%--------------------------------------------------------------
+\subsection*{Análisis de Odometría con \texttt{dibuja\_mov.py}}
+
+Se ha desarrollado un nodo que se suscribe al topic \texttt{/odom} para registrar la evolución temporal de la posición $(x, y)$ del robot.
+
+\begin{figure}[H]
+	\centering
+	% \includegraphics[width=0.7\textwidth]{images/grafica_cuadrado.png}
+	\caption{Trayectoria real registrada mediante odometría.}
+	\label{fig:grafica_odom}
+\end{figure}
+
+%--------------------------------------------------------------
+\section{Ejercicio 3: Desplazamiento Lineal Preciso}
+%--------------------------------------------------------------
+\subsection*{Cálculo de distancia recorrida}
+
+% Aquí explicarás cómo usaste la fórmula de la distancia euclídea
+Para asegurar un desplazamiento de exactamente 2 metros, se ha implementado un control basado en...
+
+%--------------------------------------------------------------
+\section{Ejercicio 4: Análisis de Precisión y Control}
+%--------------------------------------------------------------
+\subsection*{Problemas de lazo abierto y soluciones}
+
+% Aquí responderás a por qué el robot no vuelve al origen exactamente
+\begin{itemize}
+	\item \textbf{Causas del error:} (Deriva, fricción, muestreo...)
+	\item \textbf{Propuesta de mejora:} (Controlador Proporcional, etc.)
+\end{itemize}

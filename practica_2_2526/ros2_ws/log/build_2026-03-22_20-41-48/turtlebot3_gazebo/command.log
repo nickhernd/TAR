@@ -1,4 +1,0 @@
-Invoking command in '/workspace/ros2_ws/build/turtlebot3_gazebo': /usr/bin/cmake --build /workspace/ros2_ws/build/turtlebot3_gazebo -- -j20 -l20
-Invoked command in '/workspace/ros2_ws/build/turtlebot3_gazebo' returned '0': /usr/bin/cmake --build /workspace/ros2_ws/build/turtlebot3_gazebo -- -j20 -l20
-Invoking command in '/workspace/ros2_ws/build/turtlebot3_gazebo': /usr/bin/cmake --install /workspace/ros2_ws/build/turtlebot3_gazebo
-Invoked command in '/workspace/ros2_ws/build/turtlebot3_gazebo' returned '0': /usr/bin/cmake --install /workspace/ros2_ws/build/turtlebot3_gazebo

@@ -57,7 +57,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/ros2_ws/turtlebot3/turtlebot3_description
+CMAKE_SOURCE_DIR = /workspace/ros2_ws/src/turtlebot3/turtlebot3_description
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspace/ros2_ws/build/turtlebot3_description
