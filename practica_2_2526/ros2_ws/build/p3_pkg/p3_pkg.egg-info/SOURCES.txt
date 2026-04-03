@@ -9,6 +9,7 @@ setup.py
 ../../build/p3_pkg/p3_pkg.egg-info/top_level.txt
 ../../build/p3_pkg/p3_pkg.egg-info/zip-safe
 p3_pkg/__init__.py
+p3_pkg/dibuja_mov.py
 p3_pkg/movimiento.py
 resource/p3_pkg
 test/test_copyright.py

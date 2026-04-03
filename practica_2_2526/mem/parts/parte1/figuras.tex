@@ -58,7 +58,7 @@ De acuerdo con el estándar internacional adoptado por ROS (REP 103), las magnit
 %--------------------------------------------------------------
 \subsection*{Implementación del nodo \texttt{movimiento.py}}
 
-Para cumplir con el requerimiento de un único fichero ejecutable, se ha desarrollado una clase en Python orientada a objetos (\texttt{ControladorFiguras}) que integra un menú interactivo en la terminal. El control del movimiento se realiza en \textit{lazo abierto}, calculando el tiempo de ejecución exacto necesario para cada desplazamiento y giro.
+Para cumplir con el requerimiento de un único fichero ejecutable, se ha desarrollado una clase en Python orientada a objetos (\texttt{ControladorFiguras}) que lee el argumento pasado por la línea de comandos para seleccionar la figura a trazar. El control del movimiento se realiza en \textit{lazo abierto}, calculando el tiempo de ejecución teórico necesario para cada desplazamiento y giro.
 
 \textbf{Fundamento Matemático:}
 Al publicar mensajes del tipo \texttt{Twist} con velocidades constantes, el tiempo de activación ($t$) se calcula en función de la distancia ($d$), el ángulo a girar ($\theta$) y las velocidades correspondientes ($v$ lineal y $\omega$ angular):
@@ -69,21 +69,53 @@ Al publicar mensajes del tipo \texttt{Twist} con velocidades constantes, el tiem
 
 Se establecieron los siguientes parámetros para las figuras:
 \begin{itemize}
-	\item \textbf{Cuadrado:} El robot avanza $1\,m$ a $0.2\,m/s$ ($t=5\,s$). Posteriormente, realiza un giro de $90^\circ$ ($\pi/2\,rad$) a una velocidad de $0.5\,rad/s$ ($t\approx3.14\,s$). Este patrón se repite 4 veces.
-	\item \textbf{Triángulo equilátero:} El avance es idéntico al cuadrado. Sin embargo, para cerrar la figura, el robot debe rotar el ángulo exterior del polígono, equivalente a $120^\circ$ ($2\pi/3\,rad$).
-	\item \textbf{Infinito:} Esta figura consiste en la concatenación de dos circunferencias tangentes. Se logra enviando velocidad lineal y angular simultáneamente durante un tiempo correspondiente a $2\pi\,rad$. El primer círculo emplea una velocidad angular positiva ($\omega = 0.4\,rad/s$), y el segundo invierte el signo ($\omega = -0.4\,rad/s$).
+	\item \textbf{0. Línea Recta:} El robot avanza $2\,m$ a $0.2\,m/s$ ($t=10\,s$).
+\subsection*{Pregunta 6: ¿Cómo puedo comprobar que el robot haya avanzado esta distancia?}
+
+Para comprobar de forma empírica la distancia real que ha recorrido el robot en la simulación, debemos abandonar el control ciego y monitorizar sus sensores de posición espacial (odometría). Tal como sugiere la pista, al ejecutar el comando \texttt{ros2 topic list} en la terminal, identificamos el topic \texttt{/odom}.
+
+Este topic publica mensajes del tipo \texttt{nav\_msgs/msg/Odometry}. Podemos verificar el avance ejecutando el comando \texttt{ros2 topic echo /odom}. Esto imprime en pantalla, en tiempo real, la información del topic. Observando los valores de \texttt{pose.pose.position.x} y \texttt{pose.pose.position.y}, podemos comprobar las coordenadas finales del robot una vez se detiene y restarlas de su posición inicial para obtener la distancia real recorrida.
+	\item \textbf{1. Triángulo equilátero:} El robot avanza $3\,m$ a $0.2\,m/s$ ($t=15\,s$). Para cerrar la figura, el robot rota el ángulo exterior del polígono, equivalente a $120^\circ$ ($2\pi/3\,rad$) a una velocidad de $0.5\,rad/s$. Este patrón se repite 3 veces.
+	\item \textbf{2. Cuadrado:} El robot avanza $1\,m$ a $0.2\,m/s$ ($t=5\,s$). Posteriormente, realiza un giro de $90^\circ$ ($\pi/2\,rad$) a una velocidad de $0.5\,rad/s$. Este patrón se repite 4 veces.
+	\item \textbf{3. Infinito:} El robot inicia avanzando $0.5\,m$ en línea recta ($t=2.5\,s$). Aunque el enunciado menciona un giro de $60^\circ$, cinemáticamente este corresponde al ángulo interior $\theta$. Para ejecutarlo, el robot gira sobre su eje el ángulo suplementario de $120^\circ$ ($2\pi/3\,rad$). La secuencia alterna avances rectilíneos para los lados verticales ($0.5\,m$) y las diagonales ($1.0\,m$) con giros de $\pm120^\circ$ hasta regresar al origen con su orientación inicial.
 \end{itemize}
 
-Para garantizar la estabilidad en la simulación, se implementaron paradas de seguridad ($0.0\,m/s$) de $0.5$ segundos entre las transiciones de movimiento lineal y angular.
+Para garantizar la estabilidad en la simulación, se implementaron paradas de seguridad publicando velocidades nulas ($0.0\,m/s$, $0.0\,rad/s$) durante $0.5$ segundos en las transiciones de movimiento lineal y angular.
 
 \subsection*{Resultados en Simulación}
 
-% Espacio para capturas de pantalla de Gazebo
+A continuación, se presentan las capturas obtenidas en el simulador Gazebo que ilustran la trayectoria ejecutada por el robot para cada una de las figuras implementadas.
+
+% Captura de la Opción 0: Línea Recta
 \begin{figure}[H]
 	\centering
-	% \includegraphics[width=0.8\textwidth]{images/trayectorias_gazebo.png}
-	\caption{Ejecución de las trayectorias en el entorno Gazebo.}
-	\label{fig:gazebo_mov}
+	\includegraphics[width=0.7\textwidth]{parts/parte1/images_figuras/recta.png}
+	\caption{Ejecución del movimiento en línea recta (Opción 0).}
+	\label{fig:gazebo_recta}
+\end{figure}
+
+% Captura de la Opción 1: Triángulo
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{parts/parte1/images_figuras/triangulo.png}
+	\caption{Ejecución de la trayectoria triangular (Opción 1).}
+	\label{fig:gazebo_triangulo}
+\end{figure}
+
+% Captura de la Opción 2: Cuadrado
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{parts/parte1/images_figuras/cuadrado.png}
+	\caption{Ejecución de la trayectoria cuadrada (Opción 2).}
+	\label{fig:gazebo_cuadrado}
+\end{figure}
+
+% Captura de la Opción 3: Infinito (Lazo)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{parts/parte1/images_figuras/infinito.png}
+	\caption{Ejecución de la trayectoria en forma de lazo o infinito (Opción 3).}
+	\label{fig:gazebo_infinito}
 \end{figure}
 
 %--------------------------------------------------------------
@@ -91,14 +123,30 @@ Para garantizar la estabilidad en la simulación, se implementaron paradas de se
 %--------------------------------------------------------------
 \subsection*{Análisis de Odometría con \texttt{dibuja\_mov.py}}
 
-Se ha desarrollado un nodo que se suscribe al topic \texttt{/odom} para registrar la evolución temporal de la posición $(x, y)$ del robot.
+Se ha desarrollado un nodo que se suscribe al topic \texttt{/odom} para registrar la evolución temporal de la posición $(x, y)$ del robot y graficar la trayectoria real mediante la librería Matplotlib.
 
 \begin{figure}[H]
 	\centering
 	% \includegraphics[width=0.7\textwidth]{images/grafica_cuadrado.png}
-	\caption{Trayectoria real registrada mediante odometría.}
+	\caption{Trayectoria real del cuadrado registrada mediante odometría. El punto verde indica el inicio y el rojo el final.}
 	\label{fig:grafica_odom}
 \end{figure}
+
+\subsection*{Pregunta 7: Análisis del error en la posición final}
+
+Tras ejecutar 10 veces los movimientos del cuadrado, del triángulo y del infinito monitorizando los resultados, se observa un patrón claro en las gráficas obtenidas.
+
+\textbf{¿El robot acaba en la posición original?} \\
+No. En todas las ejecuciones, el robot finaliza su trayectoria con un error de posición y orientación significativo respecto al punto de partida (marcado en las gráficas por la distancia entre el punto verde inicial y el rojo final). Además, la longitud de los trazos rectos y los ángulos de giro no alcanzan los valores teóricos programados.
+
+\textbf{¿A qué puede deberse esto?} \\
+Este error sistemático se debe a la naturaleza del \textbf{control en lazo abierto (open-loop control)} y a las físicas del simulador, concretamente a los siguientes factores:
+
+\begin{enumerate}
+	\item \textbf{Factor de Tiempo Real (RTF) en Gazebo:} El código implementado se basa en el reloj del sistema operativo (\texttt{time.time()}). Sin embargo, Gazebo puede ejecutar la física de la simulación a un ritmo más lento (RTF < 1.0) dependiendo de la carga computacional. Esto provoca que los comandos de velocidad se interrumpan antes de que el robot complete el movimiento en el tiempo simulado.
+	\item \textbf{Inercia y dinámica del robot:} Matemáticamente se asume un paso instantáneo de $0.0$ a $0.2\,m/s$. Físicamente, el robot necesita una rampa de aceleración. Durante esta fase transitoria, la velocidad real es inferior a la comandada, resultando en una distancia recorrida menor a la calculada teóricamente.
+	\item \textbf{Falta de retroalimentación (Feedback):} Al ser un sistema ciego, el controlador no verifica su posición actual ni corrige las desviaciones causadas por deslizamientos de las ruedas o errores de fricción en la simulación.
+\end{enumerate}
 
 %--------------------------------------------------------------
 \section{Ejercicio 3: Desplazamiento Lineal Preciso}

@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'movimiento = p3_pkg.movimiento:main'
+            'movimiento = p3_pkg.movimiento:main',
+            'dibuja = p3_pkg.dibuja_mov:main',
         ],
     },
 )
