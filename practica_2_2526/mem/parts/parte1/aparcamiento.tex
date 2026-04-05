@@ -243,3 +243,124 @@ Para ejecutar el nodo:
 	# Infinito
 	ros2 run p3_pkg movimiento_controlado --ros-args -p movimiento:=3
 \end{lstlisting}
+
+%--------------------------------------------------------------
+\section{Ejercicio 5: Comparativa Waffle vs.\ Burger}
+%--------------------------------------------------------------
+
+En este ejercicio se repiten los ejercicios anteriores utilizando el modelo Turtlebot~3 Burger en lugar del Waffle, con el objetivo de analizar cómo las diferencias físicas entre ambos robots afectan a la precisión de los movimientos, la estabilidad del controlador y el comportamiento durante el aparcamiento.
+
+Para lanzar cualquiera de los ejercicios con el modelo Burger basta con cambiar la variable de entorno:
+
+\begin{lstlisting}[style=bash]
+	export TURTLEBOT3_MODEL=burger
+	ros2 launch p3_pkg parking_tb3.launch.py
+\end{lstlisting}
+
+No se ha modificado ningún parámetro del código fuente: los nodos \texttt{movimiento.py}, \texttt{movimiento\_controlado.py} y \texttt{aparcamiento.py} se ejecutan de forma idéntica para ambos modelos.
+
+%..............................................................
+\subsection*{Pregunta 11: Inspección de las propiedades URDF}
+%..............................................................
+
+Se han inspeccionado los archivos de descripción de ambos modelos, ubicados en el paquete \texttt{turtlebot3\_simulations/turtlebot3\_gazebo/urdf}:
+
+\begin{lstlisting}[style=bash]
+	# Burger
+	cat turtlebot3_gazebo/urdf/turtlebot3_burger.urdf
+	
+	# Waffle
+	cat turtlebot3_gazebo/urdf/turtlebot3_waffle.urdf
+\end{lstlisting}
+
+Los parámetros relevantes extraídos de los URDF y de las especificaciones oficiales se resumen en la siguiente tabla:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Parámetro}         & \textbf{Burger}  & \textbf{Waffle}  & \textbf{Impacto} \\
+		\midrule
+		Radio de rueda              & 0.033\,m         & 0.033\,m         & Igual \\
+		Separación entre ruedas     & 0.160\,m         & 0.287\,m         & Giro y odometría \\
+		Masa total                  & $\sim$0.9\,kg    & $\sim$1.8\,kg    & Inercia \\
+		Diámetro del chasis         & 138\,mm          & 281\,mm          & Holgura espacial \\
+		Sensores                    & LiDAR            & LiDAR + cámara   & Percepción \\
+		\bottomrule
+	\end{tabular}
+	\caption{Comparativa de propiedades físicas Burger vs.\ Waffle extraídas de los URDF.}
+	\label{tab:urdf_comparativa}
+\end{table}
+
+A continuación se analiza cómo cada diferencia afecta al comportamiento del robot:
+
+\begin{itemize}
+	\item \textbf{Separación entre ruedas} (\textit{wheel\_separation}): Es la diferencia más significativa. En un robot diferencial, la velocidad angular resultante es $\omega = (v_R - v_L) / L$, donde $L$ es la separación entre ruedas. Con $L = 0.160\,\text{m}$ (Burger) frente a $L = 0.287\,\text{m}$ (Waffle), el Burger es más sensible a diferencias entre las velocidades de las ruedas: un mismo error de velocidad produce un desvío angular mayor. Sin embargo, esta menor separación también permite giros con un radio de curvatura más pequeño.
+	
+	\item \textbf{Masa}: El Waffle duplica en masa al Burger. Esto implica mayor inercia: el Waffle necesita más tiempo para acelerar y frenar, pero una vez en movimiento es más estable ante perturbaciones. El Burger, al ser más ligero, responde más rápido a los comandos pero también oscila con mayor facilidad.
+	
+	\item \textbf{Tamaño del chasis}: El Burger es significativamente más compacto (138\,mm vs.\ 281\,mm), lo que le proporciona mayor margen físico en espacios estrechos como la plaza de aparcamiento o los pasillos del laberinto.
+	
+	\item \textbf{LiDAR}: Ambos modelos montan el mismo sensor LDS-01 (360°, resolución de 1°, rango 0.12--3.5\,m). El Waffle incorpora además una cámara RGB-D, pero no se utiliza en ninguno de los ejercicios de esta práctica. Por tanto, a nivel de percepción, el mismo código funciona sin modificaciones para ambos robots.
+\end{itemize}
+
+%..............................................................
+\subsection*{Pregunta 5: Precisión de los movimientos (Ejercicios 1 y 2)}
+%..............................................................
+
+Al ejecutar las mismas trayectorias (línea recta, triángulo, cuadrado e infinito) con el Burger en lazo abierto, se observa que el Burger acumula \textbf{más error angular} que el Waffle. Al finalizar 10 repeticiones del cuadrado, la desviación respecto al origen es mayor en el Burger.
+
+Esto se explica directamente por la menor separación entre ruedas ($L = 0.160\,\text{m}$): cualquier asimetría en la tracción de las ruedas produce un error angular proporcional a $1/L$, por lo que el Burger amplifica estas imprecisiones.
+
+En cuanto al tipo de movimiento, la diferencia se nota más en los \textbf{movimientos rotacionales y combinados} (giros seguidos de avances). En los tramos puramente lineales, ambos robots se comportan de forma similar, ya que el radio de rueda es idéntico y la masa no afecta significativamente a la distancia recorrida en simulación.
+
+%..............................................................
+\subsection*{Pregunta 8: Amplitud de los giros}
+%..............................................................
+
+El Burger realiza giros \textbf{más cerrados} que el Waffle. Esto es una consecuencia directa de su menor \textit{wheel\_separation}: al girar sobre su propio eje, el centro instantáneo de rotación se sitúa en el punto medio entre ambas ruedas, y la circunferencia descrita por cada rueda tiene un radio de $L/2$. Con $L = 0.160\,\text{m}$, cada rueda describe un arco de solo 80\,mm de radio, frente a los 143.5\,mm del Waffle.
+
+En la práctica, esto hace que el Burger sea más ágil en espacios reducidos, pero también más propenso a sobrepasar el ángulo objetivo si la velocidad angular no se reduce a tiempo.
+
+%..............................................................
+\subsection*{Pregunta 9: Comportamiento del controlador PID}
+%..............................................................
+
+Los mismos parámetros del controlador PID ($K_p = 2.0$, $K_i = 0.01$, $K_d = 0.1$, $K_{heading} = 1.5$) \textbf{funcionan correctamente para ambos robots} sin necesidad de reajuste. El Burger completa las trayectorias del cuadrado, triángulo e infinito regresando al punto de origen con precisión comparable a la del Waffle.
+
+No obstante, se observan diferencias cualitativas:
+
+\begin{itemize}
+	\item El Burger muestra \textbf{ligeras oscilaciones} al final de los giros, especialmente en los de 120° del infinito. Esto se debe a que su menor inercia hace que responda más bruscamente a las correcciones del PID: la componente derivativa ($K_d = 0.1$) amortigua estas oscilaciones, pero no las elimina completamente.
+	
+	\item El Waffle, al ser más pesado, presenta una respuesta más \textbf{suave y amortiguada}. La mayor inercia actúa como un filtro natural que reduce las oscilaciones de alta frecuencia.
+	
+	\item Ninguno de los dos robots se vuelve inestable con los parámetros elegidos. Si se aumentase $K_p$ significativamente (por ejemplo a 5.0), el Burger sería el primero en presentar sobreoscilación debido a su menor amortiguamiento inercial.
+\end{itemize}
+
+En resumen, el Burger es más exigente en cuanto a sintonización del controlador: requeriría ajustes más finos si se buscara una respuesta completamente libre de oscilaciones.
+
+%..............................................................
+\subsection*{Pregunta 10: Aparcamiento}
+%..............................................................
+
+Ambos robots completan la maniobra de aparcamiento correctamente con los mismos parámetros (distancia de avance $1.5\,\text{m}$, velocidad de entrada al 70\,\%, distancia de seguridad $0.35\,\text{m}$). Ninguno colisiona con las paredes.
+
+Las diferencias observadas son:
+
+\begin{itemize}
+	\item El Burger queda \textbf{más centrado} dentro de la plaza, ya que al ser 143\,mm más estrecho dispone de mayor holgura lateral. El Waffle, aunque no choca, queda con menos margen respecto a las paredes laterales.
+	
+	\item El giro de 90° previo a la entrada es \textbf{más rápido} en el Burger (menor inercia), pero ligeramente menos preciso: el robot tiende a pasarse 1--2° del ángulo objetivo antes de que la condición de parada lo detenga. Esto no afecta al resultado final porque la fase \texttt{ENTER\_SPOT} se guía por el LiDAR frontal, no por la odometría.
+	
+	\item El Waffle realiza la maniobra con una trayectoria más suave y predecible, requiriendo menos correcciones implícitas por parte de la máquina de estados.
+\end{itemize}
+
+En definitiva, el Burger realiza la maniobra con más margen espacial pero con una dinámica menos estable, mientras que el Waffle ofrece una ejecución más limpia a costa de un ajuste más preciso respecto a los límites físicos de la plaza.
+
+\begin{lstlisting}[style=bash]
+	# Lanzamiento del aparcamiento con Burger
+	export TURTLEBOT3_MODEL=burger
+	ros2 launch p3_pkg parking_tb3.launch.py
+	ros2 run p3_pkg aparcamiento
+\end{lstlisting}

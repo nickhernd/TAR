@@ -5,10 +5,11 @@
 \contentsline {section}{\numberline {1.3}Ejercicio 2: Monitorización y Gráficas}{7}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Ejercicio 3: Aparcamiento Autónomo}{7}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Ejercicio 4: Corrección de Errores con Controlador PID}{10}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Parte 2: Resolución de un Laberinto}{14}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Preguntas teóricas previas}{14}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Ejercicio 1: Resolución del Laberinto 1 --- Algoritmo Wall Follower}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Ejercicio 2: Laberinto 2 y análisis de limitaciones del Wall Follower}{17}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Ejercicio 3: Algoritmo de Pledge para el Laberinto 2}{18}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Ejercicio 4: Comparativa Waffle vs.\ Burger en el Laberinto 1}{20}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Ejercicio 5: Laberinto propio (maze\_3)}{21}{section.2.6}%
+\contentsline {section}{\numberline {1.6}Ejercicio 5: Comparativa Waffle vs.\ Burger}{13}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Parte 2: Resolución de un Laberinto}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Preguntas teóricas previas}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Ejercicio 1: Resolución del Laberinto 1 --- Algoritmo Wall Follower}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Ejercicio 2: Laberinto 2 y análisis de limitaciones del Wall Follower}{20}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ejercicio 3: Algoritmo de Pledge para el Laberinto 2}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Ejercicio 4: Comparativa Waffle vs.\ Burger en el Laberinto 1}{23}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Ejercicio 5: Laberinto propio (maze\_3)}{24}{section.2.6}%
