@@ -3,12 +3,12 @@
 \contentsline {section}{\numberline {1.1}Preguntas teóricas previas}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ejercicio 1: Figuras Geométricas}{3}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Ejercicio 2: Monitorización y Gráficas}{7}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Ejercicio 3: Desplazamiento Lineal Preciso}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Ejercicio 4: Análisis de Precisión y Control}{8}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Parte 2: Resolución de un Laberinto}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Preguntas teóricas previas}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Ejercicio 1: Resolución del Laberinto 1 --- Algoritmo Wall Follower}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Ejercicio 2: Laberinto 2 y análisis de limitaciones del Wall Follower}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Ejercicio 3: Algoritmo de Pledge para el Laberinto 2}{13}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Ejercicio 4: Comparativa Waffle vs.\ Burger en el Laberinto 1}{15}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Ejercicio 5: Laberinto propio (maze\_3)}{16}{section.2.6}%
+\contentsline {section}{\numberline {1.4}Ejercicio 3: Aparcamiento Autónomo}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Ejercicio 4: Corrección de Errores con Controlador PID}{10}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Parte 2: Resolución de un Laberinto}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Preguntas teóricas previas}{14}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Ejercicio 1: Resolución del Laberinto 1 --- Algoritmo Wall Follower}{15}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Ejercicio 2: Laberinto 2 y análisis de limitaciones del Wall Follower}{17}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ejercicio 3: Algoritmo de Pledge para el Laberinto 2}{18}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Ejercicio 4: Comparativa Waffle vs.\ Burger en el Laberinto 1}{20}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Ejercicio 5: Laberinto propio (maze\_3)}{21}{section.2.6}%

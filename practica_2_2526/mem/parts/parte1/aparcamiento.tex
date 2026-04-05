@@ -1,18 +1,245 @@
 %--------------------------------------------------------------
-\section{Ejercicio 3: Desplazamiento Lineal Preciso}
+\section{Ejercicio 3: Aparcamiento Autónomo}
 %--------------------------------------------------------------
-\subsection*{Cálculo de distancia recorrida}
 
-% Aquí explicarás cómo usaste la fórmula de la distancia euclídea
-Para asegurar un desplazamiento de exactamente 2 metros, se ha implementado un control basado en...
+Se ha desarrollado el nodo \texttt{aparcamiento.py} dentro del paquete \texttt{p3\_pkg}. El objetivo es que el Turtlebot~3 ejecute una maniobra de aparcamiento perpendicular de forma autónoma, entrando en una plaza delimitada por paredes laterales y una pared trasera.
 
-%--------------------------------------------------------------
-\section{Ejercicio 4: Análisis de Precisión y Control}
-%--------------------------------------------------------------
-\subsection*{Problemas de lazo abierto y soluciones}
+\subsection*{Configuración del entorno}
 
-% Aquí responderás a por qué el robot no vuelve al origen exactamente
+Para cargar el entorno de simulación con la plaza de aparcamiento, se han copiado los directorios \texttt{models}, \texttt{worlds} y \texttt{launch} proporcionados en la carpeta \texttt{Parte\_1} al directorio raíz del paquete \texttt{p3\_pkg}. Además, se ha modificado el archivo \texttt{setup.py} para incluir estos recursos como \texttt{data\_files} y se ha añadido la dependencia \texttt{ros2launch} en el \texttt{package.xml}. El entorno se lanza con:
+
+\begin{lstlisting}[style=bash]
+	export TURTLEBOT3_MODEL=waffle
+	ros2 launch p3_pkg parking_tb3.launch.py
+\end{lstlisting}
+
+\subsection*{Arquitectura del nodo}
+
+El nodo \texttt{aparcamiento.py} implementa una \textbf{máquina de estados} controlada por un timer a 10\,Hz. Utiliza dos fuentes de información sensorial:
+
 \begin{itemize}
-	\item \textbf{Causas del error:} (Deriva, fricción, muestreo...)
-	\item \textbf{Propuesta de mejora:} (Controlador Proporcional, etc.)
+	\item \textbf{Odometría} (\texttt{/odom}): proporciona la posición $(x, y)$ y la orientación (yaw) del robot, obtenida mediante la conversión del cuaternión a ángulo de Euler. Se utiliza para calcular distancias recorridas y ángulos girados.
+	\item \textbf{LiDAR} (\texttt{/scan}): proporciona un array de 360 distancias. Se procesan sectores específicos del escaneo: los 20 rayos centrales (frente) y los 20 rayos alrededor de 270° (derecha) para obtener lecturas robustas, filtrando valores inválidos y tomando el mínimo.
 \end{itemize}
+
+\subsection*{Máquina de estados}
+
+La maniobra de aparcamiento se descompone en cinco estados secuenciales:
+
+\begin{enumerate}
+	\item \textbf{WAITING}: El nodo espera a recibir al menos un escaneo del LiDAR antes de iniciar la maniobra. Esto garantiza que el robot no se mueva antes de disponer de datos sensoriales válidos.
+	
+	\item \textbf{ADVANCE\_TO\_SPOT}: El robot avanza en línea recta a $0.15\,m/s$. La distancia recorrida se calcula mediante la distancia euclídea entre la posición actual y la posición al inicio de esta fase:
+	\begin{equation}
+		d = \sqrt{(x_{actual} - x_{inicio})^2 + (y_{actual} - y_{inicio})^2}
+	\end{equation}
+	Cuando $d \geq 1.5\,m$, el robot se detiene. Esta distancia ha sido calibrada experimentalmente para que el robot quede alineado con el centro de la entrada de la plaza, dado que la posición de spawn es fija en la simulación.
+	
+	\item \textbf{TURN\_RIGHT}: El robot gira en sentido horario (velocidad angular negativa, $-0.3\,rad/s$) hasta completar un giro de $90°$ ($\pi/2\,rad$). El ángulo girado se calcula comparando el yaw actual con el yaw guardado al inicio del giro, normalizando la diferencia al rango $[-\pi, \pi]$ para evitar discontinuidades. El giro se considera completado cuando el error es inferior a $0.05\,rad$ ($\approx 3°$).
+	
+	\item \textbf{ENTER\_SPOT}: El robot avanza hacia el interior de la plaza a velocidad reducida ($0.105\,m/s$, un 70\% de la velocidad nominal) para mayor precisión. En cada iteración, el LiDAR mide la distancia frontal. Cuando esta distancia es inferior a $0.35\,m$ (distancia de seguridad a la pared trasera), el robot se detiene.
+	
+	\item \textbf{PARKED}: Estado final. El robot publica velocidad cero de forma indefinida.
+\end{enumerate}
+
+\subsection*{Fragmento de código relevante}
+
+El bucle principal de control (\texttt{control\_loop}) evalúa el estado actual en cada tick del timer y publica el comando de velocidad correspondiente:
+
+\begin{lstlisting}[style=python]
+	def control_loop(self):
+	if self.scan_data is None:
+	return
+	twist = Twist()
+	
+	if self.state == 'ADVANCE_TO_SPOT':
+	if self.get_distance_traveled() < 1.5:
+	twist.linear.x = self.linear_speed
+	else:
+	self.stop_robot()
+	self.state = 'TURN_RIGHT'
+	self.start_yaw = self.yaw
+	
+	elif self.state == 'TURN_RIGHT':
+	if self.get_angle_turned() < math.pi/2 - 0.05:
+	twist.angular.z = -self.angular_speed
+	else:
+	self.stop_robot()
+	self.state = 'ENTER_SPOT'
+	
+	elif self.state == 'ENTER_SPOT':
+	if self.get_front_distance() > self.stop_distance:
+	twist.linear.x = self.linear_speed * 0.7
+	else:
+	self.stop_robot()
+	self.state = 'PARKED'
+	
+	self.cmd_pub.publish(twist)
+\end{lstlisting}
+
+\subsection*{Resultados}
+
+La maniobra se ejecuta correctamente tanto con el modelo Waffle como con el modelo Burger. El robot se detiene dentro de la plaza sin colisionar con las paredes laterales ni con la pared trasera. La distancia de avance de $1.5\,m$ fue calibrada iterativamente hasta lograr que el robot quedase centrado en la entrada de la plaza.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{parts/parte1/images_figuras/Aparcamiento.jpg}
+	\caption{Turtlebot~3 Waffle aparcado correctamente dentro de la plaza.}
+	\label{fig:aparcamiento}
+\end{figure}
+Para lanzar el ejercicio:
+
+\begin{lstlisting}[style=bash]
+	# Terminal 1 - Simulacion con el entorno de parking
+	export TURTLEBOT3_MODEL=waffle
+	ros2 launch p3_pkg parking_tb3.launch.py
+	
+	# Terminal 2 - Nodo de aparcamiento
+	ros2 run p3_pkg aparcamiento
+\end{lstlisting}
+
+%--------------------------------------------------------------
+\section{Ejercicio 4: Corrección de Errores con Controlador PID}
+%--------------------------------------------------------------
+
+Como se ha evidenciado en los Ejercicios~1 y~2, el control en lazo abierto acumula errores de forma sistemática. En este ejercicio se implementa un \textbf{controlador PID} que corrige las trayectorias en tiempo real utilizando la retroalimentación de la odometría.
+
+\subsection*{Problema del lazo abierto}
+
+En el Ejercicio~1, el robot calcula el tiempo necesario para recorrer una distancia o girar un ángulo a velocidad constante ($t = d/v$ o $t = \theta/\omega$). Sin embargo, la velocidad real del robot no coincide con la comandada debido a la inercia, la fricción y el \textit{Real Time Factor} de Gazebo. Tras 10 repeticiones (Ejercicio~2), el error acumulado hace que el robot termine lejos del origen.
+
+\subsection*{Solución: control en lazo cerrado}
+
+El nodo \texttt{movimiento\_controlado.py} sustituye el control temporal por un \textbf{control basado en el error}, donde el robot mide continuamente la diferencia entre su estado actual y el objetivo, y ajusta sus velocidades proporcionalmente.
+
+\subsection*{Controlador PID para giros}
+
+Para los giros se implementa un controlador PID completo. El error se define como la diferencia angular normalizada entre la orientación objetivo y la actual:
+
+\begin{equation}
+	e(t) = \text{normalize}\left(\theta_{objetivo} - \theta_{actual}\right)
+\end{equation}
+
+La señal de control (velocidad angular) se calcula como:
+
+\begin{equation}
+	\omega(t) = K_p \cdot e(t) + K_i \cdot \int_0^t e(\tau)\,d\tau + K_d \cdot \frac{de(t)}{dt}
+\end{equation}
+
+Cada componente cumple una función específica:
+
+\begin{itemize}
+	\item \textbf{Proporcional ($K_p = 2.0$)}: produce una corrección proporcional al error actual. Si al robot le faltan $45°$ para alcanzar el objetivo, gira rápido; si le falta $1°$, gira muy despacio. Esto evita que el robot se pase del ángulo objetivo.
+	\item \textbf{Integral ($K_i = 0.01$)}: acumula el error a lo largo del tiempo. Si la componente proporcional no es suficiente para eliminar un error residual pequeño (por ejemplo, $0.5°$ que persiste porque la velocidad proporcional resultante no vence la fricción), la integral va creciendo hasta compensarlo. Se limita a $\pm 1.0$ (\textit{anti-windup}) para evitar que se acumule excesivamente.
+	\item \textbf{Derivativa ($K_d = 0.1$)}: evalúa la tasa de cambio del error. Si el error está disminuyendo rápidamente (el robot se acerca al objetivo a gran velocidad), la derivada actúa como un freno, amortiguando la respuesta para evitar sobreoscilación.
+\end{itemize}
+
+\begin{lstlisting}[style=python]
+	# Giro con PID
+	error = self.normalize_angle(self.target_yaw - self.yaw)
+	
+	self.integral_error += error * dt
+	self.integral_error = max(-1.0, min(1.0, self.integral_error))
+	derivative = (error - self.prev_error) / dt
+	self.prev_error = error
+	
+	angular_vel = (self.Kp_angular * error +
+	self.Ki_angular * self.integral_error +
+	self.Kd_angular * derivative)
+\end{lstlisting}
+
+\subsection*{Corrección de rumbo durante avances}
+
+Durante los desplazamientos lineales, el robot puede desviarse de la trayectoria recta debido a diferencias de fricción entre las ruedas o a imprecisiones en la simulación. Para corregir esto, se implementa un \textbf{controlador proporcional de rumbo} que actúa sobre la velocidad angular mientras el robot avanza:
+
+\begin{equation}
+	\omega_{correccion} = K_{heading} \cdot (\theta_{objetivo} - \theta_{actual})
+\end{equation}
+
+con $K_{heading} = 1.5$. El ángulo objetivo $\theta_{objetivo}$ es la orientación que tenía el robot al comenzar el tramo recto. Si el robot se desvía a la derecha, el error es positivo y el controlador gira ligeramente a la izquierda, y viceversa. Esto garantiza que el robot mantenga una trayectoria recta real, no solo una velocidad lineal constante.
+
+Además, la velocidad lineal se calcula de forma proporcional a la distancia restante:
+
+\begin{equation}
+	v = \min\left(v_{max},\; \max\left(0.05,\; d_{restante} \cdot 1.0\right)\right)
+\end{equation}
+
+Esto hace que el robot arranque a velocidad máxima ($0.2\,m/s$) y vaya frenando progresivamente conforme se acerca al punto objetivo, evitando que se pase por inercia.
+
+\begin{lstlisting}[style=python]
+	# Avance con correccion de rumbo
+	remaining = self.target_distance - traveled
+	linear_vel = min(self.max_linear, max(0.05, remaining * 1.0))
+	
+	heading_error = self.normalize_angle(self.target_yaw - self.yaw)
+	angular_vel = self.Kp_heading * heading_error
+	
+	twist.linear.x = linear_vel
+	twist.angular.z = angular_vel
+\end{lstlisting}
+
+\subsection*{Estructura del nodo}
+
+El nodo \texttt{movimiento\_controlado.py} utiliza la misma arquitectura de máquina de estados basada en timer (20\,Hz) que el nodo de aparcamiento. Al inicio, construye una lista de pasos según el movimiento solicitado. Por ejemplo, para el cuadrado la lista es:
+
+\begin{center}
+	\texttt{[avanzar 1m, girar 90°, avanzar 1m, girar 90°, avanzar 1m, girar 90°, avanzar 1m, girar 90°]}
+\end{center}
+
+Para el infinito (forma de pajarita), la secuencia replica exactamente la del Ejercicio~1: avanzar $0.5\,m$, girar $-120°$, avanzar la diagonal de $1.0\,m$, girar $+120°$, avanzar $0.5\,m$, girar $+120°$, avanzar la diagonal de $1.0\,m$ y girar $-120°$ para recuperar la orientación original. La diferencia es que cada avance y cada giro se ejecutan con el controlador PID en vez de con velocidad fija por tiempo.
+
+En cada tick del timer, el \texttt{control\_loop} evalúa si el paso actual ha finalizado (error dentro de la tolerancia de $0.02\,m$ para distancias y $0.02\,rad$ para ángulos). Si es así, avanza al siguiente paso; si no, aplica el controlador correspondiente. Al completar todos los pasos, el timer se cancela y el robot se detiene.
+
+\subsection*{Parámetros del controlador}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{Parámetro}      & \textbf{Valor} & \textbf{Descripción} \\
+		\midrule
+		$K_p$ (angular)         & 2.0            & Ganancia proporcional para giros \\
+		$K_i$ (angular)         & 0.01           & Ganancia integral para giros \\
+		$K_d$ (angular)         & 0.1            & Ganancia derivativa para giros \\
+		$K_{heading}$           & 1.5            & Corrección de rumbo en avance \\
+		$v_{max}$               & 0.2 m/s        & Velocidad lineal máxima \\
+		$\omega_{max}$          & 0.5 rad/s      & Velocidad angular máxima \\
+		Tolerancia distancia    & 0.02 m         & Error aceptable en avances \\
+		Tolerancia ángulo       & 0.02 rad       & Error aceptable en giros ($\approx 1.1°$) \\
+		\bottomrule
+	\end{tabular}
+	\caption{Parámetros del controlador PID implementado en \texttt{movimiento\_controlado.py}}
+\end{table}
+
+\subsection*{Resultados y comparativa}
+
+Al repetir los movimientos del Ejercicio~1 con el controlador PID, se observa una mejora significativa en la precisión de las trayectorias. El robot cierra las figuras (cuadrado, triángulo, infinito) regresando muy cerca del punto de origen, a diferencia del control en lazo abierto donde el error acumulado era evidente.
+
+% Capturas comparativas lazo abierto vs lazo cerrado
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}[b]{0.45\textwidth}
+	%        \includegraphics[width=\textwidth]{parts/parte1/images_figuras/cuadrado_open.png}
+	%        \caption{Cuadrado en lazo abierto}
+	%    \end{subfigure}
+%    \hfill
+%    \begin{subfigure}[b]{0.45\textwidth}
+	%        \includegraphics[width=\textwidth]{parts/parte1/images_figuras/cuadrado_pid.png}
+	%        \caption{Cuadrado con controlador PID}
+	%    \end{subfigure}
+%    \caption{Comparativa de precisión entre lazo abierto y lazo cerrado para la trayectoria cuadrada.}
+%    \label{fig:comparativa_pid}
+%\end{figure}
+
+Para ejecutar el nodo:
+
+\begin{lstlisting}[style=bash]
+	# Movimiento lineal (2m)
+	ros2 run p3_pkg movimiento_controlado --ros-args -p movimiento:=0
+	# Triangulo
+	ros2 run p3_pkg movimiento_controlado --ros-args -p movimiento:=1
+	# Cuadrado
+	ros2 run p3_pkg movimiento_controlado --ros-args -p movimiento:=2
+	# Infinito
+	ros2 run p3_pkg movimiento_controlado --ros-args -p movimiento:=3
+\end{lstlisting}
