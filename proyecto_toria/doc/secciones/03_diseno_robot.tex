@@ -1,0 +1,18 @@
+% secciones/03_diseno_robot.tex
+\section{Diseño y Características del Robot}
+El diseño de un robot hospitalario debe equilibrar la funcionalidad logística con la seguridad biológica y la aceptabilidad social.
+
+\subsection{Materiales y Estructura Externa}
+El exterior del robot debe estar fabricado con materiales antimicrobianos y resistentes a agentes de limpieza agresivos (peróxido de hidrógeno, alcohol isopropílico).
+\begin{itemize}
+    \item \textbf{Carcasa:} Plásticos de grado médico o acero inoxidable con acabados redondeados para evitar la acumulación de patógenos y minimizar daños en colisiones.
+    \item \textbf{Compartimentos:} Módulos sellados para el transporte de medicamentos con sistemas de apertura mediante tarjeta RFID o biometría.
+\end{itemize}
+
+\subsection{Arquitectura Interna y Sensores}
+Para una navegación segura en pasillos concurridos, se requiere:
+\begin{itemize}
+    \item \textbf{LiDAR 2D/3D:} Para mapeo y localización simultánea (SLAM).
+    \item \textbf{Cámaras de Profundidad (RGB-D):} Para detectar obstáculos a diferentes alturas (ej. pies de sueros, camillas).
+    \item \textbf{Sensores de Ultrasonido:} Como sistema redundante de detección de proximidad.
+\end{itemize}

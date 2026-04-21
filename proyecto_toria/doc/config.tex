@@ -1,0 +1,33 @@
+% config.tex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% Configuración de hipervínculos
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+}
+
+% Estilo de títulos (estilo ensayo/IEEE 1 col)
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\newcommand{\universidad}{Proyecto de Investigación}
+\newcommand{\titulo}{Robótica de Servicios en Entornos Hospitalarios}
+\newcommand{\subtitulo}{Investigación sobre Cobots Logísticos, Seguridad y Simulación en ROS 2}
+\newcommand{\autor}{=======}
+\newcommand{\fecha}{\today}

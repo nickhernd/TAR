@@ -1,0 +1,40 @@
+% main.tex
+\documentclass[12pt]{article}
+
+% Importar configuración
+\input{config}
+
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\scshape\LARGE \universidad \par}
+    \vspace{1.5cm}
+    {\huge\bfseries \titulo \par}
+    \vspace{0.5cm}
+    {\large \subtitulo \par}
+    \vspace{2cm}
+    {\Large \autor \par}
+    \vfill
+    {\large \fecha \par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Secciones modularizadas
+\input{secciones/01_introduccion}
+\input{secciones/02_estado_del_arte}
+\input{secciones/03_diseno_robot}
+\input{secciones/04_infraestructura}
+\input{secciones/05_seguridad_normativa}
+\input{secciones/06_conclusiones}
+
+% Bibliografía
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{bib/referencias}
+
+\end{document}
