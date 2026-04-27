@@ -1,6 +1,6 @@
 \babel@toc {spanish}{}\relax 
 \beamer@sectionintoc {1}{Introducción}{3}{0}{1}
-\beamer@sectionintoc {2}{Simulación y ROS 2}{4}{0}{2}
-\beamer@sectionintoc {3}{Diseño del Robot}{5}{0}{3}
-\beamer@sectionintoc {4}{Infraestructura}{6}{0}{4}
-\beamer@sectionintoc {5}{Conclusiones}{7}{0}{5}
+\beamer@sectionintoc {2}{Estado del Arte}{5}{0}{2}
+\beamer@sectionintoc {3}{Propuesta Técnica}{7}{0}{3}
+\beamer@sectionintoc {4}{Seguridad e Integración}{12}{0}{4}
+\beamer@sectionintoc {5}{Cierre}{15}{0}{5}

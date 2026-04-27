@@ -1,18 +1,9 @@
 % secciones/03_diseno_robot.tex
 \section{Diseño y Características del Robot}
-El diseño de un robot hospitalario debe equilibrar la funcionalidad logística con la seguridad biológica y la aceptabilidad social.
+El diseño de un robot destinado al entorno hospitalario debe concebirse desde una perspectiva holística que equilibre la funcionalidad logística con la seguridad biológica y la aceptabilidad social. A diferencia de los robots industriales convencionales, un dispositivo de asistencia sanitaria debe operar en un entorno semi-estructurado y altamente dinámico, lo que impone requisitos mecánicos y electrónicos extremadamente rigurosos.
 
-\subsection{Materiales y Estructura Externa}
-El exterior del robot debe estar fabricado con materiales antimicrobianos y resistentes a agentes de limpieza agresivos (peróxido de hidrógeno, alcohol isopropílico).
-\begin{itemize}
-    \item \textbf{Carcasa:} Plásticos de grado médico o acero inoxidable con acabados redondeados para evitar la acumulación de patógenos y minimizar daños en colisiones.
-    \item \textbf{Compartimentos:} Módulos sellados para el transporte de medicamentos con sistemas de apertura mediante tarjeta RFID o biometría.
-\end{itemize}
+En lo que respecta a la estructura externa, la elección de materiales es crítica para garantizar la asepsia. La carcasa del robot se proyecta utilizando polímeros de grado médico con propiedades antimicrobianas intrínsecas o acero inoxidable de alta calidad, permitiendo una desinfección profunda mediante agentes químicos agresivos como el peróxido de hidrógeno vaporizado o el alcohol isopropílico. El diseño industrial prioriza las superficies lisas y los acabados redondeados, una decisión técnica orientada a eliminar puntos de acumulación de patógenos y a minimizar el impacto mecánico en caso de una colisión accidental con el mobiliario hospitalario o el personal. Para la logística de materiales sensibles, el robot integra compartimentos modulares sellados con sistemas de cierre electromecánico, cuya apertura se gestiona mediante autenticación segura por RFID o biometría, asegurando la trazabilidad total de los medicamentos o muestras transportadas.
 
-\subsection{Arquitectura Interna y Sensores}
-Para una navegación segura en pasillos concurridos, se requiere:
-\begin{itemize}
-    \item \textbf{LiDAR 2D/3D:} Para mapeo y localización simultánea (SLAM).
-    \item \textbf{Cámaras de Profundidad (RGB-D):} Para detectar obstáculos a diferentes alturas (ej. pies de sueros, camillas).
-    \item \textbf{Sensores de Ultrasonido:} Como sistema redundante de detección de proximidad.
-\end{itemize}
+La arquitectura interna de sensores constituye el sistema nervioso del robot, permitiendo una percepción precisa del entorno para la navegación autónoma. El sistema principal de localización y mapeo simultáneo (SLAM) se apoya en una unidad LiDAR 2D de alta frecuencia que genera un mapa planar del entorno, complementada por cámaras de profundidad RGB-D. Estas cámaras son fundamentales para detectar obstáculos que escapan al plano del LiDAR, tales como pies de suero, camillas o extremidades de pacientes en reposo. Como medida de redundancia y seguridad ante fallos, se incorporan sensores de ultrasonido perimetrales que actúan como un "parachoques virtual", deteniendo el movimiento de forma inmediata ante una proximidad crítica.
+
+Uno de los elementos diferenciadores de nuestra propuesta es el sistema de locomoción y control. Para proteger las muestras biológicas de las vibraciones inherentes a los desplazamientos por pasillos y juntas de dilatación, se ha diseñado una suspensión independiente de grado automotriz. Este sistema mecánico, en conjunto con un algoritmo de control de movimiento suavizado, permite compensar las irregularidades del suelo en tiempo real. El control de bajo nivel se gestiona mediante un sistema de control de lazo cerrado que fusiona la odometría de los motores con los datos de una unidad de medición inercial (IMU), garantizando que las aceleraciones y frenados sean progresivos, evitando así cualquier daño a las cargas líquidas o frágiles que constituyen el núcleo de la misión logística del robot.

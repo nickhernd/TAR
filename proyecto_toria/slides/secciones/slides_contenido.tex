@@ -1,54 +1,187 @@
 % slides/secciones/slides_contenido.tex
 
+% --- INTRODUCCIÓN Y CONTEXTO ---
 \section{Introducción}
-\begin{frame}{El Desafío de la Logística Hospitalaria}
+\begin{frame}{Hacia una Nueva Logística Sanitaria}
+    \begin{exampleblock}{El Cambio de Paradigma}
+        La automatización en hospitales ha evolucionado de una visión futurista a una necesidad operativa para optimizar tiempos y reducir la carga no asistencial.
+    \end{exampleblock}
+    
+    \vspace{0.5cm}
+    \textbf{Foco de Investigación:}
+    Desarrollo de cobots móviles bajo el estándar ROS 2, priorizando la seguridad biológica y la estabilidad en el transporte de materiales críticos.
+\end{frame}
+
+\begin{frame}{Motivación: El Desafío Socio-Sanitario}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Entorno Crítico}
+                Hospitales saturados con alta demanda de logística interna (medicinas, muestras, residuos).
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Objetivo Humano}
+                Liberar al personal de enfermería de tareas de transporte para centrarse en el cuidado directo del paciente.
+            \end{block}
+        \end{column}
+    \end{columns}
+    \vspace{0.4cm}
+    \textit{Un robot logístico eficiente reduce en un 30\% el tiempo de desplazamiento del personal sanitario.}
+\end{frame}
+
+% --- ESTADO DEL ARTE ---
+\section{Estado del Arte}
+\begin{frame}{Referentes Comerciales Actuales}
     \begin{itemize}
-        \item Creciente demanda de servicios asistenciales.
-        \item Necesidad de liberar al personal de tareas repetitivas.
-        \item Solución: Cobots móviles para transporte de medicinas y comida.
+        \item \textbf{Aethon TUG:} Especialista en carga pesada (450kg) e integración con ascensores.
+        \item \textbf{MiR (Mobile Industrial Robots):} Flexibilidad y facilidad de configuración en entornos industriales y médicos.
+        \item \textbf{Diligent Moxi:} Robótica asistencial con brazo mecánico para interacción con el entorno.
     \end{itemize}
+    \vspace{0.3cm}
+    \begin{block}{Limitación Común}
+        Sistemas rígidos que a menudo requieren infraestructuras muy específicas o carecen de estabilidad para muestras biológicas líquidas.
+    \end{block}
 \end{frame}
 
-\section{Simulación y ROS 2}
-\begin{frame}{Por qué ROS 2 y Simulación}
+\begin{frame}{Ecosistemas de Simulación y Middleware}
+    \textbf{ROS 2 como Estándar Tecnológico:}
     \begin{itemize}
-        \item \textbf{ROS 2:} Estándar industrial, modularidad y seguridad.
-        \item \textbf{Entornos:} AWS RoboMaker Hospital, Open-RMF.
-        \item \textbf{Validación:} Pruebas de navegación segura sin riesgos físicos.
+        \item[$\bullet$] \textbf{Nav2:} El stack de navegación más avanzado para evitar obstáculos dinámicos.
+        \item[$\bullet$] \textbf{Open-RMF:} Coordinación de flotas multimarca y gestión de recursos compartidos.
+        \item[$\bullet$] \textbf{Gazebo / Ignition:} Simulación física de alta fidelidad.
     \end{itemize}
+    \vspace{0.3cm}
+    \textit{Validar en virtual ahorra meses de desarrollo y garantiza la seguridad antes del despliegue real.}
 \end{frame}
 
-\section{Diseño del Robot}
-\begin{frame}{Características Técnicas y Materiales}
-    \begin{block}{Materiales}
-        Antimicrobianos, resistentes a desinfección química (ISO 13482).
-    \end{block}
-    \begin{block}{Sensores Clave}
-        \begin{itemize}
-            \item LiDAR 3D (Mapeo y SLAM).
-            \item Cámaras RGB-D (Detección de obstáculos).
-            \item Ultrasonidos (Seguridad redundante).
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\section{Infraestructura}
-\begin{frame}{Dependencias de Infraestructura}
-    \begin{itemize}
-        \item \textbf{Carga Automática:} Salas de docking estaciones.
-        \item \textbf{Desinfección:}
+% --- DISEÑO DEL ROBOT ---
+\section{Propuesta Técnica}
+\begin{frame}{HospitalBot v1.0: Nuestra Propuesta}
+    \begin{center}
+        \textbf{Un robot diseñado por y para el hospital.}
+    \end{center}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Concepto:}
             \begin{itemize}
-                \item Cámaras de luz UV-C dedicadas.
-                \item Integración con Open-RMF para gestión de puertas/ascensores.
+                \item Estética no amenazante.
+                \item Cuerpo cilíndrico.
+                \item Fácil desinfección.
             \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Innovación:}
+            \begin{itemize}
+                \item Suspensión activa.
+                \item Materiales grado médico.
+                \item Doble sistema de visión.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Diseño Industrial: Materiales y Asepsia}
+    \begin{block}{Superficies Antimicrobianas}
+        Uso de polímeros técnicos con aditivos de iones de plata y acero inoxidable 316L.
+    \end{block}
+    \begin{itemize}
+        \item[$\checkmark$] Resistencia al peróxido de hidrógeno y alcoholes.
+        \item[$\checkmark$] Acabados redondeados para evitar nichos bacterianos.
+        \item[$\checkmark$] Compartimentos sellados para evitar derrames biológicos.
     \end{itemize}
 \end{frame}
 
-\section{Conclusiones}
-\begin{frame}{Futuro de la Robótica de Servicio}
+\begin{frame}{Ingeniería Mecánica: Suspensión Independiente}
+    \textbf{El reto de las muestras biológicas:}
+    Las vibraciones en juntas de dilatación y suelos irregulares pueden degradar muestras de sangre o tejidos.
+    
+    \vspace{0.3cm}
+    \begin{exampleblock}{Solución Técnica}
+        Suspensión de doble horquilla con amortiguación variable controlada por software para mantener la carga útil siempre nivelada y libre de vibraciones de alta frecuencia.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Sistemas de Percepción: Fusión Sensorial}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Sensores Principales:}
+            \begin{itemize}
+                \item \textbf{LiDAR 2D:} Mapeo plano y SLAM.
+                \item \textbf{Cámara RGB-D:} Visión estereoscópica para detectar objetos bajos (pies, cables).
+                \item \textbf{IMU 9-Ejes:} Estabilización y corrección de ruta.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Seguridad}
+                Sensores de ultrasonido como sistema de frenado de emergencia independiente del procesador principal.
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Arquitectura de Software: Ecosistema ROS 2}
+    \begin{block}{Comunicaciones DDS}
+        Uso de \textit{Data Distribution Service} para garantizar latencias bajas y fiabilidad en el intercambio de datos entre nodos de control.
+    \end{block}
+    \vspace{0.3cm}
     \begin{itemize}
-        \item Los robots no sustituyen, sino que \textbf{asisten}.
-        \item La estandarización (ISO 13482) es crucial.
-        \item El éxito depende de la integración con el entorno hospitalario.
+        \item[1.] \textbf{Percepción:} Procesamiento de nubes de puntos.
+        \item[2.] \textbf{Planificación:} Algoritmos A* y DWA para rutas fluidas.
+        \item[3.] \textbf{Control:} Lazo cerrado con encoders magnéticos.
+    \end{itemize}
+\end{frame}
+
+% --- SEGURIDAD E INFRAESTRUCTURA ---
+\section{Seguridad e Integración}
+\begin{frame}{Marco Normativo: ISO 13482:2014}
+    \textbf{Requisitos de Seguridad para Robots de Cuidado Personal:}
+    \begin{itemize}
+        \item[$\bullet$] \textbf{Control de Energía:} Límites estrictos de velocidad en pasillos (máx 1.2 m/s).
+        \item[$\bullet$] \textbf{Detección de Personas:} Prioridad absoluta al peatón/paciente.
+        \item[$\bullet$] \textbf{Parada de Seguridad:} Hardware redundante certificado.
+    \end{itemize}
+    \vspace{0.3cm}
+    \textit{El robot no solo debe evitar colisiones, debe ser predecible para el humano.}
+\end{frame}
+
+\begin{frame}{Infraestructura: El Hospital Inteligente}
+    El robot es un "habitante" más del edificio digital.
+    \begin{itemize}
+        \item \textbf{Gestión de Ascensores:} Protocolos inalámbricos para cambio de planta.
+        \item \textbf{Puertas Automáticas:} Apertura remota mediante balizas BLE o WiFi.
+        \item \textbf{Docking Station:} Recarga automática por inducción para evitar conectores expuestos (limpieza fácil).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Protocolos Sanitarios: Desinfección UV-C}
+    \begin{block}{Mitigación de Infecciones Nosocomiales}
+        El robot no puede ser un vector de contagio.
+    \end{block}
+    \vspace{0.3cm}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Modo Activo:}
+            Lámparas UV-C integradas para desinfectar pasillos en horas nocturnas.
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Modo Pasivo:}
+            Ciclos de limpieza en salas estancas tras transportar residuos.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- CONCLUSIONES ---
+\section{Cierre}
+\begin{frame}{Conclusiones y Perspectivas Futuras}
+    \begin{exampleblock}{Sinergia Humano-Robot}
+        La tecnología actúa como un facilitador que libera al personal sanitario para tareas de alto valor.
+    \end{exampleblock}
+    
+    \vspace{0.4cm}
+    \textbf{Mapa de Ruta:}
+    \begin{itemize}
+        \item[$\rightarrow$] Integración de 5G para telemetría masiva.
+        \item[$\rightarrow$] Algoritmos de IA para predicción de flujos de pacientes.
+        \item[$\rightarrow$] Despliegue de flotas heterogéneas (Logística + Asistencia).
     \end{itemize}
 \end{frame}

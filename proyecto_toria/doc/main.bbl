@@ -1,3 +1,10 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{openrmf}
+O.~Robotics, ``Open robotics middleware framework (open-rmf).''
+  \url{https://www.open-rmf.org/}, 2023.
+
+\bibitem{nav2}
+R.~Planning, ``Navigation 2 (nav2).'' \url{https://navigation.ros.org/}, 2023.
 
 \end{thebibliography}

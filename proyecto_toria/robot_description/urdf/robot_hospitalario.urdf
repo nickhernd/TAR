@@ -1,0 +1,464 @@
+<?xml version="1.0"?>
+<robot name="hospital_logistics_robot">
+
+  <!-- ==================== MATERIALES ==================== -->
+  <material name="White">
+    <color rgba="0.95 0.95 0.97 1.0"/>
+  </material>
+  <material name="BlueMedical">
+    <color rgba="0.0 0.55 0.77 1.0"/>
+  </material>
+  <material name="DarkMetal">
+    <color rgba="0.2 0.22 0.24 1.0"/>
+  </material>
+  <material name="BlackRubber">
+    <color rgba="0.05 0.05 0.05 1.0"/>
+  </material>
+  <material name="LightGrey">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  <material name="Screen">
+    <color rgba="0.05 0.1 0.15 1.0"/>
+  </material>
+  <material name="LED_Green">
+    <color rgba="0.0 0.9 0.1 1.0"/>
+  </material>
+  <material name="LED_Red">
+    <color rgba="1.0 0.1 0.0 1.0"/>
+  </material>
+
+  <!-- ==================== BASE FOOTPRINT ==================== -->
+  <link name="base_footprint"/>
+
+  <!-- ==================== CHASIS PRINCIPAL ==================== -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.32" length="0.28"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.32" length="0.28"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="20.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.8" ixy="0" ixz="0" iyy="0.8" iyz="0" izz="0.8"/>
+    </inertial>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.14" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== COMPARTIMENTO DE CARGA ==================== -->
+  <link name="cargo_box">
+    <visual>
+      <geometry>
+        <box size="0.5 0.45 0.38"/>
+      </geometry>
+      <origin xyz="0 0 0.33" rpy="0 0 0"/>
+      <material name="BlueMedical"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.45 0.38"/>
+      </geometry>
+      <origin xyz="0 0 0.33" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="5.0"/>
+      <origin xyz="0 0 0.33" rpy="0 0 0"/>
+      <inertia ixx="0.2" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <joint name="cargo_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cargo_box"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Detalle de puerta (línea vertical simulada con una caja fina) -->
+  <link name="door_line">
+    <visual>
+      <geometry>
+        <box size="0.02 0.35 0.30"/>
+      </geometry>
+      <origin xyz="0.27 0 0.33" rpy="0 0 0"/>
+      <material name="DarkMetal"/>
+    </visual>
+  </link>
+  <joint name="door_joint" type="fixed">
+    <parent link="cargo_box"/>
+    <child link="door_line"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== BANDEJA SUPERIOR (estante) ==================== -->
+  <link name="top_shelf">
+    <visual>
+      <geometry>
+        <box size="0.58 0.52 0.03"/>
+      </geometry>
+      <origin xyz="0 0 0.58" rpy="0 0 0"/>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.58 0.52 0.03"/>
+      </geometry>
+      <origin xyz="0 0 0.58" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0.58" rpy="0 0 0"/>
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/>
+    </inertial>
+  </link>
+
+  <joint name="shelf_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="top_shelf"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Barandas alrededor de la bandeja -->
+  <link name="railing">
+    <visual>
+      <geometry>
+        <box size="0.60 0.02 0.05"/>
+      </geometry>
+      <origin xyz="0 0.28 0.61" rpy="0 0 0"/>
+      <material name="DarkMetal"/>
+    </visual>
+  </link>
+  <joint name="railing_joint" type="fixed">
+    <parent link="top_shelf"/>
+    <child link="railing"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== SENSOR LIDAR ==================== -->
+  <link name="lidar">
+    <visual>
+      <geometry>
+        <cylinder radius="0.06" length="0.06"/>
+      </geometry>
+      <origin xyz="0 0 0.67" rpy="0 0 0"/>
+      <material name="DarkMetal"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.06" length="0.06"/>
+      </geometry>
+      <origin xyz="0 0 0.67" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.2"/>
+      <origin xyz="0 0 0.67" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== CÁMARA FRONTAL ==================== -->
+  <link name="camera_front">
+    <visual>
+      <geometry>
+        <box size="0.08 0.04 0.03"/>
+      </geometry>
+      <origin xyz="0.36 0.1 0.22" rpy="0 0.15 0"/>
+      <material name="DarkMetal"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.08 0.04 0.03"/>
+      </geometry>
+      <origin xyz="0.36 0.1 0.22" rpy="0 0.15 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <origin xyz="0.36 0.1 0.22" rpy="0 0.15 0"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_front"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== PANEL TÁCTIL TRASERO ==================== -->
+  <link name="touch_panel">
+    <visual>
+      <geometry>
+        <box size="0.16 0.12 0.02"/>
+      </geometry>
+      <origin xyz="-0.28 0 0.55" rpy="0 0 0"/>
+      <material name="Screen"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.16 0.12 0.02"/>
+      </geometry>
+      <origin xyz="-0.28 0 0.55" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.2"/>
+      <origin xyz="-0.28 0 0.55" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="touch_panel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== LEDS DE ESTADO ==================== -->
+  <!-- LED frontal verde -->
+  <link name="led_front">
+    <visual>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+      <origin xyz="0.36 0 0.1" rpy="0 0 0"/>
+      <material name="LED_Green"/>
+    </visual>
+  </link>
+  <joint name="led_front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="led_front"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- LED trasero rojo -->
+  <link name="led_rear">
+    <visual>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+      <origin xyz="-0.36 0 0.1" rpy="0 0 0"/>
+      <material name="LED_Red"/>
+    </visual>
+  </link>
+  <joint name="led_rear_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="led_rear"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== RUEDAS (orientación corregida) ==================== -->
+  <!-- Rueda derecha -->
+  <link name="wheel_right">
+    <visual>
+      <geometry>
+        <cylinder radius="0.105" length="0.055"/>
+      </geometry>
+      <!-- Rotación para que el cilindro gire sobre el eje Y (rueda en horizontal) -->
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <material name="BlackRubber"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.105" length="0.055"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.02"/>
+    </inertial>
+  </link>
+
+  <joint name="wheel_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_right"/>
+    <origin xyz="-0.12 -0.35 -0.09" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Rueda izquierda -->
+  <link name="wheel_left">
+    <visual>
+      <geometry>
+        <cylinder radius="0.105" length="0.055"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <material name="BlackRubber"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.105" length="0.055"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.02"/>
+    </inertial>
+  </link>
+
+  <joint name="wheel_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_left"/>
+    <origin xyz="-0.12 0.35 -0.09" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ==================== RUEDAS LOCAS (CASTERS) ==================== -->
+  <!-- Caster delantero -->
+  <link name="caster_front">
+    <visual>
+      <geometry>
+        <sphere radius="0.035"/>
+      </geometry>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.035"/>
+      </geometry>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="caster_front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_front"/>
+    <origin xyz="0.28 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Caster trasero -->
+  <link name="caster_rear">
+    <visual>
+      <geometry>
+        <sphere radius="0.035"/>
+      </geometry>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.035"/>
+      </geometry>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="caster_rear_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_rear"/>
+    <origin xyz="-0.28 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== PARACHOQUES (Bumper) ==================== -->
+  <link name="bumper_front">
+    <visual>
+      <geometry>
+        <box size="0.04 0.6 0.12"/>
+      </geometry>
+      <origin xyz="0.38 0 0.12" rpy="0 0 0"/>
+      <material name="BlackRubber"/>
+    </visual>
+  </link>
+  <joint name="bumper_front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="bumper_front"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== GAZEBO EXTENSIONS ==================== -->
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+    <self_collide>false</self_collide>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wheel_left">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="wheel_right">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <!-- Plugin de control diferencial (Gazebo-ROS) -->
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/hospital_bot</namespace>
+      </ros>
+      <updateRate>50</updateRate>
+      <leftJoint>wheel_left_joint</leftJoint>
+      <rightJoint>wheel_right_joint</rightJoint>
+      <wheelSeparation>0.70</wheelSeparation>
+      <wheelDiameter>0.21</wheelDiameter>
+      <torque>20.0</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+  <!-- Simulación básica del LiDAR en Gazebo -->
+  <gazebo reference="lidar">
+    <sensor type="ray" name="lidar_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>lidar</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

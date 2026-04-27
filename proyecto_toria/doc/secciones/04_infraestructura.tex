@@ -1,13 +1,9 @@
 % secciones/04_infraestructura.tex
-\section{Infraestructura y Dependencias}
-Un robot autónomo no opera de forma aislada; requiere una infraestructura de soporte integrada en el hospital.
+\section{Infraestructura e Integración en el Entorno Hospitalario}
+La eficacia operativa de un robot autónomo no reside únicamente en sus capacidades intrínsecas, sino en su grado de integración con la infraestructura física y digital del hospital. Un robot que opera de forma aislada ve limitada su utilidad; por ello, es fundamental proyectar un ecosistema de soporte que facilite su autonomía y garantice su disponibilidad continua.
 
-\subsection{Estaciones de Recarga y Mantenimiento}
-Se deben disponer salas específicas para la recarga automática de baterías mediante estaciones de acoplamiento (\textit{docking stations}). Estas áreas deben estar ventiladas y contar con sistemas de protección contra incendios.
+Uno de los pilares de esta infraestructura es el despliegue estratégico de estaciones de recarga y mantenimiento, comúnmente denominadas \textit{docking stations}. Estas áreas no solo sirven como puntos de abastecimiento energético automatizado, donde el robot se acopla de forma precisa para recargar sus baterías, sino que también actúan como nodos de diagnóstico donde el sistema puede realizar chequeos de integridad de sus sensores y actuadores. Es imperativo que estas zonas estén ubicadas en puntos que no obstruyan el flujo asistencial, contando con sistemas de ventilación adecuados y protocolos de seguridad contra incendios específicos para baterías de alta densidad energética.
 
-\subsection{Protocolos de Desinfección}
-El robot debe pasar por ciclos de desinfección programados. Se plantean dos enfoques:
-\begin{enumerate}
-    \item \textbf{Salas de Desinfección UV-C:} El robot entra en una sala estanca donde se somete a radiación ultravioleta para eliminar carga viral.
-    \item \textbf{Sistemas Integrados:} El propio robot puede portar lámparas UV-C para desinfectar el entorno mientras se desplaza en horas de baja actividad.
-\end{enumerate}
+La comunicación bidireccional con el edificio inteligente representa otra capa crítica de la infraestructura. El robot debe ser capaz de interactuar con el sistema de gestión del edificio (BMS) para solicitar la apertura de puertas automáticas o la llamada de ascensores. Esta integración permite que el robot se desplace entre diferentes plantas sin intervención humana, optimizando las rutas logísticas y reduciendo el tiempo de entrega de materiales críticos. Este flujo de datos debe estar securizado bajo estándares de ciberseguridad industrial, evitando cualquier vulnerabilidad que pueda comprometer la red hospitalaria.
+
+En el ámbito de la bioseguridad, el robot debe integrarse en los protocolos de desinfección del centro. Se han proyectado salas de desinfección específicas equipadas con sistemas de radiación UV-C de alta intensidad, donde el robot ingresa tras completar misiones en áreas de alto riesgo biológico. Alternativamente, se explora la integración de emisores UV-C en el propio chasis del robot, permitiendo que este realice tareas de desinfección ambiental de forma autónoma durante las horas de baja actividad asistencial. Este enfoque dual garantiza que el robot no solo sea un transportista eficiente, sino también un agente activo en la mitigación de infecciones nosocomiales, integrándose perfectamente en las rutinas de higiene del personal de limpieza.

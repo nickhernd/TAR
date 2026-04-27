@@ -1,14 +1,9 @@
 % secciones/05_seguridad_normativa.tex
 \section{Seguridad y Normativa}
-La operación de robots móviles en presencia de humanos vulnerables (pacientes) exige el cumplimiento de normativas internacionales estrictas.
+La operación de sistemas robóticos móviles en entornos donde conviven seres humanos en estados de vulnerabilidad exige un compromiso absoluto con la seguridad técnica y operativa. El marco normativo que rige este despliegue es complejo y requiere una integración profunda desde las primeras fases del diseño mecánico y del software de control.
 
-\subsection{Normativa Vigente}
-La norma \textbf{ISO 13482:2014} es el estándar principal para robots de cuidado personal, que incluye a los robots móviles de servicio. Esta norma define:
-\begin{itemize}
-    \item Límites de velocidad y fuerza en caso de colisión.
-    \item Requerimientos para la detección de personas.
-    \item Protocolos de parada de emergencia.
-\end{itemize}
+El pilar fundamental de la seguridad en la robótica de servicio es la norma ISO 13482:2014, la cual establece los requisitos de seguridad para robots de cuidado personal, categoría que engloba a los asistentes de transporte hospitalario. Esta normativa no solo define los límites físicos de velocidad y fuerza de impacto para prevenir lesiones en caso de contacto accidental, sino que también prescribe metodologías rigurosas para la detección de personas y la respuesta ante situaciones críticas. En nuestro diseño, el cumplimiento de esta norma se traduce en la implementación de zonas de seguridad dinámicas procesadas por el stack de navegación, las cuales ajustan la velocidad del robot en función de la densidad de personas en su entorno inmediato. Además, se han integrado protocolos de parada de emergencia redundantes, tanto físicos como basados en software de tiempo real, garantizando que el sistema sea intrínsecamente seguro ante fallos electrónicos.
 
-\subsection{Consideraciones Éticas y de Privacidad}
-El uso de cámaras para la navegación plantea retos de privacidad. Es imperativo implementar sistemas de anonimización de rostros en tiempo real si los datos se procesan fuera del robot.
+Más allá de la seguridad física, el entorno hospitalario demanda protocolos sanitarios específicos que deben ser considerados como parte de la seguridad operativa. El robot debe cumplir con estándares de compatibilidad electromagnética para no interferir con equipos de soporte vital y monitorización médica. Asimismo, los procedimientos de limpieza y desinfección deben estar protocolizados para evitar que el robot actúe como un vector de contaminación cruzada entre diferentes áreas del hospital. Esto implica que el software debe incluir modos de mantenimiento que posicionen el hardware de forma óptima para su higienización profunda.
+
+Finalmente, el despliegue de robots equipados con sistemas de visión artificial plantea desafíos éticos y legales significativos en términos de privacidad. En cumplimiento con regulaciones como el Reglamento General de Protección de Datos (RGPD), es imperativo que el procesamiento de imágenes para la navegación se realice de forma local (Edge Computing) y que cualquier dato visual que contenga rostros o información sensible sea anonimizado en tiempo real antes de ser descartado. La transparencia en la interacción humano-robot se refuerza mediante interfaces visuales y auditivas que informan claramente sobre el estado y las intenciones del robot, fomentando una convivencia basada en la confianza y el respeto a la intimidad del paciente.

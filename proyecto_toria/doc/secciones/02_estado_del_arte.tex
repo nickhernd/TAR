@@ -1,33 +1,16 @@
 % secciones/02_estado_del_arte.tex
 \section{Estado del Arte y Simulación en ROS 2}
-La investigación en robótica hospitalaria se apoya fuertemente en entornos de simulación de alta fidelidad. Actualmente, ROS 2 se ha consolidado como el estándar \textit{de facto} debido a su arquitectura distribuida y su soporte para sistemas de tiempo real.
+La investigación en robótica hospitalaria ha experimentado un crecimiento exponencial en la última década, apoyándose fundamentalmente en entornos de simulación de alta fidelidad que permiten validar algoritmos complejos antes de su despliegue físico. En este escenario, el ecosistema ROS 2 (\textit{Robot Operating System}) se ha consolidado como el estándar tecnológico predominante. Su arquitectura distribuida, basada en el estándar DDS (\textit{Data Distribution Service}), proporciona el soporte necesario para sistemas de tiempo real y comunicaciones deterministas, aspectos críticos cuando se opera en pasillos hospitalarios donde la seguridad de los pacientes es la prioridad absoluta.
 
-\subsection{Referentes Comerciales: El Robot TUG de Aethon}
-\label{sec:tug_aethon}
-
-Uno de los referentes más importantes en la logística interna de centros sanitarios es el sistema \textit{TUG}, desarrollado por \textit{Aethon}. Este robot está diseñado para la automatización del transporte de suministros, medicación y residuos, minimizando la carga física del personal de enfermería.
-
-\begin{itemize}
-    \item \textbf{Capacidad de Carga y Tracción:} El TUG destaca por su capacidad de arrastrar carros de hasta $450$ kg, utilizando una base motriz con giro sobre su propio eje (omnidireccionalidad) para maniobrar en espacios críticos.
-    \item \textbf{Integración con la Infraestructura:} Se comunica de forma autónoma con el sistema del edificio para gestionar la apertura de puertas y el uso de ascensores mediante protocolos inalámbricos seguros.
-    \item \textbf{Seguridad Dinámica:} Emplea una combinación de sensores LiDAR y ultrasonidos para garantizar la detección de obstáculos a diversas alturas, permitiendo una convivencia segura con pacientes y personal médico.
-\end{itemize}
+Uno de los referentes comerciales más consolidados en la logística interna de centros sanitarios es el sistema TUG, desarrollado por la compañía Aethon. Este dispositivo ejemplifica la automatización exitosa en el transporte de suministros, medicación y residuos, logrando una reducción significativa en la carga física y en los tiempos de desplazamiento del personal de enfermería. El éxito operativo del TUG radica en su robusta capacidad de tracción, permitiéndole arrastrar carros de hasta 450 kg mediante una base motriz diseñada para la omnidireccionalidad, lo que resulta esencial para maniobrar en espacios confinados. Además, su arquitectura de control le permite una integración transparente con la infraestructura del edificio, gestionando de forma autónoma la apertura de puertas y el uso de ascensores mediante protocolos inalámbricos seguros. La seguridad dinámica se garantiza mediante la fusión de datos provenientes de sensores LiDAR y ultrasonidos, lo que asegura una detección de obstáculos precisa a diversas alturas y una convivencia armoniosa en entornos altamente dinámicos.
 
 \begin{figure}[H]
     \centering
-    
     \includegraphics[width=0.7\textwidth]{secciones/images/TUG.png} 
-    \caption{Robot TUG de Aethon.}
+    \caption{Robot TUG de Aethon en entorno hospitalario.}
     \label{fig:robot_tug}
 \end{figure}
 
-\subsection{Plataformas de Simulación}
-Existen varios repositorios y proyectos destacados que permiten validar algoritmos de navegación y coordinación en hospitales:
-\begin{itemize}
-    \item \textbf{AWS RoboMaker Hospital World:} Un entorno desarrollado por Amazon que proporciona un hospital completo con habitaciones, quirófanos y pasillos, optimizado para pruebas con Nav2.
-    \item \textbf{Open-RMF (Robotics Middleware Framework):} Marco de trabajo para coordinar múltiples robots de diferentes fabricantes en infraestructuras compartidas.
-    \item \textbf{Navigation2 (Nav2):} El sistema de navegación de ROS 2 que permite evitar obstáculos dinámicos en tiempo real.
+Más allá del hardware, el desarrollo de estos sistemas depende de plataformas de simulación avanzadas que emulan la complejidad de un hospital. Proyectos como \textit{AWS RoboMaker Hospital World} ofrecen entornos virtuales detallados que incluyen habitaciones, quirófanos y pasillos optimizados para pruebas con el stack de navegación Nav2. En este contexto, la coordinación de flotas heterogéneas se articula a través de marcos de trabajo como \textit{Open-RMF} (\textit{Robotics Middleware Framework}), el cual permite que robots de diferentes fabricantes compartan infraestructuras y recursos de manera eficiente \cite{openrmf}. La implementación de sistemas de navegación como \textit{Nav2} facilita la evasión de obstáculos dinámicos en tiempo real, permitiendo una planificación de rutas fluida y segura \cite{nav2}.
 
-\subsection{Aplicación al Proyecto Actual}
-Nuestro diseño de robot mensajero toma la fiabilidad operativa del \textit{TUG} como base, pero evoluciona hacia una solución más ágil. A diferencia de la fuerza bruta del TUG, nuestra propuesta integra una \textbf{suspensión independiente de grado automotriz} y una carga útil optimizada de $25$ kg, facilitando el transporte de muestras biológicas delicadas que requieren una estabilidad superior frente a vibraciones y cambios de dirección bruscos.
-\end{itemize}
+Nuestra propuesta de diseño se distancia de la fuerza bruta característica de plataformas como el TUG para enfocarse en una solución más ágil y técnica. Mientras que los sistemas tradicionales priorizan el volumen de carga, este proyecto evoluciona hacia un robot mensajero especializado en el transporte de muestras biológicas y suministros delicados. Para ello, se integra una suspensión independiente de grado automotriz que minimiza las vibraciones, garantizando la integridad de las cargas sensibles. Con una capacidad de carga optimizada de 25 kg, el diseño busca un equilibrio entre la robustez mecánica y la agilidad de navegación, extrayendo las mejores prácticas de los referentes actuales para aplicarlas a un nicho de alta precisión sanitaria.
