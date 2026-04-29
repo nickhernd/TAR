@@ -2,9 +2,6 @@
 
 ## Proyecto de teoria
 
--  Estado del arte
-    - poner otro robot más de ejemplo
-
 - diseño y características
     - aquitrctura externa
         - materiales
