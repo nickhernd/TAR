@@ -1,0 +1,128 @@
+\section{Requerimientos del Sistema}
+En esta sección se detallan los requisitos que debe cumplir el sistema robótico hospitalario. Se dividen en requerimientos funcionales, que definen el comportamiento y las capacidades del robot, y requerimientos no funcionales, que describen las cualidades y restricciones del sistema.
+
+\subsection{Requerimientos Funcionales}
+Los requerimientos funcionales definen lo que hace el sistema. A continuación se presentan los primeros 5 requerimientos funcionales:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-1 \\ \hline
+\textbf{Nombre} & Navegación Autónoma en Entornos Hospitalarios \\ \hline
+\textbf{Descripción} & El sistema debe ser capaz de desplazarse de forma autónoma entre diferentes puntos del hospital (farmacia, laboratorios, plantas) utilizando un mapa previamente generado. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-2 \\ \hline
+\textbf{Nombre} & Gestión de Apertura por Autenticación \\ \hline
+\textbf{Descripción} & El robot solo permitirá la apertura de sus compartimentos de carga tras la validación de un usuario autorizado mediante RFID o biometría. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 2}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-3 \\ \hline
+\textbf{Nombre} & Evasión de Obstáculos en Tiempo Real \\ \hline
+\textbf{Descripción} & El robot debe detectar y rodear obstáculos fijos y móviles (personas, camillas) garantizando la continuidad de la ruta sin colisiones. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-4 \\ \hline
+\textbf{Nombre} & Sistema de Recepción de Tareas \\ \hline
+\textbf{Descripción} & El sistema debe poder recibir órdenes de transporte a través de una interfaz centralizada y gestionar la cola de misiones de forma eficiente. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 4}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-5 \\ \hline
+\textbf{Nombre} & Autocarga de Batería \\ \hline
+\textbf{Descripción} & El robot debe monitorizar su nivel de batería y regresar de forma autónoma a la estación de carga cuando el nivel sea inferior al umbral crítico. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 5}
+\end{table}
+
+\subsection{Requerimientos No Funcionales}
+Los requerimientos no funcionales describen cómo será el sistema y sus restricciones técnicas. A continuación se presentan los primeros 5 requerimientos no funcionales:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-1 \\ \hline
+\textbf{Nombre} & Duración de Batería \\ \hline
+\textbf{Descripción} & El robot debe ser capaz de operar de forma ininterrumpida durante al menos 8 horas con una sola carga completa. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-2 \\ \hline
+\textbf{Nombre} & Superficies Sanitizables \\ \hline
+\textbf{Descripción} & La carcasa exterior debe estar fabricada con materiales que resistan procesos de desinfección química frecuente (alcohol, peróxido) sin degradarse. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 2}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-3 \\ \hline
+\textbf{Nombre} & Control de Vibraciones \\ \hline
+\textbf{Descripción} & El sistema de suspensión debe limitar las vibraciones transmitidas a la carga a un nivel que no comprometa la integridad de muestras biológicas líquidas. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-4 \\ \hline
+\textbf{Nombre} & Parada de Emergencia \\ \hline
+\textbf{Descripción} & El robot debe contar con un botón físico de parada de emergencia y sistemas redundantes que detengan el movimiento ante fallos críticos. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 4}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-5 \\ \hline
+\textbf{Nombre} & Integración con ROS 2 \\ \hline
+\textbf{Descripción} & El software del robot debe estar basado íntegramente en ROS 2 Humble o superior para garantizar la modularidad y facilidad de mantenimiento. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 5}
+\end{table}
