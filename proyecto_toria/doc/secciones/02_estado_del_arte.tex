@@ -5,12 +5,24 @@ La investigación en robótica hospitalaria ha experimentado un crecimiento expo
 Uno de los referentes comerciales más consolidados en la logística interna de centros sanitarios es el sistema TUG, desarrollado por la compañía Aethon. Este dispositivo ejemplifica la automatización exitosa en el transporte de suministros, medicación y residuos, logrando una reducción significativa en la carga física y en los tiempos de desplazamiento del personal de enfermería. El éxito operativo del TUG radica en su robusta capacidad de tracción, permitiéndole arrastrar carros de hasta 450 kg mediante una base motriz diseñada para la omnidireccionalidad, lo que resulta esencial para maniobrar en espacios confinados. Además, su arquitectura de control le permite una integración transparente con la infraestructura del edificio, gestionando de forma autónoma la apertura de puertas y el uso de ascensores mediante protocolos inalámbricos seguros. La seguridad dinámica se garantiza mediante la fusión de datos provenientes de sensores LiDAR y ultrasonidos, lo que asegura una detección de obstáculos precisa a diversas alturas y una convivencia armoniosa en entornos altamente dinámicos.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{secciones/images/TUG.png} 
-    \caption{Robot TUG de Aethon en entorno hospitalario.}
-    \label{fig:robot_tug}
+	\centering
+	\includegraphics[width=0.7\textwidth]{secciones/images/TUG.png} 
+	\caption{Robot TUG de Aethon en entorno hospitalario.}
+	\label{fig:robot_tug}
+\end{figure}
+
+En contraste con el enfoque puramente industrial del TUG, el robot Moxi de Diligent Robotics representa una aproximación diferente, actuando como un compañero de asistencia para el personal de enfermería mediante un diseño más humanoide. Su principal innovación es la manipulación móvil: gracias a su brazo robótico articulado, Moxi puede recoger suministros de estanterías, interactuar con elementos no automatizados (como abrir puertas manuales o pulsar botones de ascensor) y entregar muestras directamente al personal médico. A nivel de inteligencia social, cuenta con una interfaz visual provista de ojos LED que cambian para expresar "emociones" e indicar la dirección de sus giros, una característica clave para reducir la ansiedad de los pacientes. En la práctica real, asume tareas logísticas no clínicas, optimizando el tiempo asistencial de las enfermeras. Destaca también su sistema de aprendizaje guiado por humanos, que permite al personal sanitario enseñarle nuevas rutas o tareas simplemente moviendo físicamente su brazo.
+
+\begin{figure}[H]
+	\centering
+	% Sustituye la ruta por la imagen que tengáis de Moxi
+	\includegraphics[width=0.7\textwidth]{secciones/images/Moxi.jpeg} 
+	\caption{Robot Moxi utilizando su brazo robótico para manipulación e interacción en planta.}
+	\label{fig:robot_moxi}
 \end{figure}
 
 Más allá del hardware, el desarrollo de estos sistemas depende de plataformas de simulación avanzadas que emulan la complejidad de un hospital. Proyectos como \textit{AWS RoboMaker Hospital World} ofrecen entornos virtuales detallados que incluyen habitaciones, quirófanos y pasillos optimizados para pruebas con el stack de navegación Nav2. En este contexto, la coordinación de flotas heterogéneas se articula a través de marcos de trabajo como \textit{Open-RMF} (\textit{Robotics Middleware Framework}), el cual permite que robots de diferentes fabricantes compartan infraestructuras y recursos de manera eficiente \cite{openrmf}. La implementación de sistemas de navegación como \textit{Nav2} facilita la evasión de obstáculos dinámicos en tiempo real, permitiendo una planificación de rutas fluida y segura \cite{nav2}.
 
 Nuestra propuesta de diseño se distancia de la fuerza bruta característica de plataformas como el TUG para enfocarse en una solución más ágil y técnica. Mientras que los sistemas tradicionales priorizan el volumen de carga, este proyecto evoluciona hacia un robot mensajero especializado en el transporte de muestras biológicas y suministros delicados. Para ello, se integra una suspensión independiente de grado automotriz que minimiza las vibraciones, garantizando la integridad de las cargas sensibles. Con una capacidad de carga optimizada de 25 kg, el diseño busca un equilibrio entre la robustez mecánica y la agilidad de navegación, extrayendo las mejores prácticas de los referentes actuales para aplicarlas a un nicho de alta precisión sanitaria.
+
+Adicionalmente, inspirándonos en la versatilidad del modelo Moxi, nuestro robot incorporará un brazo robótico orientado a la interacción con el entorno (como la llamada manual de ascensores o la apertura de puertas), garantizando su operatividad en zonas del hospital que carezcan de domótica integrada. Para respaldar esta capacidad y asegurar su funcionamiento ininterrumpido ante posibles caídas de red, se propone una arquitectura de computación híbrida \textit{Edge-Cloud}. La capa \textit{Edge} (computación local) asumirá las tareas críticas y de baja latencia, como la evasión de obstáculos, la navegación y el control cinemático del brazo robótico, dotando al sistema de autonomía real en todo momento. Paralelamente, la capa \textit{Cloud} (computación en la nube) se encargará de los procesos de alta demanda, como el análisis de datos históricos, el procesamiento avanzado de interacciones y la coordinación del enjambre hospitalario.

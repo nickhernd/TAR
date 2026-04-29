@@ -1,7 +1,7 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
 \contentsline {section}{\numberline {2}Estado del Arte y Simulación en ROS 2}{2}{section.2}%
-\contentsline {section}{\numberline {3}Diseño y Características del Robot}{3}{section.3}%
-\contentsline {section}{\numberline {4}Infraestructura e Integración en el Entorno Hospitalario}{4}{section.4}%
-\contentsline {section}{\numberline {5}Seguridad y Normativa}{5}{section.5}%
+\contentsline {section}{\numberline {3}Diseño y Características del Robot}{4}{section.3}%
+\contentsline {section}{\numberline {4}Infraestructura e Integración en el Entorno Hospitalario}{5}{section.4}%
+\contentsline {section}{\numberline {5}Seguridad y Normativa}{6}{section.5}%
 \contentsline {section}{\numberline {6}Conclusiones y Perspectivas Futuras}{6}{section.6}%
