@@ -1,0 +1,15 @@
+services:
+  ros2_simulation:
+    build: .
+    image: hospital_robot_sim:latest
+    container_name: ros2_hospital_container
+    environment:
+      - LIBGL_ALWAYS_SOFTWARE=1
+      - GALLIUM_DRIVER=llvmpipe
+    volumes:
+      - .:/ros2_ws/src/hospital_robot_project
+    ports:
+      - "6080:6080"
+    stdin_open: true
+    tty: true
+    privileged: true
