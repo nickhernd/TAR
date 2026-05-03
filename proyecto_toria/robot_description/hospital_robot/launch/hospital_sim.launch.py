@@ -13,8 +13,8 @@ def generate_launch_description():
     pkg_hospital_world = get_package_share_directory('aws_robomaker_hospital_world')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
-    # Archivo URDF
-    urdf_file = os.path.join(pkg_hospital_robot, 'urdf', 'robot_v2.urdf')
+    # Archivo URDF - Usamos la versión funcional con sensores y plugins
+    urdf_file = os.path.join(pkg_hospital_robot, 'urdf', 'robot_hospitalario.urdf')
     with open(urdf_file, 'r') as infp:
         robot_description_config = infp.read()
 
@@ -29,7 +29,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
         ),
-        launch_arguments={'world': world_path}.items()
+        launch_arguments={'world': world_path, 'verbose': 'true'}.items()
     )
 
     # Incluir cliente de Gazebo (GUI)
@@ -45,14 +45,21 @@ def generate_launch_description():
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
-        parameters=[{'robot_description': robot_description_config}]
+        parameters=[{'robot_description': robot_description_config, 'use_sim_time': True}]
+    )
+
+    # Nodo Joint State Publisher (necesario para las ruedas/articulaciones)
+    joint_state_publisher = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        parameters=[{'use_sim_time': True}]
     )
 
     # Nodo para spawnear el robot en Gazebo
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'hospital_robot', '-x', '0', '-y', '0', '-z', '0.5'],
+        arguments=['-topic', 'robot_description', '-entity', 'hospital_bot', '-x', '0', '-y', '0', '-z', '0.2'],
         output='screen'
     )
 
@@ -61,5 +68,6 @@ def generate_launch_description():
         gzserver,
         gzclient,
         robot_state_publisher,
+        joint_state_publisher,
         spawn_entity
     ])
