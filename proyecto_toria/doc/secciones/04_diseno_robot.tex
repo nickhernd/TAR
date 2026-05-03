@@ -24,36 +24,57 @@ Para orquestar la compleja arquitectura de hardware descrita y garantizar el cum
 
 Este módulo actúa como el núcleo del sistema operativo ROS 2, gestionando los algoritmos críticos de baja latencia sin depender de la nube. Por un lado, su capacidad de aceleración por hardware (mediante el entorno \textit{NVIDIA Isaac ROS}) permite procesar fluidamente las densas nubes de puntos 3D generadas por las cámaras RGB-D y el LiDAR, lo cual es estrictamente necesario para ejecutar las redes neuronales de detección de personas y cumplir con el margen de 30 cm de la navegación social (RNF-7). Por otro lado, la unidad de procesamiento central absorbe la carga computacional de la cinemática inversa del brazo robótico y la fusión sensorial (Filtro de Kalman Extendido) de las ruedas Mecanum. Todo ello operando bajo un TDP (\textit{Thermal Design Power}) máximo de 25 W, lo que minimiza el impacto térmico en el chasis cerrado y optimiza el consumo energético global del dispositivo.
 
-% --- Añadir al final de la Sección 3 ---
+\subsection*{Subsistema de Sensores Externos: Percepción del Entorno}
+Profundizando en la arquitectura de percepción ya introducida, este apartado detalla las características técnicas concretas de cada sensor externo y su rol específico dentro del sistema. La filosofía de diseño parte de un principio de redundancia: ninguna tecnología por sí sola cubre todos los escenarios hospitalarios, por lo que el robot combina tres capas complementarias.
+
+El sensor primario es un \textbf{LiDAR 2D} de tipo \textit{Time-of-Flight} con un rango efectivo de 12 m, una frecuencia de barrido de 15 Hz y una resolución angular de 1º, lo que proporciona la nube de puntos planar utilizada por el algoritmo de SLAM y el módulo de localización de Nav2. Esta unidad se sitúa en la parte frontal a una altura aproximada de 25 cm del suelo, una cota seleccionada para detectar pies de suero, ruedas de camillas y obstáculos rasantes que un LiDAR superior pasaría por alto.
+
+Como complemento volumétrico, el robot integra un par de \textbf{cámaras RGB-D estereoscópicas} de tipo \textit{Intel RealSense D455} o equivalente, dispuestas en configuración divergente para cubrir un campo de visión horizontal combinado superior a 160º. Su misión es doble: por un lado, generar las nubes de puntos 3D que alimentan a las redes neuronales de detección de personas ejecutadas en la GPU del Jetson Orin NX; por otro, identificar volúmenes intermedios y elevados (brazos, hombros, mobiliario sobresaliente) que escapan al plano del LiDAR. Las cámaras también son la fuente de información que habilita el cumplimiento del margen de 30 cm exigido por el algoritmo de Navegación Social, ya que ofrecen estimación de profundidad por píxel en un rango útil de 0.4 a 6 m con un error inferior al 2\%.
+
+El cinturón inferior de seguridad lo cierra un anillo de \textbf{ocho transductores ultrasónicos} dispuestos perimetralmente alrededor del chasis, separados aproximadamente 45º entre sí. Estos sensores no participan en la planificación de rutas, sino que operan como una capa reactiva de último recurso: si cualquiera de ellos detecta un objeto a menos de 15 cm, dispara directamente una señal de parada al controlador de movimiento sin pasar por la pila de ROS 2, garantizando una respuesta sub-milisegundo ante obstáculos invisibles a las demás tecnologías (cristal, materiales muy oscuros o superficies pulidas que confunden al LiDAR).
+
+\subsection*{Subsistema de Sensores Internos: Estado y Salud del Robot}
+Más allá de la IMU y los \textit{encoders} ya mencionados como soporte de la odometría, el robot integra un conjunto adicional de sensores internos cuya función es monitorizar el estado físico y operativo del propio sistema, condición indispensable para diagnosticar fallos y reportar telemetría al servidor central. La \textbf{Unidad de Medición Inercial (IMU) de 9 ejes}, integrada por un acelerómetro y un giroscopio MEMS de grado industrial junto a un magnetómetro de tres ejes, opera a una frecuencia de muestreo de 200 Hz y proporciona, además de los datos consumidos por el Filtro de Kalman Extendido, una detección activa de inclinación anómala que permite identificar situaciones de riesgo como rampas excesivas, escalones imprevistos o un eventual vuelco incipiente.
+
+Cada uno de los cuatro motores BLDC incorpora un \textbf{encoder magnético incremental} con una resolución de 4096 pulsos por revolución, cuyas lecturas se consolidan en el controlador de bajo nivel para reconstruir la odometría rueda a rueda. En paralelo, los inversores de los motores monitorizan en tiempo real la corriente consumida por cada eje; un consumo anómalo sostenido se interpreta como un atasco mecánico (rueda bloqueada, rodillo Mecanum dañado u objeto enrollado) y dispara una alerta de mantenimiento preventivo antes de que el problema escale a una avería crítica.
+
+El subsistema energético cuenta con su propio \textbf{Battery Management System (BMS)} integrado en el banco de baterías LiFePO4, encargado de monitorizar la tensión por celda, la corriente de entrada y salida, la temperatura interna del paquete y el estado de carga (SoC) y de salud (SoH). Estos valores se publican como \textit{topics} en ROS 2 y se utilizan tanto para activar las rutinas de carga de oportunidad (RF-9) como para detectar degradación prematura de las celdas. Adicionalmente, el compartimento de carga incorpora un sensor combinado de temperatura y humedad que materializa el control ambiental exigido por el RF-12, y una sonda térmica complementaria vigila el módulo Jetson Orin NX para garantizar que se respete el TDP máximo de 25 W en el chasis cerrado.
+
+\subsection*{Subsistema de Desinfección Activa}
+Ampliando lo introducido sobre el ciclo de desinfección del compartimento de carga, este apartado describe en detalle los componentes, parámetros operativos y mecanismos de seguridad del subsistema, que materializa el requerimiento RF-8. El elemento central es un conjunto de \textbf{lámparas UV-C de mercurio de baja presión} con emisión espectral concentrada en los 254 nm, longitud de onda de máxima eficacia germicida frente a las familias de patógenos habituales en el entorno hospitalario. Las lámparas se distribuyen en las paredes interiores del compartimento y se complementan con un revestimiento reflectante de aluminio anodizado que multiplica la dosis efectiva mediante reflexiones múltiples, alcanzando los $40\,\text{mJ}/\text{cm}^2$ recomendados para una inactivación microbiana superior al 99.9\% en un ciclo de duración inferior a tres minutos.
+
+El control del ciclo está fuertemente blindado por su naturaleza potencialmente lesiva para la retina y la piel humana. La activación de las lámparas exige la confirmación simultánea de tres condiciones independientes: el cierre electromecánico de la compuerta verificado por dos sensores redundantes situados en esquinas opuestas, la ausencia de carga útil declarada por el operador en la última entrega, y un comando explícito emitido por el planificador de misiones del nodo de control. Si cualquiera de estos contactos se interrumpe durante el ciclo, un circuito de seguridad cableado por hardware ---es decir, externo al software de ROS 2--- desconecta directamente la alimentación de las lámparas en menos de 50 ms, garantizando una protección intrínseca incluso ante un fallo total del firmware. Adicionalmente, una baliza luminosa exterior y una señalización acústica avisan en todo momento de que un ciclo está en curso.
+
+Más allá de la desinfección reactiva tras cada entrega, el subsistema soporta un \textit{ciclo profundo} programable que el robot ejecuta de forma autónoma en las estaciones de mantenimiento al finalizar el turno, prolongando el tiempo de exposición para garantizar la esterilización completa del compartimento antes del primer servicio del día siguiente. La desinfección de la carcasa exterior, en cambio, queda deliberadamente fuera del alcance del subsistema UV-C automatizado: siguiendo el mismo procedimiento que se aplica a los carros de transporte hospitalario convencionales, el personal de limpieza repasa manualmente las superficies externas del robot mediante los agentes químicos protocolizados por el centro (alcohol isopropílico o peróxido de hidrógeno), aprovechando que los materiales de la carcasa están específicamente seleccionados para resistir esta limpieza repetida sin degradarse (RNF-2). Esta división ---automatización para el interior, intervención humana para el exterior--- evita el sobrecoste y los riesgos de seguridad asociados a un emisor UV-C externo y simplifica la integración del robot en las rutinas de higiene ya establecidas en el centro.
 
 \subsection*{Dimensionamiento Energético y Capacidad de Batería}
 Para garantizar el cumplimiento del requerimiento RNF-1 (operación ininterrumpida de al menos 8 horas en franjas de alta demanda) y soportar la arquitectura de hardware descrita, es imperativo realizar un dimensionamiento energético preliminar. El cálculo se basa en un balance de potencias promedio, asumiendo un peso total del sistema de 75 kg (50 kg de chasis y componentes + 25 kg de carga útil máxima) y un voltaje de operación nominal del bus de 24 V.
 
 El consumo total estimado ($P_{total}$) se divide en tres subsistemas principales:
 \begin{itemize}
-    \item \textbf{Locomoción ($P_{loc}$):} Para desplazar una masa de 75 kg a una velocidad nominal de 1.2 m/s, asumiendo un ciclo de trabajo del 60\% (el robot se mueve el 60\% del tiempo y está en espera el 40\%), se estima un consumo medio de 120 W.
-    \item \textbf{Computación y Sensórica ($P_{sys}$):} La arquitectura \textit{Edge} con un procesador NVIDIA Jetson, junto con el LiDAR, las cámaras de profundidad RGB-D, la IMU y los módulos de comunicación Wi-Fi, presentan un consumo constante y elevado. Se estima un requerimiento continuo de 60 W.
-    \item \textbf{Periféricos de Interacción ($P_{per}$):} El brazo robótico y la lámpara de desinfección UV-C tienen un consumo pico alto, pero un ciclo de trabajo muy bajo (inferior al 5\% del turno). Se les asigna una potencia promedio ponderada de 15 W.
+	\item \textbf{Locomoción ($P_{loc}$):} Para desplazar una masa de 75 kg a una velocidad nominal de 1.2 m/s, asumiendo un ciclo de trabajo del 60\% (el robot se mueve el 60\% del tiempo y está en espera el 40\%), se estima un consumo medio de 120 W.
+	\item \textbf{Computación y Sensórica ($P_{sys}$):} La arquitectura \textit{Edge} con un procesador NVIDIA Jetson, junto con el LiDAR, las cámaras de profundidad RGB-D, la IMU y los módulos de comunicación Wi-Fi, presentan un consumo constante y elevado. Se estima un requerimiento continuo de 60 W.
+	\item \textbf{Periféricos de Interacción ($P_{per}$):} El brazo robótico y la lámpara de desinfección UV-C tienen un consumo pico alto, pero un ciclo de trabajo muy bajo (inferior al 5\% del turno). Se les asigna una potencia promedio ponderada de 15 W.
 \end{itemize}
 
 El consumo de potencia media ($P_{avg}$) del sistema en operación es la suma de estos factores:
 \begin{equation}
-    P_{avg} = P_{loc} + P_{sys} + P_{per} = 120 \text{ W} + 60 \text{ W} + 15 \text{ W} = 195 \text{ W}
+	P_{avg} = P_{loc} + P_{sys} + P_{per} = 120 \text{ W} + 60 \text{ W} + 15 \text{ W} = 195 \text{ W}
 \end{equation}
 
 Para cumplir con el turno de 8 horas ($t = 8$ h), la energía total requerida ($E$) es:
 \begin{equation}
-    E = P_{avg} \times t = 195 \text{ W} \times 8 \text{ h} = 1560 \text{ Wh}
+	E = P_{avg} \times t = 195 \text{ W} \times 8 \text{ h} = 1560 \text{ Wh}
 \end{equation}
 
 Con el fin de maximizar la vida útil de las celdas y evitar que el robot se apague abruptamente, no se debe descargar la batería por debajo del 20\% de su capacidad (Profundidad de Descarga o \textit{DoD} del 80\%). Por tanto, la energía bruta de la batería ($E_{bruta}$) debe ser:
 \begin{equation}
-    E_{bruta} = \frac{E}{DoD} = \frac{1560 \text{ Wh}}{0.80} = 1950 \text{ Wh}
+	E_{bruta} = \frac{E}{DoD} = \frac{1560 \text{ Wh}}{0.80} = 1950 \text{ Wh}
 \end{equation}
 
 Traduciendo esta energía a capacidad eléctrica ($C$) a la tensión nominal del sistema (24 V):
 \begin{equation}
-    C \text{ (Ah)} = \frac{E_{bruta}}{24 \text{ V}} = 81.25 \text{ Ah}
+	C \text{ (Ah)} = \frac{E_{bruta}}{24 \text{ V}} = 81.25 \text{ Ah}
 \end{equation}
 
 \textbf{Conclusión de Diseño:} En base a estos cálculos, el diseño final prescribirá un banco de baterías de tecnología \textbf{LiFePO4 (Litio-Ferrofosfato)} con una capacidad comercial estándar de \textbf{24 V y 100 Ah} (aproximadamente 2.4 kWh). Aunque el requerimiento mínimo calculado es de 81.25 Ah, se opta por el modelo de 100 Ah para proporcionar un margen de seguridad del 18\%, compensando la posible degradación de las celdas tras ciclos de uso intensivos y garantizando que el robot pueda completar misiones críticas de última hora incluso al final de su turno sin comprometer el umbral de seguridad de descarga. Esta química es ideal por su nulo riesgo de incendio en entornos críticos y su soporte para cargas de oportunidad rápidas (RF-9).
