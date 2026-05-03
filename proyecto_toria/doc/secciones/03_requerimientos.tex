@@ -64,6 +64,54 @@ Los requerimientos funcionales definen lo que hace el sistema.
 \caption{Requerimiento Funcional 5}
 \end{table}
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-6 \\ \hline
+\textbf{Nombre} & Capacidad de Carga Útil \\ \hline
+\textbf{Descripción} & El sistema debe permitir el transporte de una carga nominal de hasta 25 kg en su compartimento interno, manteniendo la integridad estructural y la precisión de movimiento. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 6}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-7 \\ \hline
+\textbf{Nombre} & Gestión Híbrida de Infraestructura \\ \hline
+\textbf{Descripción} & El robot debe interactuar con ascensores y puertas mediante protocolos Wi-Fi. Como sistema redundante y complementario, dispondrá de un brazo robótico para la manipulación física de estos elementos en caso de fallo de red o falta de domotización. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 7}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-8 \\ \hline
+\textbf{Nombre} & Ciclo de Desinfección Interna \\ \hline
+\textbf{Descripción} & El sistema debe ejecutar automáticamente un protocolo de desinfección mediante luz UV-C dentro de la cabina de carga tras la detección de una entrega finalizada. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 8}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-9 \\ \hline
+\textbf{Nombre} & Gestión de Carga de Oportunidad \\ \hline
+\textbf{Descripción} & El sistema debe monitorizar su estado energético en tiempo real y ejecutar rutinas de carga autónoma aprovechando los periodos de baja demanda de tareas detectados por el servidor central. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 9}
+\end{table}
+
 \subsection{Requerimientos No Funcionales}
 Los requerimientos no funcionales describen cómo será el sistema y sus restricciones técnicas.
 
@@ -72,8 +120,8 @@ Los requerimientos no funcionales describen cómo será el sistema y sus restric
 \begin{tabular}{|l|p{10cm}|}
 \hline
 \textbf{ID} & RNF-1 \\ \hline
-\textbf{Nombre} & Duración de Batería \\ \hline
-\textbf{Descripción} & El robot debe ser capaz de operar de forma ininterrumpida durante al menos 8 horas con una sola carga completa. \\ \hline
+\textbf{Nombre} & Autonomía y Disponibilidad Crítica \\ \hline
+\textbf{Description} & El robot debe operar de forma ininterrumpida durante al menos 8 horas. Asimismo, debe garantizar una disponibilidad del 100\% durante las franjas de máxima actividad hospitalaria (08:00-14:00 y 16:00-20:00), gestionando sus ciclos de carga fuera de estos intervalos. \\ \hline
 \textbf{Prioridad} & Alta \\ \hline
 \end{tabular}
 \caption{Requerimiento No Funcional 1}
@@ -125,4 +173,40 @@ Los requerimientos no funcionales describen cómo será el sistema y sus restric
 \textbf{Prioridad} & Media \\ \hline
 \end{tabular}
 \caption{Requerimiento No Funcional 5}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-6 \\ \hline
+\textbf{Nombre} & Seguridad en Frenado de Emergencia \\ \hline
+\textbf{Descripción} & El sistema de frenado debe ser capaz de detener el robot con carga máxima (25 kg) en una distancia inferior a 50 cm cuando circula a su velocidad nominal de 1.2 m/s. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 6}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-8 \\ \hline
+\textbf{Nombre} & Navegación Social y Márgenes de Seguridad \\ \hline
+\textbf{Descripción} & El algoritmo de planificación de rutas debe garantizar un margen de separación mínimo de 30 cm con respecto a peatones y personal sanitario durante las maniobras de rebase. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 8}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-9 \\ \hline
+\textbf{Nombre} & Protocolos de Comunicación Inalámbrica \\ \hline
+\textbf{Descripción} & La comunicación con la infraestructura (Open-RMF, ascensores, puertas) se realizará bajo protocolos estándar sobre red Wi-Fi hospitalaria con cifrado de seguridad. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 9}
 \end{table}
