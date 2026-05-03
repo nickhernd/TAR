@@ -1,7 +1,7 @@
-\section{Requerimientos del Sistema}
+\subsection{Requerimientos del Sistema}
 En esta sección se detallan los requisitos que debe cumplir el sistema robótico hospitalario. Se dividen en requerimientos funcionales, que definen el comportamiento y las capacidades del robot, y requerimientos no funcionales, que describen las cualidades y restricciones del sistema.
 
-\subsection{Requerimientos Funcionales}
+\subsubsection{Requerimientos Funcionales}
 Los requerimientos funcionales definen lo que hace el sistema.
 
 \begin{table}[H]
@@ -112,7 +112,80 @@ Los requerimientos funcionales definen lo que hace el sistema.
 \caption{Requerimiento Funcional 9}
 \end{table}
 
-\subsection{Requerimientos No Funcionales}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-10 \\ \hline
+\textbf{Nombre} & Interfaz de Notificación Visual y Sonora \\ \hline
+\textbf{Descripción} & El robot debe emitir señales acústicas y visuales (luces LED de estado) para indicar su intención de movimiento, giro o frenado inminente a los peatones. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 10}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-11 \\ \hline
+\textbf{Nombre} & Registro de Trazabilidad de Entregas \\ \hline
+\textbf{Descripción} & El sistema debe almacenar un log detallado de cada misión, incluyendo hora de recogida, usuario solicitante, ruta seguida y hora de entrega confirmada. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 11}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-12 \\ \hline
+\textbf{Nombre} & Teleoperación de Emergencia \\ \hline
+\textbf{Descripción} & En caso de bloqueo por fallo de software o entorno imprevisto, un operador humano debe poder tomar el control remoto del robot a través de la red Wi-Fi. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 12}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-13 \\ \hline
+\textbf{Nombre} & Actualización Dinámica del Mapa \\ \hline
+\textbf{Descripción} & El robot debe ser capaz de detectar cambios permanentes en el entorno (ej. obras o mobiliario nuevo) y sugerir actualizaciones al mapa maestro del servidor. \\ \hline
+\textbf{Prioridad} & Baja \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 13}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-14 \\ \hline
+\textbf{Nombre} & Autodiagnóstico de Sensores \\ \hline
+\textbf{Descripción} & El robot debe realizar un chequeo de integridad de sus sensores (LiDAR, IMU, Cámaras) al inicio de cada turno y reportar cualquier anomalía al centro de mando. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 14}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RF-15 \\ \hline
+\textbf{Nombre} & Integración con Alarma de Incendios \\ \hline
+\textbf{Descripción} & Ante la activación de una alarma de incendios en el edificio, el robot debe detenerse inmediatamente en la zona segura más cercana y liberar sus compartimentos si es necesario. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento Funcional 15}
+\end{table}
+
+\newpage
+\subsubsection{Requerimientos No Funcionales}
 Los requerimientos no funcionales describen cómo será el sistema y sus restricciones técnicas.
 
 \begin{table}[H]
@@ -221,4 +294,76 @@ Los requerimientos no funcionales describen cómo será el sistema y sus restric
 \textbf{Prioridad} & Alta \\ \hline
 \end{tabular}
 \caption{Requerimiento No Funcional 9}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-10 \\ \hline
+\textbf{Nombre} & Nivel de Emisión Sonora \\ \hline
+\textbf{Descripción} & El nivel de ruido generado por el robot durante su movimiento no debe exceder los 45 dB, cumpliendo con las normativas de confort acústico en entornos hospitalarios nocturnos. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 10}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-11 \\ \hline
+\textbf{Nombre} & Modularidad del Hardware \\ \hline
+\textbf{Descripción} & El diseño mecánico debe permitir el reemplazo de cualquier actuador o sensor crítico (motores, ruedas, LiDAR) en un tiempo inferior a 30 minutos por un técnico cualificado. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 11}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-12 \\ \hline
+\textbf{Nombre} & Estética No Amenazante \\ \hline
+\textbf{Descripción} & El diseño exterior (carcasa y colores) debe seguir una estética minimalista y "amigable" para reducir la percepción de riesgo o ansiedad en los pacientes. \\ \hline
+\textbf{Prioridad} & Baja \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 12}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-13 \\ \hline
+\textbf{Nombre} & Precisión de Posicionamiento en Parada \\ \hline
+\textbf{Descripción} & El robot debe ser capaz de detenerse frente a una estación de carga o punto de entrega con un error máximo de $\pm$2 cm respecto al punto objetivo. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 13}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-14 \\ \hline
+\textbf{Nombre} & Tiempo de Respuesta del Control (Latencia) \\ \hline
+\textbf{Descripción} & El bucle de control de bajo nivel (odometría y motores) debe operar a una frecuencia mínima de 50 Hz para garantizar una respuesta fluida ante obstáculos. \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 14}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{ID} & RNF-15 \\ \hline
+\textbf{Nombre} & Ciclo de Vida de la Batería \\ \hline
+\textbf{Descripción} & Las baterías LiFePO4 utilizadas deben garantizar al menos 2000 ciclos de carga/descarga manteniendo el 80\% de su capacidad nominal. \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\end{tabular}
+\caption{Requerimiento No Funcional 15}
 \end{table}

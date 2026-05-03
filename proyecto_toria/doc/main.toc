@@ -1,4 +1,5 @@
 \babel@toc {spanish}{}\relax 
+<<<<<<< HEAD
 \contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
 \contentsline {section}{\numberline {2}Estado del Arte y Simulación en ROS 2}{2}{section.2}%
 \contentsline {section}{\numberline {3}Requerimientos del Sistema}{4}{section.3}%
@@ -8,3 +9,29 @@
 \contentsline {section}{\numberline {5}Infraestructura e Integración en el Entorno Hospitalario}{13}{section.5}%
 \contentsline {section}{\numberline {6}Seguridad y Normativa}{14}{section.6}%
 \contentsline {section}{\numberline {7}Conclusiones y Perspectivas Futuras}{15}{section.7}%
+=======
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}Estado del Arte y Simulación en ROS 2}{4}{section.2}%
+\contentsline {section}{\numberline {3}Diseño del Robot}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Requerimientos del Sistema}{7}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Requerimientos Funcionales}{7}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Requerimientos No Funcionales}{11}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Diseño Mecánico y Arquitectura de Hardware}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Capa de Control de Bajo Nivel: Microcontrolador STM32H7}{15}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Brazo Manipulador Colaborativo: Cinemática e Interacción}{17}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Interfaz Hombre-Máquina (HMI) y Comunicación Social}{17}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Distribución de Potencia y Gestión de Energía (BMS)}{17}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Infraestructura e Integración en el Entorno Hospitalario}{20}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Estaciones de Desinfección Automatizada}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Ciberseguridad Industrial y el Estándar IEC 62443}{20}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Seguridad y Normativa}{22}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Análisis de Riesgos e Impacto Socio-Ético}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Análisis de Riesgos (ISO 12100 e ISO 13849)}{24}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Peligros Mecánicos y de Movimiento}{24}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Fallos Eléctricos y Térmicos}{24}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Impacto Socioeconómico y Ético}{24}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Transformación del Trabajo de Enfermería}{24}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Privacidad y Ética del Procesamiento de Datos}{25}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Sostenibilidad Ambiental}{25}{subsubsection.4.2.3}%
+\contentsline {section}{\numberline {5}Conclusiones y Perspectivas Futuras}{26}{section.5}%
+>>>>>>> 79d0f96 (doc -> 8000 words)

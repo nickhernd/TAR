@@ -1,10 +1,21 @@
 \begin{thebibliography}{1}
 
+\bibitem{macenski2022}
+S.~Macenski, T.~Foote, B.~Gerkey, C.~Lalancette, and W.~Woodall, ``Robot
+  operating system 2: Design, architecture, and uses in the wild,'' {\em
+  Science Robotics}, vol.~7, no.~66, p.~eabm6074, 2022.
+
 \bibitem{openrmf}
 O.~Robotics, ``Open robotics middleware framework (open-rmf).''
   \url{https://www.open-rmf.org/}, 2023.
 
 \bibitem{nav2}
 R.~Planning, ``Navigation 2 (nav2).'' \url{https://navigation.ros.org/}, 2023.
+
+\bibitem{robotshop2025}
+RobotShop, ``C{\'o}mo dise{\~n}ar un robot.''
+  \url{https://www.robotshop.com/community/tutorials/show/how-to-make-a-robot-lesson-1-getting-started},
+  2025.
+\newblock Consultado el 22 de febrero de 2025.
 
 \end{thebibliography}

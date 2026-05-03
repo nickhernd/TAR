@@ -1,6 +1,16 @@
 % main.tex
 \documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{caption}
+
+\geometry{a4paper, margin=2.5cm}
 
 % Importar configuración
 \input{config}
@@ -22,18 +32,33 @@
     {\large \fecha \par}
 \end{titlepage}
 
+\newpage
+\input{secciones/00_declaracion_ia}
+
+\newpage
 \tableofcontents
 \newpage
 
 % Secciones modularizadas
 \input{secciones/01_introduccion}
+\newpage
 \input{secciones/02_estado_del_arte}
-\input{secciones/03_requerimientos}
-\input{secciones/04_diseno_robot}
-\input{secciones/05_infraestructura}
-\input{secciones/06_seguridad_normativa}
-\input{secciones/07_conclusiones}
+\newpage
 
+\section{Diseño del Robot}
+\input{secciones/03_requerimientos}
+\newpage
+\input{secciones/04_diseno_robot}
+\newpage
+\input{secciones/05_infraestructura}
+\newpage
+\input{secciones/06_seguridad_normativa}
+\newpage
+
+\input{secciones/08_impacto_riesgos}
+\newpage
+\input{secciones/07_conclusiones}
+\newpage
 % Bibliografía
 \newpage
 \bibliographystyle{ieeetr}

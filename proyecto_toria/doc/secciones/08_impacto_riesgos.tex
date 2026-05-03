@@ -1,0 +1,31 @@
+\section{Análisis de Riesgos e Impacto Socio-Ético}
+El despliegue de una flota de robots autónomos en un ecosistema tan sensible como un hospital no puede analizarse únicamente desde un prisma técnico. Es imperativo evaluar los riesgos operativos y el impacto que esta tecnología tiene sobre el personal, los pacientes y el medio ambiente.
+
+\subsection{Análisis de Riesgos (ISO 12100 e ISO 13849)}
+Siguiendo las directrices de la norma \textbf{ISO 12100}, se ha llevado a cabo una evaluación de riesgos exhaustiva para identificar los peligros potenciales y definir las medidas de mitigación necesarias. Los riesgos se han categorizado según su naturaleza:
+
+\subsubsection{Peligros Mecánicos y de Movimiento}
+El principal riesgo identificado es el atropello o atrapamiento de personas, especialmente en zonas de alta densidad como las salas de espera. Para mitigar este riesgo, el robot implementa:
+\begin{itemize}
+    \item \textbf{Limitación de Energía Cinética:} El sistema operativo limita la velocidad máxima a 1.2 m/s, asegurando que, en caso de impacto residual, la fuerza ejercida sea inferior a los límites de dolor establecidos en la norma ISO 15066 para robots colaborativos.
+    \item \textbf{Redundancia en la Detección:} El LiDAR y las cámaras RGB-D actúan como sistemas independientes. El fallo de uno de ellos activa automáticamente una transición al estado de "Falla Segura" (\textit{Safe-State}), deteniendo el robot.
+\end{itemize}
+
+\subsubsection{Fallos Eléctricos y Térmicos}
+Dada la alta densidad energética de las baterías LiFePO4, existe un riesgo residual de incendio o cortocircuito. Las medidas de mitigación incluyen:
+\begin{itemize}
+    \item \textbf{Aislamiento de Celdas:} La batería cuenta con una carcasa ignífuga de acero y un sistema de extinción pasiva.
+    \item \textbf{Monitorización Continua:} El microcontrolador STM32 desconecta físicamente la batería del bus de potencia si se detecta una temperatura superior a los 60$^{\circ}$C.
+\end{itemize}
+
+\subsection{Impacto Socioeconómico y Ético}
+La introducción del robot mensajero hospitalario tiene profundas implicaciones en la organización del trabajo y en la experiencia del paciente.
+
+\subsubsection{Transformación del Trabajo de Enfermería}
+A diferencia de los temores tradicionales sobre la sustitución de empleo, nuestro proyecto se concibe bajo el paradigma de la \textbf{colaboración humano-robot}. El objetivo es eliminar las tareas de "transporte vacío", permitiendo que el personal de enfermería recupere tiempo de calidad para la interacción clínica. El impacto socioeconómico se mide no solo en la reducción de costes operativos, sino en la mejora del clima laboral y la reducción de bajas por lesiones músculo-esqueléticas derivadas del empuje de carros pesados.
+
+\subsubsection{Privacidad y Ética del Procesamiento de Datos}
+El uso de cámaras de profundidad plantea interrogantes sobre la privacidad de los pacientes. Siguiendo el principio de \textbf{Privacidad por Diseño}, el robot procesa toda la información visual de forma local en la NVIDIA Jetson. Las imágenes nunca se almacenan ni se transmiten por la red; solo se extraen coordenadas matemáticas anónimas (nubes de puntos) para la navegación. Esto garantiza el cumplimiento del RGPD y protege la dignidad e intimidad de las personas en situaciones de vulnerabilidad.
+
+\subsubsection{Sostenibilidad Ambiental}
+Finalmente, el diseño contempla el ciclo de vida del producto. La elección de baterías LiFePO4 no solo responde a criterios de seguridad, sino de sostenibilidad, ya que carecen de cobalto y tienen una vida útil significativamente mayor que las de Litio-Ion convencionales, reduciendo la huella de carbono y facilitando el reciclaje de sus componentes al final de su vida operativa.

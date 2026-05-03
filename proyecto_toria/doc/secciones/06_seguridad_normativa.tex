@@ -1,5 +1,14 @@
 % secciones/05_seguridad_normativa.tex
-\section{Seguridad y Normativa}
+\subsection{Seguridad y Normativa}
+El despliegue de robots en entornos públicos y, especialmente, en infraestructuras críticas como hospitales, trasciende el mero reto de la ingeniería de control para convertirse en un desafío de responsabilidad civil y ética. En este contexto, la adherencia a estándares técnicos no es solo un requisito legal, sino la garantía de que el sistema operará bajo márgenes de riesgo controlados y predecibles.
+
+Un estándar o norma técnica es un documento de consenso, elaborado por organismos especializados (como ISO, IEC o IEEE), que establece criterios, reglas y directrices para asegurar que los materiales, productos y procesos sean adecuados para su propósito. En la robótica de servicio, los estándares cumplen tres funciones vitales:
+\begin{itemize}
+    \item \textbf{Seguridad Intrínseca:} Establecen los niveles máximos de fuerza, velocidad y energía que un robot puede ejercer en caso de impacto accidental, protegiendo la integridad física de los seres humanos.
+    \item \textbf{Interoperabilidad:} Permiten que dispositivos de diferentes fabricantes puedan comunicarse y compartir infraestructuras (como ascensores o estaciones de carga) de forma segura y eficiente.
+    \item \textbf{Confianza del Usuario:} Facilitan la aceptación social de la tecnología al asegurar que el dispositivo ha superado pruebas de validación rigurosas y normalizadas.
+\end{itemize}
+
 La operación de sistemas robóticos móviles en entornos donde conviven seres humanos en estados de vulnerabilidad exige un compromiso absoluto con la seguridad técnica y operativa. El marco normativo que rige este despliegue es complejo y requiere una integración profunda desde las primeras fases del diseño mecánico y del software de control.
 
 El pilar fundamental de la seguridad en la robótica de servicio es la norma ISO 13482:2014, la cual establece los requisitos de seguridad para robots de cuidado personal, categoría que engloba a los asistentes de transporte hospitalario. Esta normativa no solo define los límites físicos de velocidad y fuerza de impacto para prevenir lesiones en caso de contacto accidental, sino que también prescribe metodologías rigurosas para la detección de personas y la respuesta ante situaciones críticas. En nuestro diseño, el cumplimiento de esta norma se traduce en la implementación de zonas de seguridad dinámicas procesadas por el stack de navegación, las cuales ajustan la velocidad del robot en función de la densidad de personas en su entorno inmediato. Además, se han integrado protocolos de parada de emergencia redundantes, tanto físicos como basados en software de tiempo real, garantizando que el sistema sea intrínsecamente seguro ante fallos electrónicos.
