@@ -4,12 +4,14 @@ services:
     image: hospital_robot_sim:latest
     container_name: ros2_hospital_container
     environment:
-      - LIBGL_ALWAYS_SOFTWARE=1
-      - GALLIUM_DRIVER=llvmpipe
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
     volumes:
       - .:/ros2_ws/src/hospital_robot_project
-    ports:
-      - "6080:6080"
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    devices:
+      - /dev/dri:/dev/dri
+    network_mode: host
     stdin_open: true
     tty: true
     privileged: true
