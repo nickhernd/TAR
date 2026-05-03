@@ -3,8 +3,8 @@
 \contentsline {section}{\numberline {2}Estado del Arte y Simulación en ROS 2}{2}{section.2}%
 \contentsline {section}{\numberline {3}Requerimientos del Sistema}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Requerimientos Funcionales}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Requerimientos No Funcionales}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Diseño y Características del Robot}{6}{section.4}%
-\contentsline {section}{\numberline {5}Infraestructura e Integración en el Entorno Hospitalario}{7}{section.5}%
-\contentsline {section}{\numberline {6}Seguridad y Normativa}{8}{section.6}%
-\contentsline {section}{\numberline {7}Conclusiones y Perspectivas Futuras}{9}{section.7}%
+\contentsline {subsection}{\numberline {3.2}Requerimientos No Funcionales}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Diseño y Características del Robot}{11}{section.4}%
+\contentsline {section}{\numberline {5}Infraestructura e Integración en el Entorno Hospitalario}{11}{section.5}%
+\contentsline {section}{\numberline {6}Seguridad y Normativa}{12}{section.6}%
+\contentsline {section}{\numberline {7}Conclusiones y Perspectivas Futuras}{13}{section.7}%

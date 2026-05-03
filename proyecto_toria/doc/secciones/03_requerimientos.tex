@@ -5,208 +5,328 @@ En esta sección se detallan los requisitos que debe cumplir el sistema robótic
 Los requerimientos funcionales definen lo que hace el sistema.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-1 \\ \hline
-\textbf{Nombre} & Navegación Autónoma en Entornos Hospitalarios \\ \hline
-\textbf{Descripción} & El sistema debe ser capaz de desplazarse de forma autónoma entre diferentes puntos del hospital (farmacia, laboratorios, plantas) utilizando un mapa previamente generado. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 1}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-1 \\ \hline
+		\textbf{Nombre} & Navegación Autónoma en Entornos Hospitalarios \\ \hline
+		\textbf{Descripción} & El sistema debe ser capaz de desplazarse de forma autónoma entre diferentes puntos del hospital (farmacia, laboratorios, plantas) utilizando un mapa previamente generado. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 1}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-2 \\ \hline
-\textbf{Nombre} & Gestión de Apertura por Autenticación \\ \hline
-\textbf{Descripción} & El robot solo permitirá la apertura de sus compartimentos de carga tras la validación de un usuario autorizado mediante RFID o biometría. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 2}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-2 \\ \hline
+		\textbf{Nombre} & Gestión de Apertura por Autenticación \\ \hline
+		\textbf{Descripción} & El robot solo permitirá la apertura de sus compartimentos de carga tras la validación de un usuario autorizado mediante RFID o biometría. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 2}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-3 \\ \hline
-\textbf{Nombre} & Evasión de Obstáculos en Tiempo Real \\ \hline
-\textbf{Descripción} & El robot debe detectar y rodear obstáculos fijos y móviles (personas, camillas) garantizando la continuidad de la ruta sin colisiones. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 3}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-3 \\ \hline
+		\textbf{Nombre} & Evasión de Obstáculos en Tiempo Real \\ \hline
+		\textbf{Descripción} & El robot debe detectar y rodear obstáculos fijos y móviles (personas, camillas) garantizando la continuidad de la ruta sin colisiones. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 3}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-4 \\ \hline
-\textbf{Nombre} & Sistema de Recepción de Tareas \\ \hline
-\textbf{Descripción} & El sistema debe poder recibir órdenes de transporte a través de una interfaz centralizada y gestionar la cola de misiones de forma eficiente. \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 4}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-4 \\ \hline
+		\textbf{Nombre} & Sistema de Recepción de Tareas \\ \hline
+		\textbf{Descripción} & El sistema debe poder recibir órdenes de transporte a través de una interfaz centralizada y gestionar la cola de misiones de forma eficiente. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 4}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-5 \\ \hline
-\textbf{Nombre} & Autocarga de Batería \\ \hline
-\textbf{Descripción} & El robot debe monitorizar su nivel de batería y regresar de forma autónoma a la estación de carga cuando el nivel sea inferior al umbral crítico. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 5}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-5 \\ \hline
+		\textbf{Nombre} & Autocarga de Batería \\ \hline
+		\textbf{Descripción} & El robot debe monitorizar su nivel de batería y regresar de forma autónoma a la estación de carga cuando el nivel sea inferior al umbral crítico. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 5}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-6 \\ \hline
-\textbf{Nombre} & Capacidad de Carga Útil \\ \hline
-\textbf{Descripción} & El sistema debe permitir el transporte de una carga nominal de hasta 25 kg en su compartimento interno, manteniendo la integridad estructural y la precisión de movimiento. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 6}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-6 \\ \hline
+		\textbf{Nombre} & Capacidad de Carga Útil \\ \hline
+		\textbf{Descripción} & El sistema debe permitir el transporte de una carga nominal de hasta 25 kg en su compartimento interno, manteniendo la integridad estructural y la precisión de movimiento. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 6}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-7 \\ \hline
-\textbf{Nombre} & Gestión Híbrida de Infraestructura \\ \hline
-\textbf{Descripción} & El robot debe interactuar con ascensores y puertas mediante protocolos Wi-Fi. Como sistema redundante y complementario, dispondrá de un brazo robótico para la manipulación física de estos elementos en caso de fallo de red o falta de domotización. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 7}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-7 \\ \hline
+		\textbf{Nombre} & Gestión Híbrida de Infraestructura \\ \hline
+		\textbf{Descripción} & El robot debe interactuar con ascensores y puertas mediante protocolos Wi-Fi. Como sistema redundante y complementario, dispondrá de un brazo robótico para la manipulación física de estos elementos en caso de fallo de red o falta de domotización. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 7}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-8 \\ \hline
-\textbf{Nombre} & Ciclo de Desinfección Interna \\ \hline
-\textbf{Descripción} & El sistema debe ejecutar automáticamente un protocolo de desinfección mediante luz UV-C dentro de la cabina de carga tras la detección de una entrega finalizada. \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 8}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-8 \\ \hline
+		\textbf{Nombre} & Ciclo de Desinfección Interna \\ \hline
+		\textbf{Descripción} & El sistema debe ejecutar automáticamente un protocolo de desinfección mediante luz UV-C dentro de la cabina de carga tras la detección de una entrega finalizada. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 8}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RF-9 \\ \hline
-\textbf{Nombre} & Gestión de Carga de Oportunidad \\ \hline
-\textbf{Descripción} & El sistema debe monitorizar su estado energético en tiempo real y ejecutar rutinas de carga autónoma aprovechando los periodos de baja demanda de tareas detectados por el servidor central. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento Funcional 9}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-9 \\ \hline
+		\textbf{Nombre} & Gestión de Carga de Oportunidad \\ \hline
+		\textbf{Descripción} & El sistema debe monitorizar su estado energético en tiempo real y ejecutar rutinas de carga autónoma aprovechando los periodos de baja demanda de tareas detectados por el servidor central. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 9}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-10 \\ \hline
+		\textbf{Nombre} & Trazabilidad de Misiones y Cadena de Custodia \\ \hline
+		\textbf{Descripción} & El sistema debe registrar de forma persistente cada misión logística realizada, almacenando metadatos como el operador que ha cargado el material, el destinatario que lo ha recogido, el contenido declarado, las marcas de tiempo de cada evento y el trayecto recorrido, garantizando una cadena de custodia auditable conforme a los requisitos de farmacia hospitalaria. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 10}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-11 \\ \hline
+		\textbf{Nombre} & Notificación al Destinatario de Entrega \\ \hline
+		\textbf{Descripción} & Al alcanzar el punto de destino, el robot debe notificar la llegada al personal destinatario mediante mensajería integrada con el sistema hospitalario (busca, correo o aplicación móvil) y emitir señales acústicas y visuales locales hasta que la entrega sea confirmada o se agote un tiempo máximo de espera. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 11}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-12 \\ \hline
+		\textbf{Nombre} & Monitorización Ambiental de Cargas Sensibles \\ \hline
+		\textbf{Descripción} & El compartimento de transporte debe disponer de sensores de temperatura y humedad que registren las condiciones internas durante toda la misión. Si los valores se desvían del rango configurado para la carga (por ejemplo, cadena de frío para muestras biológicas), el sistema debe generar una alerta inmediata al supervisor y marcar la entrega como comprometida. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 12}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-13 \\ \hline
+		\textbf{Nombre} & Cesión Cortés de Paso a Personal Sanitario \\ \hline
+		\textbf{Descripción} & Cuando el robot detecte una situación de tránsito prioritaria (camillas en movimiento, personal con carros de parada o caminando en sentido opuesto en pasillos estrechos), debe ejecutar una maniobra de cesión de paso, apartándose hacia una zona segura y reanudando su misión únicamente cuando la vía esté despejada. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 13}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RF-14 \\ \hline
+		\textbf{Nombre} & Modo Teleoperación de Rescate \\ \hline
+		\textbf{Descripción} & El sistema debe ofrecer un modo de teleoperación remota seguro que permita a un operador autorizado tomar el control manual del robot desde la sala de supervisión cuando este quede bloqueado, desorientado o atrapado en una zona no mapeada, incluyendo retransmisión de vídeo en directo desde las cámaras embarcadas. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento Funcional 14}
 \end{table}
 
 \subsection{Requerimientos No Funcionales}
 Los requerimientos no funcionales describen cómo será el sistema y sus restricciones técnicas.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-1 \\ \hline
-\textbf{Nombre} & Autonomía y Disponibilidad Crítica \\ \hline
-\textbf{Description} & El robot debe operar de forma ininterrumpida durante al menos 8 horas. Asimismo, debe garantizar una disponibilidad del 100\% durante las franjas de máxima actividad hospitalaria (08:00-14:00 y 16:00-20:00), gestionando sus ciclos de carga fuera de estos intervalos. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 1}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-1 \\ \hline
+		\textbf{Nombre} & Autonomía y Disponibilidad Crítica \\ \hline
+		\textbf{Description} & El robot debe operar de forma ininterrumpida durante al menos 8 horas. Asimismo, debe garantizar una disponibilidad del 100\% durante las franjas de máxima actividad hospitalaria (08:00-14:00 y 16:00-20:00), gestionando sus ciclos de carga fuera de estos intervalos. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 1}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-2 \\ \hline
-\textbf{Nombre} & Superficies Sanitizables \\ \hline
-\textbf{Descripción} & La carcasa exterior debe estar fabricada con materiales que resistan procesos de desinfección química frecuente (alcohol, peróxido) sin degradarse. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 2}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-2 \\ \hline
+		\textbf{Nombre} & Superficies Sanitizables \\ \hline
+		\textbf{Descripción} & La carcasa exterior debe estar fabricada con materiales que resistan procesos de desinfección química frecuente (alcohol, peróxido) sin degradarse. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 2}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-3 \\ \hline
-\textbf{Nombre} & Control de Vibraciones \\ \hline
-\textbf{Descripción} & El sistema de suspensión debe limitar las vibraciones transmitidas a la carga a un nivel que no comprometa la integridad de muestras biológicas líquidas. \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 3}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-3 \\ \hline
+		\textbf{Nombre} & Control de Vibraciones \\ \hline
+		\textbf{Descripción} & El sistema de suspensión debe limitar las vibraciones transmitidas a la carga a un nivel que no comprometa la integridad de muestras biológicas líquidas. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 3}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-4 \\ \hline
-\textbf{Nombre} & Parada de Emergencia \\ \hline
-\textbf{Descripción} & El robot debe contar con un botón físico de parada de emergencia y sistemas redundantes que detengan el movimiento ante fallos críticos. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 4}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-4 \\ \hline
+		\textbf{Nombre} & Parada de Emergencia \\ \hline
+		\textbf{Descripción} & El robot debe contar con un botón físico de parada de emergencia y sistemas redundantes que detengan el movimiento ante fallos críticos. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 4}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-5 \\ \hline
-\textbf{Nombre} & Integración con ROS 2 \\ \hline
-\textbf{Descripción} & El software del robot debe estar basado íntegramente en ROS 2 Humble o superior para garantizar la modularidad y facilidad de mantenimiento. \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 5}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-5 \\ \hline
+		\textbf{Nombre} & Integración con ROS 2 \\ \hline
+		\textbf{Descripción} & El software del robot debe estar basado íntegramente en ROS 2 Humble o superior para garantizar la modularidad y facilidad de mantenimiento. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 5}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-6 \\ \hline
-\textbf{Nombre} & Seguridad en Frenado de Emergencia \\ \hline
-\textbf{Descripción} & El sistema de frenado debe ser capaz de detener el robot con carga máxima (25 kg) en una distancia inferior a 50 cm cuando circula a su velocidad nominal de 1.2 m/s. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 6}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-6 \\ \hline
+		\textbf{Nombre} & Seguridad en Frenado de Emergencia \\ \hline
+		\textbf{Descripción} & El sistema de frenado debe ser capaz de detener el robot con carga máxima (25 kg) en una distancia inferior a 50 cm cuando circula a su velocidad nominal de 1.2 m/s. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 6}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-8 \\ \hline
-\textbf{Nombre} & Navegación Social y Márgenes de Seguridad \\ \hline
-\textbf{Descripción} & El algoritmo de planificación de rutas debe garantizar un margen de separación mínimo de 30 cm con respecto a peatones y personal sanitario durante las maniobras de rebase. \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 8}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-8 \\ \hline
+		\textbf{Nombre} & Navegación Social y Márgenes de Seguridad \\ \hline
+		\textbf{Descripción} & El algoritmo de planificación de rutas debe garantizar un margen de separación mínimo de 30 cm con respecto a peatones y personal sanitario durante las maniobras de rebase. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 8}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{ID} & RNF-9 \\ \hline
-\textbf{Nombre} & Protocolos de Comunicación Inalámbrica \\ \hline
-\textbf{Descripción} & La comunicación con la infraestructura (Open-RMF, ascensores, puertas) se realizará bajo protocolos estándar sobre red Wi-Fi hospitalaria con cifrado de seguridad. \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\end{tabular}
-\caption{Requerimiento No Funcional 9}
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-9 \\ \hline
+		\textbf{Nombre} & Protocolos de Comunicación Inalámbrica \\ \hline
+		\textbf{Descripción} & La comunicación con la infraestructura (Open-RMF, ascensores, puertas) se realizará bajo protocolos estándar sobre red Wi-Fi hospitalaria con cifrado de seguridad. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 9}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-10 \\ \hline
+		\textbf{Nombre} & Compatibilidad Electromagnética \\ \hline
+		\textbf{Descripción} & El conjunto de sistemas electrónicos del robot debe cumplir con la normativa de compatibilidad electromagnética aplicable a entornos sanitarios, garantizando que sus emisiones no interfieran con el funcionamiento de equipos de soporte vital, monitorización médica o sistemas de imagen presentes en su trayectoria. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 10}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-11 \\ \hline
+		\textbf{Nombre} & Nivel de Ruido Acústico \\ \hline
+		\textbf{Descripción} & El robot, durante su funcionamiento nominal, no debe superar los 50 dB(A) medidos a un metro de distancia, evitando así perturbar el descanso de pacientes hospitalizados y la concentración del personal sanitario en zonas de cuidados críticos. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 11}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-12 \\ \hline
+		\textbf{Nombre} & Dimensiones y Maniobrabilidad \\ \hline
+		\textbf{Descripción} & La huella física del robot no debe exceder los 70 cm de ancho por 90 cm de largo, permitiendo su circulación holgada por puertas estándar hospitalarias y su giro completo dentro de pasillos de servicio sin necesidad de maniobras múltiples. \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 12}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-13 \\ \hline
+		\textbf{Nombre} & Privacidad y Cumplimiento del RGPD \\ \hline
+		\textbf{Descripción} & El procesamiento de imágenes captadas por las cámaras embarcadas debe realizarse íntegramente en la capa Edge del robot, anonimizando rostros y rasgos identificables antes de cualquier almacenamiento o transmisión, en estricto cumplimiento del Reglamento General de Protección de Datos (RGPD). \\ \hline
+		\textbf{Prioridad} & Alta \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 13}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{ID} & RNF-14 \\ \hline
+		\textbf{Nombre} & Mantenibilidad Modular del Hardware \\ \hline
+		\textbf{Descripción} & Los principales subsistemas físicos del robot (baterías, ruedas motrices, sensores LiDAR y cámaras) deben ser reemplazables en menos de 15 minutos por personal técnico cualificado mediante conectores estandarizados y sin requerir herramientas especializadas, minimizando el tiempo medio de reparación. \\ \hline
+		\textbf{Prioridad} & Media \\ \hline
+	\end{tabular}
+	\caption{Requerimiento No Funcional 14}
 \end{table}
